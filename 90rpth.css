@@ -15,7 +15,7 @@
 .tv-root{
   width:550px;
   margin:auto;
-  background:#000;
+  background:#141414;
 }
 
 .tv-vase{
@@ -57,7 +57,7 @@
   float:left;
   width:50px;
   height:320px;
-  background:#000;
+  background:#141414;
   margin-left:-3px;
   margin-top:-300px;
   position:relative;
@@ -102,5 +102,6 @@
   font-size:17px;
   letter-spacing: 0.2rem;
 }
+
 
 
