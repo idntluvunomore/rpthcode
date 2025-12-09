@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'KyleNM';
-  src: url('https://cdn.jsdelivr.net/gh/idntluvunomore/rpthcode@main/KyleNM.woff2') format('woff2');
+  font-family: 'KyleDis';
+  src: url('https://cdn.jsdelivr.net/gh/idntluvunomore/rpthcode@main/KyleDis.woff2') format('woff2');
   font-weight: normal;
   font-display: swap;
 }
@@ -90,7 +90,7 @@
 .tv-polaroid-text{
   text-align:right;
   color:#000;
-  font-size:14px;
+  font-size:15px;
   font-family: 'KyleCH', sans-serif !important;
   
 }
@@ -99,7 +99,8 @@
   margin-top:15px;
   text-align:center;
   color:#696969;
-  font-family: 'KyleNM', serif !important;
-  font-size:15px;
+  font-family: 'KyleDis', serif !important;
+  font-size:14px;
   font-style:italic;
 }
+
