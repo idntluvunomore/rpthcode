@@ -34,30 +34,11 @@
 }
 
 .tv-layer{
-  width:380px;
-  height:260px;
+  width:468px;
   margin-top:-270px;
-  margin-left:50px;
+  margin-left:20px;
   position:relative;
-  z-index:3;
-  overflow:hidden;
-}
-
-.tv-layer iframe{
-  width:120% !important;
-  height:120% !important;
-  position:absolute;
-  top:-10%;
-  left:-10%;
-}
-
-/* if not */
-.tv-layer *{
-  width:120% !important;
-  height:120% !important;
-  position:absolute;
-  top:-10%;
-  left:-10%;
+  z-index:1;
 }
 
 .tv-leftmask{
@@ -110,4 +91,5 @@
   font-size:15px;
   font-style:italic;
 }
+
 
