@@ -16,14 +16,13 @@
   clear: both;
   background: #000;
   position: relative; 
-  height: 600px; 
+  height: 650px; 
 }
 
 .flower {
   background: url(https://i.imgur.com/25HbyIW.png) center center/cover no-repeat;
   width: 135px;
   height: 150px; 
-  margin: auto;
   position: absolute;
   top: 10px;
   left: 50%;
@@ -35,9 +34,8 @@
   background: url(https://i.imgur.com/v3wJeyj.png) center center/cover no-repeat;
   width: 468px;
   height: 313px;
-  margin: auto;
   position: absolute;
-  top: 150px;
+  top: 150px; 
   left: 50%;
   transform: translateX(-50%);
   z-index: 4;
@@ -45,21 +43,22 @@
 
 .clip {
   position: absolute; 
-  top: 45px; 
-  left: 55px; 
+  top: 195px;
+  left: 98px; 
   width: 355px;
   height: 240px; 
-  overflow: hidden;
+  overflow: hidden; 
   z-index: 3;
 }
+
 .error {
   background: url(https://i.imgur.com/8MhkIyR.gif) center center/cover no-repeat;
   width: 380px;
   height: 260px;
   position: absolute; 
-  top: 173px;
-  left: 100px; 
-  z-index: 2; 
+  top: 173px; 
+  left: 100px;
+  z-index: 2;
   opacity: 0.2;
 }
 
@@ -80,32 +79,9 @@
   background: #fff;
 }
 
-.inpol {
-  width:120px;
-  height:120px;
-  margin-bottom: 2px;
-}
-
-.inpol img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    display: block;
-    filter: brightness(85%);
-}
-
-.polar-caption {
-    position: absolute;
-    bottom: 5px;
-    right: 8px;
-    color: #000000;
-    text-decoration: none;
-    z-index: 100;
-}
-
 .music-caption {
     position: absolute;
-    bottom: 200px; 
+    bottom: 100px;
     width: 100%;
     text-align: center;
     color: #696969; 
