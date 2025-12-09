@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&family=Poltawski+Nowy:ital,wght@0,400..700;1,400..700&display=swap');
 
 .tv-root{
   width:550px;
   margin:auto;
   background:#000;
-  font-family:"Macondo",cursive;
+  font-family:"Liu Jian Mao Cao", cursive;
   font-size:15px;
 }
 
@@ -81,6 +81,8 @@
   text-align:right;
   color:#000;
   font-size:14px;
+  font-family: "Poltawski Nowy", serif;
+  
 }
 
 .tv-music{
@@ -89,3 +91,4 @@
   color:#696969;
   font-style:italic;
 }
+
