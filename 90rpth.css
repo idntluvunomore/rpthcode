@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'KyleDC';
-  src: url('https://cdn.jsdelivr.net/gh/idntluvunomore/rpthcode@main/KyleDC.woff2') format('woff2');
+  font-family: 'KyleNM';
+  src: url('https://cdn.jsdelivr.net/gh/idntluvunomore/rpthcode@main/KyleNM.woff2') format('woff2');
   font-weight: normal;
   font-display: swap;
 }
@@ -99,10 +99,7 @@
   margin-top:15px;
   text-align:center;
   color:#696969;
-  font-family: 'KyleDC', serif !important;
+  font-family: 'KyleNM', serif !important;
   font-size:15px;
   font-style:italic;
 }
-
-
-
