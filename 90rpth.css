@@ -8,6 +8,7 @@
   font-size:15px;
 }
 
+/* แจกัน */
 .vase{
   width:135px;
   height:150px;
@@ -15,6 +16,7 @@
   background:url(https://i.imgur.com/25HbyIW.png) center/cover no-repeat;
 }
 
+/* ทีวี */
 .tv{
   width:468px;
   height:313px;
@@ -24,6 +26,7 @@
   z-index:4;
 }
 
+/* static */
 .error{
   width:380px;
   height:260px;
@@ -35,6 +38,7 @@
   z-index:2;
 }
 
+/* youtube */
 .clip{
   width:468px;
   margin-top:-270px;
@@ -43,6 +47,7 @@
   z-index:1;
 }
 
+/* mask*/
 .leftmask{
   float:left;
   width:50px;
@@ -54,6 +59,7 @@
   z-index:1;
 }
 
+/* โพลารอยด์ */
 .polarcomp{
   float:right;
   margin-right:20px;
@@ -71,22 +77,24 @@
   box-shadow:0 0 10px #000;
 }
 
+/* ภาพ */
 .polarimg{
   width:120px;
   height:120px;
   background:var(--polaroid,#eee) center/cover no-repeat;
 }
 
+/* ชื่อ */
 .polarname{
   text-align:right;
   color:#000;
   font-size:14px;
 }
 
+/* ข้อความ */
 .text{
   margin-top:15px;
   text-align:center;
   color:#696969;
   font-style:italic;
 }
-
