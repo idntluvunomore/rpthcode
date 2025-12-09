@@ -1,122 +1,152 @@
+/* style.css */
 @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   padding: 0;
   background: #000;
-}
-
-.tv-container {
-  width: 100%;
-  background: #000;
-  font-family: "Macondo", cursive;
+  font-family: 'Macondo', cursive;
   font-weight: 400;
   font-style: normal;
   font-size: 15px;
+  color: #fff;
 }
 
+/* container */
+.tv-container {
+  width: 100%;
+  background: #000;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* main box that holds everything */
 .tv-box {
   width: 550px;
   padding: 10px;
-  margin: auto;
-  background: #000;
-  clear: both;
+  margin: 0 auto;
+  background: transparent;
+  position: relative;
 }
 
-/* Vase */
+/* vase on top */
 .tv-vase {
-  background: url("https://i.imgur.com/25HbyIW.png") center center/cover no-repeat;
   width: 135px;
   height: 150px;
-  margin: auto;
+  margin: 0 auto 8px auto;
+  background: url("https://i.imgur.com/25HbyIW.png") center center/cover no-repeat;
 }
 
-/* TV frame */
+/* tv frame */
 .tv-frame {
-  background: url("https://i.imgur.com/v3wJeyj.png") center center/cover no-repeat;
   width: 468px;
   height: 313px;
-  margin: auto;
-  position: relative;
+  margin: 0 auto;
+  position: relative; /* anchor for absolute children */
   z-index: 4;
-  clear: both;
+  background: url("https://i.imgur.com/v3wJeyj.png") center center/cover no-repeat;
 }
 
-/* Gif layer */
+/* video / embed area centered inside the tv frame */
+.tv-video {
+  width: 380px;            /* area for the embedded video / player */
+  height: 230px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -10%); /* adjust vertical placement inside TV */
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* static overlay (slightly transparent) */
 .tv-static {
-  background: url("https://i.imgur.com/8MhkIyR.gif") center center/cover no-repeat;
   width: 380px;
   height: 260px;
-  margin-top: -283px;
-  margin-left: 50px;
-  position: relative;
-  z-index: 2;
+  position: absolute;
+  left: calc(50% + 50px - 190px); /* roughly matches original offset */
+  top: 12px;
+  z-index: 6;
   opacity: 0.2;
+  background: url("https://i.imgur.com/8MhkIyR.gif") center center/cover no-repeat;
+  pointer-events: none;
 }
 
-/* YouTube layer */
-.tv-video {
-  width: 468px;
-  margin: auto;
-  margin-top: -270px;
-  margin-left: 20px;
-  clear: both;
-  z-index: 1;
-}
-
-/* Left black bar */
+/* left black mask (if you need a black bar) */
 .tv-mask-left {
-  float: left;
+  position: absolute;
+  left: -3px;
+  top: -5px;
   width: 50px;
   height: 320px;
   background: #000;
-  z-index: 1;
-  clear: both;
-  margin-left: -3px;
-  margin-top: -300px;
-  position: relative;
+  z-index: 3;
 }
 
-/* Polaroid */
+/* polaroid on the right */
 .polaroid-wrap {
-  float: right;
-  margin-right: 20px;
+  position: absolute;
+  right: 20px;
+  top: 140px; /* position relative to tv-box */
   z-index: 99;
-  position: relative;
-  margin-top: -150px;
+  transform: rotate(-7deg);
 }
 
+/* polaroid card */
 .polaroid {
-  position: relative;
-  box-shadow: 0px 0px 10px 1px #000000;
-  rotate: -7deg;
   width: 120px;
   height: 148px;
   padding: 5px;
   background: #fff;
+  box-shadow: 0 0 10px 1px rgba(0,0,0,0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
 }
 
-.polarimg {
+/* placeholder area for user image */
+.polaroid-img {
   width: 120px;
   height: 120px;
-  background: #eee;
-  margin-bottom: 2px;
+  background: #eee;      /* placeholder color; users can change to transparent */
   overflow: hidden;
 }
 
-.polarsetting  {
+/* if user supplies <img> inside, it will cover the area */
+.polaroid-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-.polartext {
+/* caption under polaroid image */
+.polaroid-text {
+  margin-top: 2px;
+  padding: 0 4px;
   text-align: right;
   color: #000;
+  font-size: 14px;
+  line-height: 1;
 }
 
-.below {
+/* bottom text */
+.music-text {
+  margin-top: 10px;
   text-align: center;
   color: #696969;
   font-style: italic;
+  font-size: 14px;
+}
+
+/* responsive shrink */
+@media (max-width: 600px) {
+  .tv-box { transform: scale(0.85); transform-origin: top center; }
 }
