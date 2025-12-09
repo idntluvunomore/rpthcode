@@ -25,10 +25,10 @@
 
 .tv-layer{
   position:absolute;
-  top:-185px;
-  left:50%;
+  top:185px;
+  left:30%;
   transform:translateX(-50%);
-  width:380px;
+  width:280px;
   height:260px;
   z-index:1;
   overflow:hidden;
@@ -88,6 +88,7 @@
   color:#696969;
   font-style:italic;
 }
+
 
 
 
