@@ -2,7 +2,6 @@
   font-family: 'KlyeDC';
   src: url('https://cdn.jsdelivr.net/gh/idntluvunomore/rpthcode@main/KyleDC.woff2') format('woff2');
   font-weight: normal;
-  font-style: normal;
   font-display: swap;
 }
 
@@ -10,7 +9,6 @@
   font-family: 'KyleCH';
   src: url('https://cdn.jsdelivr.net/gh/idntluvunomore/rpthcode@main/KyleCH.woff2') format('woff2');
   font-weight: normal;
-  font-style: normal;
   font-display: swap;
 }
 
@@ -105,4 +103,5 @@
   font-size:15px;
   font-style:italic;
 }
+
 
