@@ -1,19 +1,11 @@
 @font-face {
-  font-family: 'Grace Zyora';
-  src: url('GraceZyora-Regular.woff2') format('woff2'),
-       url('GraceZyora-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+  font-family: 'kyledc';
+  src: url('https://cdn.jsdelivr.net/gh/idntluvunomore/rpthcode@main/kyledc.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'HanyiSentyPagoda';
-  src: url('HanyiSentyPagoda.woff2') format('woff2'),
-       url('HanyiSentyPagoda.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+  font-family: 'kylech';
+  src: url('https://cdn.jsdelivr.net/gh/idntluvunomore/rpthcode@main/kylech.ttf') format('truetype');
 }
 
 .tv-root{
@@ -95,7 +87,7 @@
   text-align:right;
   color:#000;
   font-size:14px;
-  font-family: 'HanyiSentyPagoda', serif !important;
+  font-family: 'kylech', sans-serif !important;
   
 }
 
@@ -103,11 +95,7 @@
   margin-top:15px;
   text-align:center;
   color:#696969;
-  font-family: 'Grace Zyora', sans-serif !important;
+  font-family: 'kyledc', serif !important;
   font-size:15px;
   font-style:italic;
 }
-
-
-
-
