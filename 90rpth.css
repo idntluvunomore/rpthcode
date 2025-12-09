@@ -25,7 +25,7 @@
 
 .tv-layer{
   position:absolute;
-  top:0px;
+  top:-185px;
   left:50%;
   transform:translateX(-50%);
   width:380px;
@@ -88,5 +88,6 @@
   color:#696969;
   font-style:italic;
 }
+
 
 
