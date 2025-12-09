@@ -3,61 +3,68 @@
 .tv-root{
   width:550px;
   margin:auto;
-  position:relative;
-  font-family:Macondo,cursive;
+  background:#000;
+  font-family:"Macondo",cursive;
+  font-size:15px;
 }
 
+/* แจกัน */
 .tv-vase{
   width:135px;
   height:150px;
-  background:url(https://i.imgur.com/25HbyIW.png) center/cover no-repeat;
   margin:auto;
+  background:url(https://i.imgur.com/25HbyIW.png) center/cover no-repeat;
 }
 
+/* ทีวี */
 .tv-tv{
   width:468px;
   height:313px;
-  background:url(https://i.imgur.com/v3wJeyj.png) center/cover no-repeat;
   margin:auto;
+  background:url(https://i.imgur.com/v3wJeyj.png) center/cover no-repeat;
   position:relative;
-  z-index:5;
+  z-index:4;
 }
 
-.tv-layer{
-  position:absolute;
-  top:200px;
-  left:50%;
-  transform:translateX(-50%);
-  width:380px;
-  height:260px;
-  z-index:1;
-  overflow:hidden;
-}
-
-.tv-layer iframe{
-  width:430px !important;
-  height:300px !important;
-  margin-left:-20px;/
-  margin-top:-10px;
-}
-
+/* static noise — ตาม inline เดิม */
 .tv-static{
-  position:absolute;
-  top:200px;
-  left:50%;
-  transform:translateX(-50%);
   width:380px;
   height:260px;
   background:url(https://i.imgur.com/8MhkIyR.gif) center/cover no-repeat;
   opacity:.2;
-  z-index:3;
-  pointer-events:none;
+  margin-top:-283px;
+  margin-left:50px;
+  position:relative;
+  z-index:2;
 }
 
+/* youtube clip layer — ตาม inline เดิม */
+.tv-layer{
+  width:468px;
+  margin-top:-270px;
+  margin-left:20px;
+  position:relative;
+  z-index:1;
+}
+
+/* mask ซ้าย (inline เดิมมี) */
+.tv-leftmask{
+  float:left;
+  width:50px;
+  height:320px;
+  background:#000;
+  margin-left:-3px;
+  margin-top:-300px;
+  position:relative;
+  z-index:1;
+}
+
+/* โพลารอยด์ */
 .tv-polaroid-wrap{
-  position:absolute;
-  right:5px;
-  top:250px;
+  float:right;
+  margin-right:20px;
+  margin-top:-150px;
+  position:relative;
   z-index:99;
   transform:rotate(-7deg);
 }
@@ -70,35 +77,24 @@
   box-shadow:0 0 10px #000;
 }
 
+/* ผู้ใช้กำหนดรูปเองได้ */
 .tv-polaroid-img{
   width:120px;
   height:120px;
-  background:#eee;
-  overflow:hidden;
+  background:var(--polaroid,#eee) center/cover no-repeat;
 }
 
-.tv-polaroid-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
+/* ชื่อใต้ภาพ */
 .tv-polaroid-text{
   text-align:right;
   color:#000;
   font-size:14px;
 }
 
+/* ข้อความเพลง */
 .tv-music{
   margin-top:15px;
   text-align:center;
   color:#696969;
   font-style:italic;
 }
-
-
-
-
-
-
-
