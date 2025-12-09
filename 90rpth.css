@@ -46,12 +46,12 @@
 }
 
 .clip {
-  width: 468px;
-  margin: auto;
-  margin-top: -270px;
-  margin-left: 20px;
-  clear: both;
-  z-index: 1;
+  position: absolute; 
+  top: 30px;
+  left: 60px;
+  width: 380px;
+  height: 250px;
+  z-index: 3;
 }
 
 .hideleft-shim {
@@ -113,3 +113,4 @@
     font-style: italic;
     padding-top: 10px; 
 }
+
