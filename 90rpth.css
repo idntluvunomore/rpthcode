@@ -1,101 +1,95 @@
 @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 
-.root {
-  width: 100%;
-  background: #000;
-  font-family: "Macondo", cursive;
-  font-weight: 400;
-  font-size: 15px;
+.tv-root{
+  width:550px;
+  margin:auto;
+  position:relative;
+  font-family:Macondo,cursive;
 }
 
-.wrap {
-  width: 550px;
-  padding: 10px;
-  margin: auto;
-  background: #000;
-  position: relative;
+/* vase */
+.tv-vase{
+  width:135px;
+  height:150px;
+  background:url(https://i.imgur.com/25HbyIW.png) center/cover no-repeat;
+  margin:auto;
 }
 
-.vase {
-  width: 135px;
-  height: 150px;
-  margin: auto;
-  background: url(https://i.imgur.com/25HbyIW.png) center/cover no-repeat;
+/* tv frame */
+.tv-tv{
+  width:468px;
+  height:313px;
+  background:url(https://i.imgur.com/v3wJeyj.png) center/cover no-repeat;
+  margin:auto;
+  position:relative;
+  z-index:5;
 }
 
-.tv {
-  width: 468px;
-  height: 313px;
-  margin: auto;
-  background: url(https://i.imgur.com/v3wJeyj.png) center/cover no-repeat;
-  position: relative;
-  z-index: 4;
+/* layer area */
+.tv-layer{
+  position:absolute;
+  top:185px;
+  left:50%;
+  transform:translateX(-50%);
+  width:380px;
+  height:260px;
+  z-index:1;
+  overflow:hidden;
 }
 
-.tv-noise {
-  width: 380px;
-  height: 260px;
-  background: url(https://i.imgur.com/8MhkIyR.gif) center/cover no-repeat;
-  margin-top: -283px;
-  margin-left: 50px;
-  position: relative;
-  z-index: 2;
-  opacity: 0.2;
+.tv-static{
+  position:absolute;
+  top:185px;
+  left:50%;
+  transform:translateX(-50%);
+  width:380px;
+  height:260px;
+  background:url(https://i.imgur.com/8MhkIyR.gif) center/cover no-repeat;
+  opacity:.2;
+  z-index:3;
+  pointer-events:none;
 }
 
-.clip {
-  width: 468px;
-  margin: auto;
-  margin-top: -270px;
-  margin-left: 20px;
-  position: relative;
-  z-index: 1;
+/* polaroid */
+.tv-polaroid-wrap{
+  position:absolute;
+  right:15px;
+  top:230px;
+  z-index:99;
+  transform:rotate(-7deg);
 }
 
-.leftbar {
-  float: left;
-  width: 50px;
-  height: 320px;
-  background: #000;
-  position: relative;
-  margin-left: -3px;
-  margin-top: -300px;
-  z-index: 1;
+.tv-polaroid{
+  width:120px;
+  height:148px;
+  padding:5px;
+  background:#fff;
+  box-shadow:0 0 10px #000;
 }
 
-.polaroid-wrap {
-  float: right;
-  margin-right: 20px;
-  margin-top: -150px;
-  position: relative;
-  z-index: 99;
-}
-.polaroid {
-  width: 120px;
-  height: 148px;
-  padding: 5px;
-  background: #fff;
-  box-shadow: 0px 0px 10px 1px #000;
-  transform: rotate(-7deg);
-  position: relative;
+.tv-polaroid-img{
+  width:120px;
+  height:120px;
+  background:#eee;
+  overflow:hidden;
 }
 
-.polaroid-img {
-  width: 120px;
-  height: 120px;
-  background: #eee; /* พื้นโล่ง */
-  overflow: hidden;
+.tv-polaroid-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
-.polaroid-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.tv-polaroid-text{
+  text-align:right;
+  color:#000;
+  font-size:14px;
 }
 
-.text {
-  text-align: center;
-  color: #696969;
-  font-style: italic;
-  margin-top: 5px;
+/* bottom text */
+.tv-music{
+  margin-top:15px;
+  text-align:center;
+  color:#696969;
+  font-style:italic;
 }
