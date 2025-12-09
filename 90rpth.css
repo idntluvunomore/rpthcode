@@ -1,152 +1,95 @@
-/* style.css */
 @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  padding: 0;
-  background: #000;
-  font-family: 'Macondo', cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 15px;
-  color: #fff;
+.tv-root{
+  width:550px;
+  margin:auto;
+  position:relative;
+  font-family:Macondo,cursive;
 }
 
-/* container */
-.tv-container {
-  width: 100%;
-  background: #000;
-  padding: 20px 0;
-  display: flex;
-  justify-content: center;
-}
-
-/* main box that holds everything */
-.tv-box {
-  width: 550px;
-  padding: 10px;
-  margin: 0 auto;
-  background: transparent;
-  position: relative;
-}
-
-/* vase on top */
-.tv-vase {
-  width: 135px;
-  height: 150px;
-  margin: 0 auto 8px auto;
-  background: url("https://i.imgur.com/25HbyIW.png") center center/cover no-repeat;
+/* vase */
+.tv-vase{
+  width:135px;
+  height:150px;
+  background:url(https://i.imgur.com/25HbyIW.png) center/cover no-repeat;
+  margin:auto;
 }
 
 /* tv frame */
-.tv-frame {
-  width: 468px;
-  height: 313px;
-  margin: 0 auto;
-  position: relative; /* anchor for absolute children */
-  z-index: 4;
-  background: url("https://i.imgur.com/v3wJeyj.png") center center/cover no-repeat;
+.tv-tv{
+  width:468px;
+  height:313px;
+  background:url(https://i.imgur.com/v3wJeyj.png) center/cover no-repeat;
+  margin:auto;
+  position:relative;
+  z-index:5;
 }
 
-/* video / embed area centered inside the tv frame */
-.tv-video {
-  width: 380px;            /* area for the embedded video / player */
-  height: 230px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -10%); /* adjust vertical placement inside TV */
-  z-index: 5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+/* layer area */
+.tv-layer{
+  position:absolute;
+  top:185px;
+  left:50%;
+  transform:translateX(-50%);
+  width:380px;
+  height:260px;
+  z-index:1;
+  overflow:hidden;
 }
 
-/* static overlay (slightly transparent) */
-.tv-static {
-  width: 380px;
-  height: 260px;
-  position: absolute;
-  left: calc(50% + 50px - 190px); /* roughly matches original offset */
-  top: 12px;
-  z-index: 6;
-  opacity: 0.2;
-  background: url("https://i.imgur.com/8MhkIyR.gif") center center/cover no-repeat;
-  pointer-events: none;
+.tv-static{
+  position:absolute;
+  top:185px;
+  left:50%;
+  transform:translateX(-50%);
+  width:380px;
+  height:260px;
+  background:url(https://i.imgur.com/8MhkIyR.gif) center/cover no-repeat;
+  opacity:.2;
+  z-index:3;
+  pointer-events:none;
 }
 
-/* left black mask (if you need a black bar) */
-.tv-mask-left {
-  position: absolute;
-  left: -3px;
-  top: -5px;
-  width: 50px;
-  height: 320px;
-  background: #000;
-  z-index: 3;
+/* polaroid */
+.tv-polaroid-wrap{
+  position:absolute;
+  right:15px;
+  top:230px;
+  z-index:99;
+  transform:rotate(-7deg);
 }
 
-/* polaroid on the right */
-.polaroid-wrap {
-  position: absolute;
-  right: 20px;
-  top: 140px; /* position relative to tv-box */
-  z-index: 99;
-  transform: rotate(-7deg);
+.tv-polaroid{
+  width:120px;
+  height:148px;
+  padding:5px;
+  background:#fff;
+  box-shadow:0 0 10px #000;
 }
 
-/* polaroid card */
-.polaroid {
-  width: 120px;
-  height: 148px;
-  padding: 5px;
-  background: #fff;
-  box-shadow: 0 0 10px 1px rgba(0,0,0,0.8);
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
+.tv-polaroid-img{
+  width:120px;
+  height:120px;
+  background:#eee;
+  overflow:hidden;
 }
 
-/* placeholder area for user image */
-.polaroid-img {
-  width: 120px;
-  height: 120px;
-  background: #eee;      /* placeholder color; users can change to transparent */
-  overflow: hidden;
+.tv-polaroid-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
-/* if user supplies <img> inside, it will cover the area */
-.polaroid-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* caption under polaroid image */
-.polaroid-text {
-  margin-top: 2px;
-  padding: 0 4px;
-  text-align: right;
-  color: #000;
-  font-size: 14px;
-  line-height: 1;
+.tv-polaroid-text{
+  text-align:right;
+  color:#000;
+  font-size:14px;
 }
 
 /* bottom text */
-.music-text {
-  margin-top: 10px;
-  text-align: center;
-  color: #696969;
-  font-style: italic;
-  font-size: 14px;
-}
-
-/* responsive shrink */
-@media (max-width: 600px) {
-  .tv-box { transform: scale(0.85); transform-origin: top center; }
+.tv-music{
+  margin-top:15px;
+  text-align:center;
+  color:#696969;
+  font-style:italic;
 }
