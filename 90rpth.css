@@ -1,6 +1,12 @@
-@import url(https://fonts.googleapis.com/css2?family=Macondo&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 
-.back {
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+}
+
+.tv-container {
   width: 100%;
   background: #000;
   font-family: "Macondo", cursive;
@@ -9,82 +15,108 @@
   font-size: 15px;
 }
 
-.page {
+.tv-box {
   width: 550px;
   padding: 10px;
   margin: auto;
-  clear: both;
   background: #000;
-  position: relative; 
-  height: 650px; 
+  clear: both;
 }
 
-.flower {
-  background: url(https://i.imgur.com/25HbyIW.png) center center/cover no-repeat;
+/* Vase */
+.tv-vase {
+  background: url("https://i.imgur.com/25HbyIW.png") center center/cover no-repeat;
   width: 135px;
-  height: 150px; 
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
+  height: 150px;
+  margin: auto;
 }
 
-.tv {
-  background: url(https://i.imgur.com/v3wJeyj.png) center center/cover no-repeat;
+/* TV frame */
+.tv-frame {
+  background: url("https://i.imgur.com/v3wJeyj.png") center center/cover no-repeat;
   width: 468px;
   height: 313px;
-  position: absolute;
-  top: 150px; 
-  left: 50%;
-  transform: translateX(-50%);
+  margin: auto;
+  position: relative;
   z-index: 4;
+  clear: both;
 }
 
-.clip {
-  position: absolute; 
-  top: 195px;
-  left: 98px; 
-  width: 355px;
-  height: 240px; 
-  overflow: hidden; 
-  z-index: 3;
-}
-
-.error {
-  background: url(https://i.imgur.com/8MhkIyR.gif) center center/cover no-repeat;
+/* Gif layer */
+.tv-static {
+  background: url("https://i.imgur.com/8MhkIyR.gif") center center/cover no-repeat;
   width: 380px;
   height: 260px;
-  position: absolute; 
-  top: 173px; 
-  left: 100px;
+  margin-top: -283px;
+  margin-left: 50px;
+  position: relative;
   z-index: 2;
   opacity: 0.2;
 }
 
-.hideright {
-  position: absolute;
-  top: 300px; 
-  right: 50px;
-  z-index: 99;
+/* YouTube layer */
+.tv-video {
+  width: 468px;
+  margin: auto;
+  margin-top: -270px;
+  margin-left: 20px;
+  clear: both;
+  z-index: 1;
 }
 
-.polar {
+/* Left black bar */
+.tv-mask-left {
+  float: left;
+  width: 50px;
+  height: 320px;
+  background: #000;
+  z-index: 1;
+  clear: both;
+  margin-left: -3px;
+  margin-top: -300px;
+  position: relative;
+}
+
+/* Polaroid */
+.polaroid-wrap {
+  float: right;
+  margin-right: 20px;
+  z-index: 99;
+  position: relative;
+  margin-top: -150px;
+}
+
+.polaroid {
   position: relative;
   box-shadow: 0px 0px 10px 1px #000000;
-  transform: rotate(-7deg); 
-  width:120px;
-  height:148px;
-  padding:5px;
+  rotate: -7deg;
+  width: 120px;
+  height: 148px;
+  padding: 5px;
   background: #fff;
 }
 
-.music-caption {
-    position: absolute;
-    bottom: 100px;
-    width: 100%;
-    text-align: center;
-    color: #696969; 
-    font-style: italic;
-    z-index: 1;
+.polarimg {
+  width: 120px;
+  height: 120px;
+  background: #eee;
+  margin-bottom: 2px;
+  overflow: hidden;
+}
+
+.polarsetting  {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.polartext {
+  text-align: right;
+  color: #000;
+}
+
+.below {
+  text-align: center;
+  color: #696969;
+  font-style: italic;
 }
