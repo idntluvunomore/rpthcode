@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 
-.root{
+.tv-root{
   width:550px;
   margin:auto;
   background:#000;
@@ -8,16 +8,14 @@
   font-size:15px;
 }
 
-/* แจกัน */
-.vase{
+.tv-vase{
   width:135px;
   height:150px;
   margin:auto;
   background:url(https://i.imgur.com/25HbyIW.png) center/cover no-repeat;
 }
 
-/* ทีวี */
-.tv{
+.tv-tv{
   width:468px;
   height:313px;
   margin:auto;
@@ -26,8 +24,7 @@
   z-index:4;
 }
 
-/* static */
-.tv.error{
+.tv-static{
   width:380px;
   height:260px;
   background:url(https://i.imgur.com/8MhkIyR.gif) center/cover no-repeat;
@@ -38,8 +35,7 @@
   z-index:2;
 }
 
-/* youtube */
-.tv.clip{
+.tv-layer{
   width:468px;
   margin-top:-270px;
   margin-left:20px;
@@ -47,8 +43,7 @@
   z-index:1;
 }
 
-/* mask*/
-.tv.leftmask{
+.tv-leftmask{
   float:left;
   width:50px;
   height:320px;
@@ -59,8 +54,7 @@
   z-index:1;
 }
 
-/* โพลารอยด์ */
-.polar{
+.tv-polaroid-wrap{
   float:right;
   margin-right:20px;
   margin-top:-150px;
@@ -69,7 +63,7 @@
   transform:rotate(-7deg);
 }
 
-.polar.border{
+.tv-polaroid{
   width:120px;
   height:148px;
   padding:5px;
@@ -77,25 +71,21 @@
   box-shadow:0 0 10px #000;
 }
 
-/* ภาพ */
-.polar.img{
+.tv-polaroid-img{
   width:120px;
   height:120px;
   background:var(--polaroid,#eee) center/cover no-repeat;
 }
 
-/* ชื่อ */
-.polar.name{
+.tv-polaroid-text{
   text-align:right;
   color:#000;
   font-size:14px;
 }
 
-/* ข้อความ */
-.text{
+.tv-music{
   margin-top:15px;
   text-align:center;
   color:#696969;
   font-style:italic;
 }
-
