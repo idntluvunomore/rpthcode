@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'KlyeDC';
+  font-family: 'KyleDC';
   src: url('https://cdn.jsdelivr.net/gh/idntluvunomore/rpthcode@main/KyleDC.woff2') format('woff2');
   font-weight: normal;
   font-display: swap;
@@ -103,5 +103,6 @@
   font-size:15px;
   font-style:italic;
 }
+
 
 
