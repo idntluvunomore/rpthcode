@@ -27,7 +27,7 @@
 }
 
 /* static */
-.error{
+.tv.error{
   width:380px;
   height:260px;
   background:url(https://i.imgur.com/8MhkIyR.gif) center/cover no-repeat;
@@ -39,7 +39,7 @@
 }
 
 /* youtube */
-.clip{
+.tv.clip{
   width:468px;
   margin-top:-270px;
   margin-left:20px;
@@ -48,7 +48,7 @@
 }
 
 /* mask*/
-.leftmask{
+.tv.leftmask{
   float:left;
   width:50px;
   height:320px;
@@ -60,7 +60,7 @@
 }
 
 /* โพลารอยด์ */
-.polarcomp{
+.polar{
   float:right;
   margin-right:20px;
   margin-top:-150px;
@@ -69,7 +69,7 @@
   transform:rotate(-7deg);
 }
 
-.polar{
+.polar.border{
   width:120px;
   height:148px;
   padding:5px;
@@ -78,14 +78,14 @@
 }
 
 /* ภาพ */
-.polarimg{
+.polar.img{
   width:120px;
   height:120px;
   background:var(--polaroid,#eee) center/cover no-repeat;
 }
 
 /* ชื่อ */
-.polarname{
+.polar.name{
   text-align:right;
   color:#000;
   font-size:14px;
@@ -98,3 +98,4 @@
   color:#696969;
   font-style:italic;
 }
+
