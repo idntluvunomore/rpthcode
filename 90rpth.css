@@ -4,8 +4,6 @@
   width:550px;
   margin:auto;
   background:#000;
-  font-family:"Liu Jian Mao Cao", cursive;
-  font-size:15px;
 }
 
 .tv-vase{
@@ -36,11 +34,30 @@
 }
 
 .tv-layer{
-  width:468px;
+  width:380px;
+  height:260px;
   margin-top:-270px;
-  margin-left:20px;
+  margin-left:50px;
   position:relative;
-  z-index:1;
+  z-index:3;
+  overflow:hidden;
+}
+
+.tv-layer iframe{
+  width:120% !important;
+  height:120% !important;
+  position:absolute;
+  top:-10%;
+  left:-10%;
+}
+
+/* subif */
+.tv-layer *{
+  width:120% !important;
+  height:120% !important;
+  position:absolute;
+  top:-10%;
+  left:-10%;
 }
 
 .tv-leftmask{
@@ -89,6 +106,7 @@
   margin-top:15px;
   text-align:center;
   color:#696969;
+  font-family:"Liu Jian Mao Cao", cursive;
+  font-size:15px;
   font-style:italic;
 }
-
