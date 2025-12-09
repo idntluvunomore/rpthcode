@@ -35,7 +35,7 @@
 
 .tv-layer{
   width:468px;
-  margin-top:-270px;
+  margin-top:-260px;
   margin-left:20px;
   position:relative;
   z-index:1;
@@ -91,5 +91,6 @@
   font-size:15px;
   font-style:italic;
 }
+
 
 
