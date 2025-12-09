@@ -1,18 +1,115 @@
-<link href="90.css" rel="stylesheet">
-<div class="back">
- <div class="page">
-  <div class="flower"></div>
-  <div class="tv"></div>
-  <div class="error"></div>
-  <div class="clip">[ytauto=T-hsTRAb_MY][/ytauto]</div>
-  <div class="hideleft">
-   <div class="hideright">
-    <div class="polar">
-     <div class="inpol">
-      <img src="https://64.media.tumblr.com/0c5ef11256a421c76d6a16c41bccbbdb/ffc19f90b513fdd5-ab/s540x810/6d533ba66e8511aa79b4ff3481d810b49e8d8d2d.gif" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-     </div>
-    </div>
-   </div>
-  </div>
- </div>
-</div>
+@import url(https://fonts.googleapis.com/css2?family=Macondo&display=swap);
+
+.back {
+  width: 100%;
+  background: #000;
+  font-family: "Macondo", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+
+.page {
+  width: 550px;
+  padding: 10px;
+  margin: auto;
+  clear: both;
+  background: #000;
+}
+
+.flower {
+  background: url(https://i.imgur.com/25HbyIW.png) center center/cover no-repeat;
+  width: 135px;
+  height: 150px; 
+  margin: auto;
+}
+
+.tv {
+  background: url(https://i.imgur.com/v3wJeyj.png) center center/cover no-repeat;
+  width: 468px;
+  height: 313px;
+  margin: auto;
+  position: relative;
+  z-index: 4;
+  clear: both;
+}
+
+.error {
+  background: url(https://i.imgur.com/8MhkIyR.gif) center center/cover no-repeat;
+  width: 380px;
+  height: 260px;
+  margin-top: -283px;
+  margin-left:50px;
+  position: relative;
+  z-index: 2;
+  opacity: 0.2;
+}
+
+.clip {
+  width: 468px;
+  margin: auto;
+  margin-top: -270px;
+  margin-left: 20px;
+  clear: both;
+  z-index: 1;
+}
+
+.hideleft-shim {
+  float: left; 
+  width: 50px; 
+  height: 320px; 
+  background: #000; 
+  z-index: 1; 
+  clear: both; 
+  margin-left: -3px; 
+  margin-top: -300px; 
+  position: relative;
+}
+
+.hideright {
+  float: right;
+  margin-right: 20px;
+  z-index:99;
+  position: relative;
+  margin-top: -150px; 
+}
+
+.polar {
+  position: relative;
+  box-shadow: 0px 0px 10px 1px #000000;
+  transform: rotate(-7deg); 
+  width:120px;
+  height:148px;
+  padding:5px;
+  background: #fff;
+}
+
+.inpol {
+  width:120px;
+  height:120px;
+  margin-bottom: 2px;
+}
+
+.inpol img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+.polar-caption {
+    position: absolute;
+    bottom: 5px;
+    right: 8px;
+    color: #000000;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.music-caption {
+    clear: both; 
+    text-align: center; 
+    color: #696969; 
+    font-style: italic;
+    padding-top: 10px; 
+}
