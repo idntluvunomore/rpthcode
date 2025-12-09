@@ -7,7 +7,6 @@
   font-family:Macondo,cursive;
 }
 
-/* vase */
 .tv-vase{
   width:135px;
   height:150px;
@@ -15,7 +14,6 @@
   margin:auto;
 }
 
-/* tv frame */
 .tv-tv{
   width:468px;
   height:313px;
@@ -25,10 +23,9 @@
   z-index:5;
 }
 
-/* layer area */
 .tv-layer{
   position:absolute;
-  top:185px;
+  top:150px;
   left:50%;
   transform:translateX(-50%);
   width:380px;
@@ -50,7 +47,6 @@
   pointer-events:none;
 }
 
-/* polaroid */
 .tv-polaroid-wrap{
   position:absolute;
   right:15px;
@@ -86,10 +82,10 @@
   font-size:14px;
 }
 
-/* bottom text */
 .tv-music{
   margin-top:15px;
   text-align:center;
   color:#696969;
   font-style:italic;
 }
+
