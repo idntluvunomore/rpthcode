@@ -1,131 +1,513 @@
-/* ==========================
-   GLOBAL VARIABLES
-   ========================== */
-:root {
-  --award-best-male-rookies: "Best Male Rookies";
-  --award-best-female-rookies: "Best Female Rookies";
-  --award-best-male-group: "Best Male Group";
-  --award-best-female-group: "Best Female Group";
-  --award-best-male-solo: "Best Male Solo";
-  --award-best-female-solo: "Best Female Solo";
-  --award-best-dance-performance: "Best Dance Performance";
-  --award-best-vocal-performance: "Best Vocal Performance";
-  --award-best-collaboration: "Best Collaboration";
-  --award-best-ost: "Best OST.";
-  --award-best-music-video: "Best Music Video";
-  --award-best-choreography: "Best Choreography";
-
-  --rank-font-size: 25px;
-  --credit-color: #555;
-  --top10-head-font: 25px;
-  --top10-sub-font: 10px;
+/* ROOT WRAPPER */
+.c1 {
+  width: 100%;
+  padding: 0;
+  margin: auto;
 }
 
+.c2 {
+  width: 80%;
+  margin: auto;
+  background: #000;
+}
 
-/* ==========================
-   BASIC COMPONENTS
-   ========================== */
+/* HEADER BAR */
+.c3 {
+  background: #222;
+  padding: 10px 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-.msaw-rank {
-  width: 35px;
-  text-align: center;
-  font-size: var(--rank-font-size);
-  font-weight: bold;
+/* HEADER — LEFT BLOCK */
+.c4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   color: #fff;
 }
 
-.msaw-credit {
+/* HEADER — CIRCLE ICON */
+.c5 {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #555;
+  overflow: hidden;
+  background: url(https://pbs.twimg.com/profile_images/1663080956000083969/v3zLUCdl_400x400.jpg)
+    center center / cover no-repeat;
+}
+
+/* HEADER — TITLE “JJ’s MUSIC AWARD 2025” */
+.c6::before {
+  content: "JJ's MUSIC AWARD 2025";
+  font-weight: bold;
+  font-style: italic;
+  color: #fff;
+}
+
+/* HEADER — RIGHT NAV */
+.c7 {
+  display: flex;
+  gap: 20px;
+  color: #c0c0c0;
+}
+
+/* MENU ITEM ACTIVE */
+.c8::before {
+  content: "Artist of the Year";
+  color: #a19168;
+  font-weight: bold;
+}
+
+/* MENU OTHER */
+.c9::before {
+  content: "Album of the Year";
+}
+
+.c10::before {
+  content: "Song of the Year";
+}
+
+/* MAIN WRAPPER (ซ้าย–ขวา) */
+.c11 {
+  width: 70%;
+}
+
+/* BLOCK: TOP ARTIST SECTION (รูปใหญ่ + ชื่อ + รายละเอียด) */
+.c12 {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+}
+
+/* ARTIST LARGE IMAGE */
+.c13 {
+  background: url(https://i.scdn.co/image/ab676161000051741249e0e4671a04aa0d786386)
+    center center / cover no-repeat;
+  width: 160px;
+  height: 160px;
+  border: 1px solid #fff;
+  flex-shrink: 0;
+}
+
+/* ARTIST TEXT WRAPPER */
+.c14 {
+  font-size: 20px;
+  color: #fff;
+}
+
+/* ARTIST NAME */
+.c15::before {
+  content: "Artist Name";
+  font-weight: bold;
+}
+
+/* ARTIST AWARD TITLE */
+.c16::before {
+  content: "ARTIST OF THE YEAR AWARD";
+  font-size: 10px;
+  color: #c0c0c0;
+  text-shadow: 0px 2px 5px #dbb970;
+  display: block;
+  margin-top: 2px;
+}
+
+/* ARTIST DESCRIPTION */
+.c16::after {
+  content: "description description description description description description description description description description description description";
+  font-size: 15px;
+  color: #fff;
+  line-height: 1;
+  margin-top: 5px;
+  display: block;
+}
+
+/* BEST OF ... title bar */
+.c17 {
+  color: #fff;
+  padding: 15px 30px;
+  background: #222;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+.c17::before {
+  content: "BEST OF . . .";
+  font-weight: bold;
+}
+
+/* SPACER (margin-bottom: 15px) */
+.c18 {
+  margin-bottom: 15px;
+}
+
+/* CATEGORY GROUP ROW 1 (Male Rookies / Female Rookies / Male Group) */
+.c19 {
+  padding: 15px;
+  display: flex;
+  gap: 5px;
+}
+
+/* CATEGORY TEMPLATE (ทุกกล่องทำแบบเดียวกัน) */
+.cat1, .cat2, .cat3,
+.cat4, .cat5, .cat6,
+.cat7, .cat8, .cat9,
+.cat10, .cat11, .cat12 {
+  width: 200px;
+  display: flex;
+  gap: 10px;
+}
+
+/* CATEGORY IMAGE — ทุกอันใช้รูปเดียวกันจาก inline */
+.cat1-img, .cat2-img, .cat3-img,
+.cat4-img, .cat5-img, .cat6-img,
+.cat7-img, .cat8-img, .cat9-img,
+.cat10-img, .cat11-img, .cat12-img {
+  background: url(https://i.scdn.co/image/ab676161000051741249e0e4671a04aa0d786386)
+    center center / cover no-repeat;
+  width: 70px;
+  height: 70px;
+  border: 1px solid #c0c0c0;
+  flex-shrink: 0;
+}
+
+/* CATEGORY TEXT BLOCK */
+.cat1-body, .cat2-body, .cat3-body,
+.cat4-body, .cat5-body, .cat6-body,
+.cat7-body, .cat8-body, .cat9-body,
+.cat10-body, .cat11-body, .cat12-body {
+  color: #c0c0c0;
+  font-size: 13px;
+}
+
+/* -------- CATEGORY LABELS & CONTENT -------- */
+
+/* 1 */
+.cat1-body::before {
+  content: "Male Rookies";
+}
+.cat1-body summary div::before {
+  content: "XXXX";
+}
+.cat1-body details div::after {
+  content: "description";
+}
+
+/* 2 */
+.cat2-body::before {
+  content: "Female Rookies";
+}
+.cat2-body summary div::before {
+  content: "XXXX";
+}
+.cat2-body details div::after {
+  content: "description";
+}
+
+/* 3 */
+.cat3-body::before {
+  content: "Male Group";
+}
+.cat3-body summary div::before {
+  content: "XXXX";
+}
+.cat3-body details div::after {
+  content: "description";
+}
+
+/* ROW 2 --------------------------------------------------- */
+.c20 {
+  padding: 15px;
+  display: flex;
+  gap: 5px;
+}
+
+/* 4 */
+.cat4-body::before {
+  content: "Female Group";
+}
+.cat4-body summary div::before {
+  content: "XXXX";
+}
+.cat4-body details div::after {
+  content: "description";
+}
+
+/* 5 */
+.cat5-body::before {
+  content: "Male Solo";
+}
+.cat5-body summary div::before {
+  content: "XXXX";
+}
+.cat5-body details div::after {
+  content: "description";
+}
+
+/* 6 */
+.cat6-body::before {
+  content: "Female Solo";
+}
+.cat6-body summary div::before {
+  content: "XXXX";
+}
+.cat6-body details div::after {
+  content: "description";
+}
+
+/* ROW 3 --------------------------------------------------- */
+.c21 {
+  padding: 15px;
+  display: flex;
+  gap: 5px;
+}
+
+/* 7 */
+.cat7-body::before {
+  content: "Dance Perf.";
+}
+.cat7-body summary div::before {
+  content: "XXXX";
+}
+.cat7-body details div::after {
+  content: "description";
+}
+
+/* 8 */
+.cat8-body::before {
+  content: "Vocal Perf.";
+}
+.cat8-body summary div::before {
+  content: "XXXX";
+}
+.cat8-body details div::after {
+  content: "description";
+}
+
+/* 9 */
+.cat9-body::before {
+  content: "Collaboration";
+}
+.cat9-body summary div::before {
+  content: "XXXX";
+}
+.cat9-body details div::after {
+  content: "description";
+}
+
+/* ROW 4 --------------------------------------------------- */
+.c22 {
+  padding: 15px 15px 30px 15px;
+  display: flex;
+  gap: 5px;
+}
+
+/* 10 */
+.cat10-body::before {
+  content: "OST.";
+}
+.cat10-body summary div::before {
+  content: "XXXX";
+}
+.cat10-body details div::after {
+  content: "description";
+}
+
+/* 11 */
+.cat11-body::before {
+  content: "Music Video";
+}
+.cat11-body summary div::before {
+  content: "XXXX";
+}
+.cat11-body details div::after {
+  content: "description";
+}
+
+/* 12 */
+.cat12-body::before {
+  content: "Choreography";
+}
+.cat12-body summary div::before {
+  content: "XXXX";
+}
+.cat12-body details div::after {
+  content: "description";
+}
+
+/* RIGHT SIDE WRAPPER (เส้นแบ่งตรงกลางด้านซ้ายระบุใน c23 ตอนก่อนหน้า) */
+.c24 {
+  width: 30%;
+  padding: 0px 20px;
+}
+
+/* TOP10 HEADER */
+.c24 center div:first-child::before {
+  content: "TOP 10";
+  font-size: 25px;
+  font-weight: bold;
+}
+.c24 center div:last-child::before {
+  content: "ARTIST OF THE YEAR";
+  font-size: 10px;
+}
+
+/* SCROLL AREA */
+.c25 {
+  max-height: 550px;
+  overflow-y: auto;
+  padding-right: 5px;
+  scrollbar-width: none;
+}
+
+/* TEMPLATE — EACH RANK ITEM */
+.rank1, .rank2, .rank3, .rank4, .rank5,
+.rank6, .rank7, .rank8, .rank9, .rank10 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 5px 0;
+}
+
+/* RANK NUMBER BLOCK */
+.rank1-num, .rank2-num, .rank3-num, .rank4-num, .rank5-num,
+.rank6-num, .rank7-num, .rank8-num, .rank9-num, .rank10-num {
+  width: 35px;
   text-align: center;
-  color: var(--credit-color);
+  font-size: 25px;
+  font-weight: bold;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+/* RANK IMAGE */
+.rank1-img, .rank2-img, .rank3-img, .rank4-img, .rank5-img,
+.rank6-img, .rank7-img, .rank8-img, .rank9-img, .rank10-img {
+  background: url(https://i.scdn.co/image/ab676161000051741249e0e4671a04aa0d786386)
+    center center / cover no-repeat;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #c0c0c0;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* RANK NAME TEXT */
+.rank1-name, .rank2-name, .rank3-name, .rank4-name, .rank5-name,
+.rank6-name, .rank7-name, .rank8-name, .rank9-name, .rank10-name {
+  font-size: 14px;
+  color: #fff;
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ------- RANK NUMBER CONTENT ------- */
+.rank1-num::before { content: "1"; }
+.rank2-num::before { content: "2"; }
+.rank3-num::before { content: "3"; }
+.rank4-num::before { content: "4"; }
+.rank5-num::before { content: "5"; }
+.rank6-num::before { content: "6"; }
+.rank7-num::before { content: "7"; }
+.rank8-num::before { content: "8"; }
+.rank9-num::before { content: "9"; }
+.rank10-num::before { content: "10"; }
+
+/* ------- RANK NAME DEFAULT ------- */
+.rank1-name::before,
+.rank2-name::before,
+.rank3-name::before,
+.rank4-name::before,
+.rank5-name::before,
+.rank6-name::before,
+.rank7-name::before,
+.rank8-name::before,
+.rank9-name::before,
+.rank10-name::before {
+  content: "XXXX";
+}
+
+/* ------- FOOTER -------- */
+.c26 {
+  border-bottom: 1px solid #333;
+}
+
+.c27 {
+  text-align: center;
+  color: #555;
   font-style: italic;
   letter-spacing: 5px;
   font-size: 12px;
 }
-
-.msaw-top10-head {
-  text-align: center;
-  font-size: var(--top10-head-font);
-  color: #fff;
+.c27::before {
+  content: "@ almostnineynine";
 }
 
-.msaw-top10-sub {
-  text-align: center;
-  font-size: var(--top10-sub-font);
-  color: #c0c0c0;
+/* OUTERMOST WRAPPER */
+.c1 {
+  width: 100%;
+  padding: 0;
+  margin: auto;
 }
 
-.msaw-card-small-body {
-  font-size: 13px;
-  color: #c0c0c0;
-  padding: 5px 0;
+/* MAIN CONTAINER */
+.c2 {
+  width: 80%;
+  margin: auto;
+  background: #000;
+  box-sizing: border-box;
+}
+
+/* FLEX SPLIT (ซ้าย content, ขวา TOP10) */
+.c11 {
+  width: 70%;
   display: block;
 }
 
-
-/* ==========================
-   AWARD NAME CLASSES
-   ========================== */
-
-.award-best-male-rookies::before {
-  content: var(--award-best-male-rookies);
+/* COLUMN SPLIT LINE (ตรงกลางแนวตั้ง) */
+.c23 {
+  border-left: 1px solid #333;
+  width: 1px;
 }
 
-.award-best-female-rookies::before {
-  content: var(--award-best-female-rookies);
+/* RIGHT SECTION */
+.c24 {
+  width: 30%;
+  padding: 0px 20px;
+  box-sizing: border-box;
 }
 
-.award-best-male-group::before {
-  content: var(--award-best-male-group);
+/* RIGHT FOOTER DIVIDER */
+.c26 {
+  border-bottom: 1px solid #333;
 }
 
-.award-best-female-group::before {
-  content: var(--award-best-female-group);
+/* FOOTER TEXT */
+.c27 {
+  text-align: center;
+  color: #555;
+  font-style: italic;
+  letter-spacing: 5px;
+  font-size: 12px;
+}
+.c27::before {
+  content: "@ almostnineynine";
 }
 
-.award-best-male-solo::before {
-  content: var(--award-best-male-solo);
+/* LAYOUT FLEX FOR MAIN TWO COLUMNS */
+.c3 ~ div {
+  display: flex;
 }
 
-.award-best-female-solo::before {
-  content: var(--award-best-female-solo);
+/* FIX “Â” stray char inside your HTML (hide it) */
+.c24::before {
+  content: "";
+  display: none;
 }
 
-.award-best-dance-performance::before {
-  content: var(--award-best-dance-performance);
-}
-
-.award-best-vocal-performance::before {
-  content: var(--award-best-vocal-performance);
-}
-
-.award-best-collaboration::before {
-  content: var(--award-best-collaboration);
-}
-
-.award-best-ost::before {
-  content: var(--award-best-ost);
-}
-
-.award-best-music-video::before {
-  content: var(--award-best-music-video);
-}
-
-.award-best-choreography::before {
-  content: var(--award-best-choreography);
-}
-
-
-/* ==========================
-   NAV HIGHLIGHT
-   ========================== */
-
-.msaw-nav-item {
-  color: #c0c0c0;
-  display: inline-block;
-  padding: 3px 8px;
-}
-
-.msaw-nav-item.highlight {
-  color: #a19168;
-  font-weight: bold;
-}
