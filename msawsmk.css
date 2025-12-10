@@ -1,215 +1,131 @@
-/* WRAPPER */
-.jj-wrapper {
-    width: 100%;
-    padding: 0;
-    margin: auto;
+/* ==========================
+   GLOBAL VARIABLES
+   ========================== */
+:root {
+  --award-best-male-rookies: "Best Male Rookies";
+  --award-best-female-rookies: "Best Female Rookies";
+  --award-best-male-group: "Best Male Group";
+  --award-best-female-group: "Best Female Group";
+  --award-best-male-solo: "Best Male Solo";
+  --award-best-female-solo: "Best Female Solo";
+  --award-best-dance-performance: "Best Dance Performance";
+  --award-best-vocal-performance: "Best Vocal Performance";
+  --award-best-collaboration: "Best Collaboration";
+  --award-best-ost: "Best OST.";
+  --award-best-music-video: "Best Music Video";
+  --award-best-choreography: "Best Choreography";
+
+  --rank-font-size: 25px;
+  --credit-color: #555;
+  --top10-head-font: 25px;
+  --top10-sub-font: 10px;
 }
 
-.jj-container {
-    width: 80%;
-    margin: auto;
-    background: #000;
+
+/* ==========================
+   BASIC COMPONENTS
+   ========================== */
+
+.msaw-rank {
+  width: 35px;
+  text-align: center;
+  font-size: var(--rank-font-size);
+  font-weight: bold;
+  color: #fff;
 }
 
-/* HEADER */
-.jj-header {
-    background: #222;
-    padding: 10px 20px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.msaw-credit {
+  text-align: center;
+  color: var(--credit-color);
+  font-style: italic;
+  letter-spacing: 5px;
+  font-size: 12px;
 }
 
-/* HEADER LEFT */
-.jj-head-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #fff;
+.msaw-top10-head {
+  text-align: center;
+  font-size: var(--top10-head-font);
+  color: #fff;
 }
 
-.jj-avatar {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: #555;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    overflow: hidden;
+.msaw-top10-sub {
+  text-align: center;
+  font-size: var(--top10-sub-font);
+  color: #c0c0c0;
 }
 
-/* HEADER MENU */
-.jj-head-menu {
-    display: flex;
-    gap: 20px;
-    color: #c0c0c0;
+.msaw-card-small-body {
+  font-size: 13px;
+  color: #c0c0c0;
+  padding: 5px 0;
+  display: block;
 }
 
-.jj-head-menu .active {
-    color: #a19168;
+
+/* ==========================
+   AWARD NAME CLASSES
+   ========================== */
+
+.award-best-male-rookies::before {
+  content: var(--award-best-male-rookies);
 }
 
-/* LEFT + RIGHT SECTION */
-.jj-body {
-    display: flex;
+.award-best-female-rookies::before {
+  content: var(--award-best-female-rookies);
 }
 
-/* LEFT SIDE */
-.jj-left {
-    width: 70%;
+.award-best-male-group::before {
+  content: var(--award-best-male-group);
 }
 
-.jj-artist-box {
-    display: flex;
-    gap: 20px;
-    padding: 30px;
+.award-best-female-group::before {
+  content: var(--award-best-female-group);
 }
 
-.jj-artist-img {
-    width: 160px;
-    height: 160px;
-    border: 1px solid #fff;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    flex-shrink: 0;
+.award-best-male-solo::before {
+  content: var(--award-best-male-solo);
 }
 
-.jj-artist-info {
-    font-size: 20px;
-    color: #fff;
+.award-best-female-solo::before {
+  content: var(--award-best-female-solo);
 }
 
-.jj-artist-award {
-    font-size: 10px;
-    color: #c0c0c0;
-    text-shadow: 0px 2px 5px #dbb970;
+.award-best-dance-performance::before {
+  content: var(--award-best-dance-performance);
 }
 
-.jj-artist-desc {
-    font-size: 15px;
-    color: #fff;
-    line-height: 1;
-    margin-top: 5px;
+.award-best-vocal-performance::before {
+  content: var(--award-best-vocal-performance);
 }
 
-/* BEST OF */
-.jj-section-title {
-    color: #fff;
-    padding: 15px 30px;
-    background: #222;
-    width: 100%;
-    box-sizing: border-box;
-    display: block;
+.award-best-collaboration::before {
+  content: var(--award-best-collaboration);
 }
 
-.jj-list-row {
-    padding: 15px;
-    display: flex;
-    gap: 5px;
+.award-best-ost::before {
+  content: var(--award-best-ost);
 }
 
-.jj-item {
-    width: 200px;
-    display: flex;
-    gap: 10px;
+.award-best-music-video::before {
+  content: var(--award-best-music-video);
 }
 
-.jj-item-img {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 70px;
-    height: 70px;
-    border: 1px solid #c0c0c0;
-    flex-shrink: 0;
+.award-best-choreography::before {
+  content: var(--award-best-choreography);
 }
 
-.jj-item-text {
-    font-size: 13px;
-    color: #c0c0c0;
+
+/* ==========================
+   NAV HIGHLIGHT
+   ========================== */
+
+.msaw-nav-item {
+  color: #c0c0c0;
+  display: inline-block;
+  padding: 3px 8px;
 }
 
-.jj-item-text summary { list-style: none; }
-.jj-item-text summary div {
-    color: #fff;
-    font-size: 14px;
-}
-
-/* RIGHT SECTION */
-.jj-divider {
-    border-left: 1px solid #333;
-    width: 1px;
-}
-
-.jj-right {
-    width: 30%;
-    padding: 0 20px;
-}
-
-.jj-right-title {
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.jj-right-sub {
-    font-size: 10px;
-}
-
-.jj-top10 {
-    max-height: 550px;
-    overflow-y: auto;
-    padding-right: 5px;
-    scrollbar-width: none; /* Firefox hidden scrollbar */
-}
-
-.jj-rank-row {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    gap: 20px;
-    padding: 5px 0;
-}
-
-.jj-rank-num {
-    width: 35px;
-    text-align: center;
-    font-size: 25px;
-    font-weight: bold;
-    flex-shrink: 0;
-}
-
-.jj-rank-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 1px solid #c0c0c0;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    flex-shrink: 0;
-}
-
-.jj-rank-name {
-    font-size: 14px;
-    color: #fff;
-    flex-grow: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* FOOTER */
-.jj-footer {
-    border-bottom: 1px solid #333;
-    text-align: center;
-}
-
-.jj-credit {
-    color: #555;
-    font-style: italic;
-    letter-spacing: 5px;
-    font-size: 12px;
+.msaw-nav-item.highlight {
+  color: #a19168;
+  font-weight: bold;
 }
