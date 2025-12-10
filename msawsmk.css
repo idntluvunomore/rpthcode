@@ -1,272 +1,215 @@
-/* -------------------------------------------------------- */
-/* RESET BASIC                                               */
-/* -------------------------------------------------------- */
-
-.msawsmk * {
-    box-sizing: border-box;
-}
-
-/* -------------------------------------------------------- */
-/* GLOBAL WRAPPER                                            */
-/* -------------------------------------------------------- */
-
-.msawsmk {
+/* WRAPPER */
+.jj-wrapper {
     width: 100%;
-    margin: auto;
     padding: 0;
+    margin: auto;
 }
 
-.msawsmk-inner {
+.jj-container {
     width: 80%;
     margin: auto;
     background: #000;
 }
 
-/* -------------------------------------------------------- */
-/* HEADER                                                     */
-/* -------------------------------------------------------- */
-
-.msawsmk-header {
+/* HEADER */
+.jj-header {
     background: #222;
     padding: 10px 20px;
     font-size: 14px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
-/* Title block */
-.msawsmk-title {
+/* HEADER LEFT */
+.jj-head-left {
     display: flex;
     align-items: center;
     gap: 10px;
     color: #fff;
-    font-size: 0;
 }
 
-.msawsmk-title-icon {
+.jj-avatar {
     width: 28px;
     height: 28px;
     border-radius: 50%;
     background: #555;
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
-.msawsmk-title::before {
-    content: "MUSIC AWARD 2025";
-    font-size: 14px;
-}
-
-/* NAV tabs */
-.msawsmk-nav {
+/* HEADER MENU */
+.jj-head-menu {
     display: flex;
     gap: 20px;
-}
-
-.msawsmk-navitem {
     color: #c0c0c0;
-    cursor: pointer;
-    font-size: 0;
 }
 
-/* labels' visible text */
-.msawsmk-navitem:nth-of-type(1)::before {
-    content: "Artist of the Year";
-    font-size: 14px;
-}
-.msawsmk-navitem:nth-of-type(2)::before {
-    content: "Album of the Year";
-    font-size: 14px;
-}
-.msawsmk-navitem:nth-of-type(3)::before {
-    content: "Song of the Year";
-    font-size: 14px;
-}
-
-/* active state */
-#tab-artist:checked ~ .msawsmk-header .msawsmk-navitem:nth-of-type(1)::before,
-#tab-album:checked  ~ .msawsmk-header .msawsmk-navitem:nth-of-type(2)::before,
-#tab-song:checked   ~ .msawsmk-header .msawsmk-navitem:nth-of-type(3)::before {
+.jj-head-menu .active {
     color: #a19168;
-    font-weight: bold;
 }
 
-/* -------------------------------------------------------- */
-/* CONTENT AREA                                              */
-/* -------------------------------------------------------- */
-
-.msawsmk-body {
+/* LEFT + RIGHT SECTION */
+.jj-body {
     display: flex;
 }
 
-.msawsmk-left {
+/* LEFT SIDE */
+.jj-left {
     width: 70%;
 }
 
-/* main block (picture + text) */
-.msawsmk-main {
+.jj-artist-box {
     display: flex;
     gap: 20px;
     padding: 30px;
 }
 
-.msawsmk-main-pic {
+.jj-artist-img {
     width: 160px;
     height: 160px;
     border: 1px solid #fff;
-    flex-shrink: 0;
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
 }
 
-.msawsmk-mainText {
-    color: #fff;
+.jj-artist-info {
     font-size: 20px;
+    color: #fff;
 }
 
-.msawsmk-artistName {
-    font-weight: bold;
-}
-
-/* award name under artist */
-.msawsmk-art-award {
+.jj-artist-award {
+    font-size: 10px;
     color: #c0c0c0;
-    font-size: 0;
     text-shadow: 0px 2px 5px #dbb970;
 }
 
-#tab-artist:checked ~ .msawsmk-body .msawsmk-art-award::before {
-    content: "ARTIST OF THE YEAR AWARD";
-    font-size: 10px;
-}
-#tab-album:checked ~ .msawsmk-body .msawsmk-art-award::before {
-    content: "ALBUM OF THE YEAR AWARD";
-    font-size: 10px;
-}
-#tab-song:checked ~ .msawsmk-body .msawsmk-art-award::before {
-    content: "SONG OF THE YEAR AWARD";
-    font-size: 10px;
-}
-
-.msawsmk-description {
+.jj-artist-desc {
     font-size: 15px;
     color: #fff;
-    margin-top: 5px;
     line-height: 1;
+    margin-top: 5px;
 }
 
-/* -------------------------------------------------------- */
-/* BEST OF…                                                  */
-/* -------------------------------------------------------- */
-
-.msawsmk-bestof-title {
-    background: #222;
+/* BEST OF */
+.jj-section-title {
     color: #fff;
     padding: 15px 30px;
-    font-weight: bold;
+    background: #222;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
 }
 
-.msawsmk-cats {
+.jj-list-row {
     padding: 15px;
     display: flex;
     gap: 5px;
 }
 
-.msawsmk-catbox {
+.jj-item {
     width: 200px;
     display: flex;
     gap: 10px;
 }
 
-.msawsmk-catpic {
+.jj-item-img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 70px;
     height: 70px;
     border: 1px solid #c0c0c0;
-    background-position: center;
-    background-size: cover;
+    flex-shrink: 0;
 }
 
-.msawsmk-cat-label {
+.jj-item-text {
     font-size: 13px;
     color: #c0c0c0;
 }
 
-/* -------------------------------------------------------- */
-/* RIGHT COLUMN TOP10                                        */
-/* -------------------------------------------------------- */
+.jj-item-text summary { list-style: none; }
+.jj-item-text summary div {
+    color: #fff;
+    font-size: 14px;
+}
 
-.msawsmk-right {
+/* RIGHT SECTION */
+.jj-divider {
+    border-left: 1px solid #333;
+    width: 1px;
+}
+
+.jj-right {
     width: 30%;
-    padding: 0px 20px;
+    padding: 0 20px;
 }
 
-.msawsmk-top10-title,
-.msawsmk-top10-sub {
-    text-align: center;
-    font-size: 0;
-}
-
-.msawsmk-top10-title::before {
-    content: "TOP 10";
+.jj-right-title {
     font-size: 25px;
     font-weight: bold;
 }
 
-.msawsmk-top10-sub::before {
-    content: "ARTIST OF THE YEAR";
+.jj-right-sub {
     font-size: 10px;
 }
 
-/* list */
-.msawsmk-top10-list {
+.jj-top10 {
     max-height: 550px;
     overflow-y: auto;
     padding-right: 5px;
-    scrollbar-width: none;
+    scrollbar-width: none; /* Firefox hidden scrollbar */
 }
 
-.msawsmk-top10-item {
+.jj-rank-row {
     display: flex;
+    width: 100%;
     align-items: center;
     gap: 20px;
     padding: 5px 0;
 }
 
-.msawsmk-top10-rank {
+.jj-rank-num {
     width: 35px;
+    text-align: center;
     font-size: 25px;
     font-weight: bold;
+    flex-shrink: 0;
+}
+
+.jj-rank-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #c0c0c0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+}
+
+.jj-rank-name {
+    font-size: 14px;
+    color: #fff;
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* FOOTER */
+.jj-footer {
+    border-bottom: 1px solid #333;
     text-align: center;
 }
 
-/* -------------------------------------------------------- */
-/* CREDIT                                                    */
-/* -------------------------------------------------------- */
-
-.msawsmk-credit {
-    font-size: 0;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.msawsmk-credit::before {
-    content: "@ almostnineynine";
-    letter-spacing: 5px;
+.jj-credit {
     color: #555;
     font-style: italic;
+    letter-spacing: 5px;
     font-size: 12px;
-}
-
-/* -------------------------------------------------------- */
-/* HIDE ALL REAL TEXT                                        */
-/* -------------------------------------------------------- */
-
-.msawsmk-title,
-.msawsmk-top10-title,
-.msawsmk-top10-sub,
-.msawsmk-navitem,
-.msawsmk-art-award,
-.msawsmk-credit {
-    font-size: 0;
 }
