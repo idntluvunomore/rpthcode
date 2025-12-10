@@ -1,74 +1,44 @@
-/* ========= BASE (ตรงตาม inline เดิม) ========= */
+/* ========= BASE (ตรงกับ inline เดิม) ========= */
 .msawsmk { width: 100%; padding: 0; margin: 0 auto; }
 .msawsmk-inner { width: 80%; margin: 0 auto; background: #000; }
 
-/* ========= IMAGE (เปลี่ยนรูปจาก HTML ด้วย --img:url(...)) ========= */
-.img {
-  background-image: var(--img);
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+/* ========= IMAGE (ปรับรูปจาก HTML ด้วย --img:url(...)) ========= */
+.img { background-image: var(--img); background-position: center center; background-size: cover; background-repeat: no-repeat; }
 
-/* ========= PAGE SWITCH (CSS-only via :target) ========= */
-/* DOM order in HTML: #tab-album  -> #tab-song -> #tab-artist (default shown) */
-.msawsmk-page { display: none; }
-#tab-artist { display: block; }                    /* default = Artist of the Year */
-#tab-album:target { display: block; }
-#tab-song:target { display: block; }
+/* ========= TOP BAR (เดิม: background #222, flex, space-between) ========= */
+.msawsmk-topbar { background: #222; padding: 10px 20px; font-size: 14px; display: flex; align-items: center; justify-content: space-between; }
 
-/* When album is targeted, hide later siblings (song + artist) */
-#tab-album:target ~ #tab-song { display: none; }
-#tab-album:target ~ #tab-artist { display: none; }
-
-/* When song is targeted, hide later sibling (artist) */
-#tab-song:target ~ #tab-artist { display: none; }
-
-/* ========= LAYOUT ORDER (topbar appears visually on top) ========= */
-.msawsmk-inner { display: flex; flex-direction: column; }
-.msawsmk-topbar { order: -1; } /* visually above the pages/static body */
-
-/* ========= TOP BAR (เดิม: background #222, flex) ========= */
-.msawsmk-topbar {
-  background: #222;
-  padding: 10px 20px;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* BRAND */
+/* brand */
 .msawsmk-brand { display: flex; align-items: center; gap: 10px; color: #fff; }
 .msawsmk-brand-icon { width: 28px; height: 28px; border-radius: 50%; background: #555; overflow: hidden; }
 
-/* TITLE: JJ's editable, " MUSIC AWARD 2025" injected from CSS */
+/* title: JJ's editable; " MUSIC AWARD 2025" injected */
 .msawsmk-title { font-weight: 700; }
 .msawsmk-title::after { content: " MUSIC AWARD 2025"; }
 .msawsmk-owner { font-style: italic; }
 
-/* NAV (text injected in CSS; active = gold) */
+/* nav (text injected; active gold) */
 .msawsmk-nav { display: flex; gap: 20px; color: #c0c0c0; }
-.msawsmk-navitem { text-decoration: none; color: inherit; }
+.msawsmk-navitem { color: inherit; text-decoration: none; }
 
 /* default active = Artist (gold) */
 .msawsmk-navitem:nth-child(1) { color: #a19168; }
 
-/* when album is selected */
-#tab-album:target ~ .msawsmk-topbar .msawsmk-navitem:nth-child(1) { color: #c0c0c0; }
-#tab-album:target ~ .msawsmk-topbar .msawsmk-navitem:nth-child(2) { color: #a19168; }
-
-/* when song is selected */
-#tab-song:target ~ .msawsmk-topbar .msawsmk-navitem:nth-child(1) { color: #c0c0c0; }
-#tab-song:target ~ .msawsmk-topbar .msawsmk-navitem:nth-child(3) { color: #a19168; }
-
-/* NAV labels (ทั้งหมดฝังใน CSS) */
+/* nav labels (all fixed in CSS) */
 .msawsmk-navitem:nth-child(1)::before { content: "Artist of the Year"; }
 .msawsmk-navitem:nth-child(2)::before { content: "Album of the Year"; }
 .msawsmk-navitem:nth-child(3)::before { content: "Song of the Year"; }
 
-/* ========= HERO (โครงเดิม: gap 20, padding 30, สี/ขนาดตาม inline) ========= */
-.msawsmk-hero { display: flex; gap: 20px; padding: 30px; }
+/* ========= MAIN LAYOUT ========= */
+.msawsmk-main { display: flex; }
+
+/* LEFT (70%) */
+.msawsmk-left { width: 70%; }
+
+/* HERO (เดิม: flex gap 20 padding 30) */
+.msawsmk-hero { display: none; gap: 20px; padding: 30px; }
+.msawsmk-hero--artist { display: flex; } /* default view */
+
 .msawsmk-hero-img { width: 160px; height: 160px; border: 1px solid #fff; flex-shrink: 0; }
 .msawsmk-hero-meta { font-size: 20px; color: #fff; }
 .msawsmk-hero-name { font-weight: 700; }
@@ -76,30 +46,34 @@
 .msawsmk-hero-tag::before { content: "ARTIST OF THE YEAR AWARD"; }
 .msawsmk-hero-desc { font-size: 15px; color: #fff; line-height: 1; margin-top: 5px; }
 
-/* ========= STATIC BODY (ไม่เปลี่ยนตามการกด) ========= */
-.msawsmk-body { display: flex; }
+/* :target switching (CSS-only) — only the hero block changes */
+#tab-album:target ~ .msawsmk-topbar .msawsmk-navitem:nth-child(1) { color: #c0c0c0; }
+#tab-album:target ~ .msawsmk-topbar .msawsmk-navitem:nth-child(2) { color: #a19168; }
+#tab-album:target ~ .msawsmk-main .msawsmk-hero--artist { display: none; }
+#tab-album:target ~ .msawsmk-main .msawsmk-hero--album { display: flex; }
 
-/* LEFT (70%) */
-.msawsmk-left { width: 70%; }
+#tab-song:target ~ .msawsmk-topbar .msawsmk-navitem:nth-child(1) { color: #c0c0c0; }
+#tab-song:target ~ .msawsmk-topbar .msawsmk-navitem:nth-child(3) { color: #a19168; }
+#tab-song:target ~ .msawsmk-main .msawsmk-hero--artist { display: none; }
+#tab-song:target ~ .msawsmk-main .msawsmk-hero--song { display: flex; }
 
-/* BEST OF ... (ฝังใน CSS) */
-.msawsmk-section-title { color: #fff; padding: 15px 30px; background: #222; width: 100%; box-sizing: border-box; display: block; }
-.msawsmk-section-title::before { content: "BEST OF . . ."; }
+/* BEST OF (fixed text) */
+.msawsmk-bestof { color: #fff; padding: 15px 30px; background: #222; width: 100%; box-sizing: border-box; display: block; }
+.msawsmk-bestof::before { content: "BEST OF . . ."; }
 
-/* spacer (เดิม: margin-bottom: 15px) */
+/* spacer (เดิม: margin-bottom 15px) */
 .msawsmk-spacer { margin-bottom: 15px; }
 
-/* category grid (เดิม: padding 15px / gap 5px) */
+/* CATEGORY ROWS (เดิม: padding 15, gap 5) */
 .msawsmk-row { padding: 15px; display: flex; gap: 5px; }
 .msawsmk-row--last { padding: 15px 15px 30px 15px; }
 
-/* category item (เดิม: width 200, gap 10) */
+/* category item */
 .msawsmk-cat { width: 200px; display: flex; gap: 10px; }
 .msawsmk-cat-cover { width: 70px; height: 70px; border: 1px solid #c0c0c0; flex-shrink: 0; }
 .msawsmk-cat-text { color: #c0c0c0; font-size: 13px; }
 
-/* category label: text is injected (ตามที่คุณสั่ง) */
-.msawsmk-cat-label { color: #c0c0c0; font-size: 13px; }
+/* category labels (fixed in CSS) — mapped to the exact order of your original rows */
 .msawsmk-row:nth-of-type(1) .msawsmk-cat:nth-child(1) .msawsmk-cat-label::before { content: "Male Rookies"; }
 .msawsmk-row:nth-of-type(1) .msawsmk-cat:nth-child(2) .msawsmk-cat-label::before { content: "Female Rookies"; }
 .msawsmk-row:nth-of-type(1) .msawsmk-cat:nth-child(3) .msawsmk-cat-label::before { content: "Male Group"; }
@@ -116,34 +90,34 @@
 .msawsmk-row:nth-of-type(4) .msawsmk-cat:nth-child(2) .msawsmk-cat-label::before { content: "Music Video"; }
 .msawsmk-row:nth-of-type(4) .msawsmk-cat:nth-child(3) .msawsmk-cat-label::before { content: "Choreography"; }
 
-/* details (สอดคล้องกับ inline เดิม) */
+/* details/summary (ยังคงพฤติกรรมเดิม) */
 .msawsmk-cat-details { margin: 0; }
 .msawsmk-cat-summary { list-style: none; cursor: pointer; }
 .msawsmk-cat-summary div { color: #fff; font-size: 14px; }
 .msawsmk-cat-desc { font-size: 13px; }
 
-/* divider (เดิม: border-left 1px solid #333) */
+/* divider (เดิม: border-left #333 width 1px) */
 .msawsmk-divider { border-left: 1px solid #333; width: 1px; }
 
-/* RIGHT (30%) + TOP 10 (เดิม: padding 0 20px) */
+/* RIGHT (30%) */
 .msawsmk-right { width: 30%; padding: 0 20px; }
 
-/* TOP 10 header (ฝังข้อความทั้งหมด) */
+/* TOP 10 header (fixed text) */
 .msawsmk-right-head { text-align: center; }
 .msawsmk-top10-title { font-size: 25px; }
 .msawsmk-top10-title::before { content: "TOP 10"; }
 .msawsmk-top10-sub { font-size: 10px; }
 .msawsmk-top10-sub::before { content: "ARTIST OF THE YEAR"; }
 
-/* scroll panel (เดิม: max-height 550, overflow-y auto, scrollbar-width none) */
+/* top10 list (เดิม: max-height 550, overflow-y auto, padding-right 5, scrollbar none) */
 .msawsmk-top10-list { max-height: 550px; overflow-y: auto; padding-right: 5px; scrollbar-width: none; }
 .msawsmk-top10-list::-webkit-scrollbar { width: 0; height: 0; }
 
-/* top10 item (เดิม: flex align center gap 20 padding 5px 0) */
+/* each item (เดิม: flex align center gap 20 padding 5 0) */
 .msawsmk-top10-item { width: 100%; display: flex; align-items: center; gap: 20px; padding: 5px 0; }
 .msawsmk-top10-rank { width: 35px; text-align: center; font-size: 25px; font-weight: bold; flex-shrink: 0; }
 
-/* rank numbers injected (1–10) */
+/* rank numbers (fixed in CSS) */
 .msawsmk-top10-item:nth-child(1) .msawsmk-top10-rank::before { content: "1"; }
 .msawsmk-top10-item:nth-child(2) .msawsmk-top10-rank::before { content: "2"; }
 .msawsmk-top10-item:nth-child(3) .msawsmk-top10-rank::before { content: "3"; }
@@ -158,7 +132,7 @@
 .msawsmk-top10-pic { width: 50px; height: 50px; border: 1px solid #c0c0c0; border-radius: 50%; flex-shrink: 0; }
 .msawsmk-top10-name { font-size: 14px; color: #fff; flex-grow: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-/* ========= FOOTER (เครดิตฝังใน CSS) ========= */
+/* footer (เดิม: border-bottom #333; credit styling) */
 .msawsmk-bottomline { border-bottom: 1px solid #333; }
 .msawsmk-credit { color: #555; font-style: italic; letter-spacing: 5px; font-size: 12px; text-align: center; padding: 5px 0 15px 0; }
 .msawsmk-credit::before { content: "@ almostnineynine"; }
