@@ -534,20 +534,27 @@
 }
 
 .lcpf-rel-body {
-  padding: 6px 10px 10px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0 0 7px 7px;
+  padding: 5px 10px 8px;
   color: #555;
-  font-size: 12px;
+  font-size: min(0.8vw, 12px);
 }
 
-.lcpf-rel-role {
-  display: block;
-  margin-bottom: 2px;
+/* สัญลักษณ์หัวใจ / ลูกศร / ตัว M */
+
+.lcpf-rel-role::before {
+  content: "❤︎ ";
 }
 
-.lcpf-rel-id {
-  display: block;
+.lcpf-rel-id::before {
+  content: "▷ ";
 }
 
+.lcpf-rel-num::after {
+  content: "M ";
+}
 
 /* กล่อง "เพิ่ม Relationship" */
 
