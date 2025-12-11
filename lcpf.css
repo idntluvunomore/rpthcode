@@ -35,15 +35,23 @@
 */
 
 .lcpf {
-  --main: #d46363;            /* main color (label / highlight) */
-  --sub: #582828;             /* sub color (ปุ่ม / เส้น active) */
-  --avatar-border: #131313;   /* สีขอบวงกลมเมจ */
-  --cover: none;              /* url() ของภาพปก */
-  --avatar: none;             /* url() ของภาพโปรไฟล์วงกลม */
-  --g1: none;                 /* url() gallery 1 */
-  --g2: none;                 /* url() gallery 2 */
-  --g3: none;                 /* url() gallery 3 */
-  --tail: #550000;            /* สีหาง appendix */
+  /* default theme = เทาตาม code เปล่า */
+  --main: #939393;          /* สีตัวอักษรหัวข้อย่อย / label */
+  --sub: #555555;           /* สีเส้นใต้ About + สีปุ่มหลัก */
+
+  --search-bg: #ffffff;     /* กล่อง Search */
+  --search-text: #555555;   /* ตัวอักษร Search */
+  --search-icon: #b6b6b6;   /* ไอคอนแว่น */
+
+  --follow-bg: #ffffff;     /* กล่อง Follow */
+  --follow-text: #555555;   /* ตัวอักษร Follow */
+
+  --subscribe-bg: #ffffff;  /* กล่อง Subscribe */
+  --subscribe-text: #555555;/* ตัวอักษร Subscribe */
+
+  --avatar-border: #555555; /* ขอบวงกลมเมจ */
+
+  --tail: #555555;          /* สีหางใน Appendix */
 }
 
 /* ========= ส่วน header ปกด้านบน ========= */
@@ -80,14 +88,15 @@
   align-items: center;
   gap: 6px;
   padding: 5px 20px;
-  background: var(--sub);
   border-radius: 20px;
-  color: #ccc;
   margin-left: 20px;
   margin-top: 20px;
-  cursor: pointer;
+  font-family: "Work Sans", system-ui, sans-serif;
   font-weight: 500;
   font-size: 13px;
+
+  background: var(--search-bg);
+  color: var(--search-text);
 }
 
 .lcpf-search-icon {
@@ -96,7 +105,9 @@
   display: inline-block;
   -webkit-mask: url(https://i.imgur.com/IAWUsAq.png) center / cover;
   mask: url(https://i.imgur.com/IAWUsAq.png) center / cover;
-  background: #ccc;
+  background: var(--search-icon);
+  position: relative;
+  top: 6px;
 }
 
 .lcpf-search::after {
@@ -112,10 +123,10 @@
   text-align: center;
   gap: 5px;
   margin-top: 20px;
-  font-size: 13px;
-  font-family: "Work Sans", system-ui, -apple-system, sans-serif;
-  font-weight: 500;
   margin-right: 20px;
+  font-size: 13px;
+  font-family: "Work Sans", system-ui, sans-serif;
+  font-weight: 500;
 }
 
 .lcpf-btn {
@@ -127,12 +138,10 @@
   cursor: pointer;
 }
 
-/* Follow */
-
+/* FOLLOW */
 .lcpf-follow {
-  background: var(--sub);
-  color: #ccc;
-  font-weight: 500;
+  background: var(--follow-bg);
+  color: var(--follow-text);
 }
 
 .lcpf-follow::before {
@@ -144,11 +153,10 @@
   content: "Follow";
 }
 
-/* Subscribe */
-
+/* SUBSCRIBE */
 .lcpf-subscribe {
-  background: #ccc;
-  color: var(--sub);
+  background: var(--subscribe-bg);
+  color: var(--subscribe-text);
 }
 
 .lcpf-subscribe::before {
@@ -161,10 +169,10 @@
   width: 130px;
   aspect-ratio: 1/1;
   margin: auto;
-  border: 3px solid var(--avatar-border);
-  border-radius: 100%;
   margin-top: -100px;
-  background: var(--avatar) center / cover no-repeat;
+  border-radius: 50%;
+  background: var(--avatar) center/cover no-repeat;
+  border: 3px solid var(--avatar-border);
 }
 
 .lcpf-display {
@@ -205,8 +213,6 @@
 .lcpf-nav-posts::before   { content: "Posts"; }
 .lcpf-nav-noti::before    { content: "Notifications"; }
 .lcpf-nav-bookmark::before{ content: "Bookmarks"; }
-
-/* tab ที่ active (About) */
 
 .lcpf-nav-about {
   border-bottom: 2px solid var(--sub);
@@ -376,15 +382,33 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  line-height: 1.4;
 }
 
-/* label appendix */
-
+/* "สีหาง:" */
 .lcpf-app-tail::before {
   content: "สีหาง: ";
   color: var(--main);
 }
+
+/* "#XXXXXX" */
+.lcpf-tail-code::before {
+  content: var(--tail);
+  color: var(--tail);
+  font-weight: 700;
+}
+
+/* ● จุดสีหาง */
+.lcpf-tail-dot {
+  width: 13px;
+  height: 13px;
+  background: var(--tail);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  top: 1px;
+}
+
+/* label appendix */
 
 .lcpf-app-animal::before {
   content: "สัตว์แฝง: ";
