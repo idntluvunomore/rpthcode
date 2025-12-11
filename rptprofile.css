@@ -1,317 +1,163 @@
-/* =========================
-   FONT IMPORT
-   ========================= */
+/* profile.css - minimal vars (change only --color-main / --color-sub) */
+
+/* import fonts */
 @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-/* =========================
-   RESET
-   ========================= */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* reset */
+*{box-sizing:border-box;margin:0;padding:0}
 
-/* =========================
-   VARIABLES
-   ========================= */
-:root {
-  --img-cover: url(https://via.placeholder.com/800x500/111/fff?text=COVER);
-  --img-avatar: url(https://via.placeholder.com/300/222/fff?text=AVATAR);
+/* core variables (change only these two) */
+:root{
+  --color-main:#6b2e2e;   /* primary accent (edit this) */
+  --color-sub:#222;       /* secondary / panels (edit this) */
 
-  --img-gallery-1: url(https://via.placeholder.com/300/444/fff?text=G1);
-  --img-gallery-2: url(https://via.placeholder.com/300/555/fff?text=G2);
-  --img-gallery-3: url(https://via.placeholder.com/300/666/fff?text=G3);
+  /* images (placeholders; override with correct urls) */
+  --img-cover: url("https://via.placeholder.com/1200x400/111/fff?text=COVER");
+  --img-avatar: url("https://via.placeholder.com/300/222/fff?text=AVATAR");
+  --img-gallery-1: url("https://via.placeholder.com/300/300/333/fff?text=G1");
+  --img-gallery-2: url("https://via.placeholder.com/300/300/444/fff?text=G2");
+  --img-gallery-3: url("https://via.placeholder.com/300/300/555/fff?text=G3");
 
-  --ui-search-bg: #222;
+  /* derived */
+  --ui-search-bg: var(--color-sub);
   --ui-search-fg: #fff;
-
-  --ui-follow-bg: #444;
+  --ui-follow-bg: var(--color-main);
   --ui-follow-fg: #fff;
-
-  --ui-sub-bg: #777;
+  --ui-sub-bg: #444;
   --ui-sub-fg: #fff;
-
-  --ui-border-circle: #777;
-  --ui-line: #555;
+  --ui-border-circle: #888;
+  --ui-line: #444;
+  --muted:#939393;
+  --card-bg:#0f0f0f;
+  --text:#ddd;
 }
 
-/* =========================
-   ROOT CARD
-   ========================= */
-.profile-root {
-  font-family: "Bai Jamjuree", sans-serif;
-  font-size: min(1.3vw, 15px);
-  color: #ddd;
-  max-width: 1000px;
-  min-width: 450px;
-  margin: auto;
-  border: 1px solid #333;
-  border-radius: 10px 10px 0 0;
-  background: #000;
-  line-height: 1.6;
+/* root card */
+.profile-root{
+  font-family:"Bai Jamjuree",sans-serif;
+  font-size:min(1.3vw,15px);
+  color:var(--text);
+  max-width:1000px;
+  min-width:450px;
+  margin:auto;
+  background:#000;
+  border:1px solid #333;
+  border-radius:10px 10px 0 0;
+  line-height:1.6;
 }
 
-/* =========================
-   COVER
-   ========================= */
-.profile-cover {
-  width: 100%;
-  height: 350px;
+/* cover */
+.profile-cover{
+  width:100%;
+  height:350px;
   background: #000 var(--img-cover) center/cover no-repeat;
-  border-radius: 10px 10px 0 0;
+  border-radius:10px 10px 0 0;
 }
 
-/* =========================
-   TOP BAR
-   ========================= */
-.profile-topbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
+/* topbar (search + actions) */
+.profile-topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding:20px;
+  max-width:1000px;
+  margin:0 auto;
 }
-
-.profile-search {
-  background: var(--ui-search-bg);
-  color: var(--ui-search-fg);
-  padding: 4px 20px;
-  border-radius: 20px;
-  font-family: "Work Sans";
-  font-size: 13px;
-  font-weight: 500;
+.profile-search{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--ui-search-bg);
+  color:var(--ui-search-fg);
+  padding:6px 20px;
+  border-radius:20px;
+  font-family:"Work Sans",sans-serif;
+  font-weight:500;
+  font-size:13px;
 }
-.profile-search-icon {
-  width: 20px;
-  aspect-ratio: 1;
-  background: var(--ui-search-fg);
+.profile-search-icon{
+  width:20px;height:20px;
+  display:inline-block;
   -webkit-mask: url(https://i.imgur.com/IAWUsAq.png) center/cover no-repeat;
-  margin-right: 6px;
-  display: inline-block;
-  position: relative;
-  top: 4px;
+  background:var(--ui-search-fg);
+  margin-right:2px;
 }
+.profile-buttons{display:flex;gap:8px;align-items:center}
+.profile-btn-follow{min-width:75px;padding:6px 10px;background:var(--ui-follow-bg);color:var(--ui-follow-fg);border-radius:5px;font-family:"Work Sans";font-weight:500;text-align:center}
+.profile-btn-sub{min-width:75px;padding:6px 10px;background:var(--ui-sub-bg);color:var(--ui-sub-fg);border-radius:5px;font-family:"Work Sans";font-weight:500;text-align:center}
 
-.profile-buttons {
-  display: flex;
-  gap: 6px;
-  font-family: "Work Sans";
-  font-size: 13px;
-  font-weight: 500;
-}
-.profile-btn-follow {
-  min-width: 75px;
-  padding: 5px 10px;
-  background: var(--ui-follow-bg);
-  color: var(--ui-follow-fg);
-  border-radius: 5px;
-  text-align: center;
-}
-.profile-btn-sub {
-  min-width: 75px;
-  padding: 5px 10px;
-  background: var(--ui-sub-bg);
-  color: var(--ui-sub-fg);
-  border-radius: 5px;
-  text-align: center;
-}
-
-/* =========================
-   AVATAR + NAME
-   ========================= */
-.profile-avatar {
-  width: 130px;
-  aspect-ratio: 1;
+/* avatar / name / race */
+.profile-avatar{
+  width:130px;height:130px;
+  border-radius:50%;
+  margin:auto;
+  margin-top:-100px;
   background: var(--img-avatar) center/cover no-repeat;
-  border: 3px solid var(--ui-border-circle);
-  border-radius: 100%;
-  margin: auto;
-  margin-top: -100px;
+  border:3px solid var(--ui-border-circle);
+  box-shadow:0 2px 6px rgba(0,0,0,0.6);
 }
-.profile-displayname {
-  margin-top: 10px;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-}
-.profile-race {
-  text-align: center;
-  color: #aaa;
-  margin-top: -5px;
-  font-style: italic;
-}
+.profile-displayname{text-align:center;font-weight:600;font-size:20px;margin-top:10px}
+.profile-race{text-align:center;color:#8f8f8f;font-style:oblique;margin-top:-5px}
 
-/* =========================
-   TABS
-   ========================= */
-.profile-tabs {
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 0;
-  margin-top: 10px;
-}
-.profile-tab {
-  padding: 2px 8px 4px;
-  font-family: "Work Sans";
-  font-size: 13px;
-  font-weight: 500;
-  color: #ccc;
-}
-.profile-tab.active {
-  border-bottom: 2px solid var(--ui-line);
-}
+/* tabs */
+.profile-tabs{display:flex;justify-content:space-around;padding:10px 0;margin-top:6px}
+.profile-tab{padding:1px 8px 4px;font-family:"Work Sans";font-weight:500;font-size:13px;color:#ccc}
+.profile-tab.active{border-bottom:2px solid var(--ui-line)}
+/* auto tab labels */
+.profile-tab:nth-child(1)::before{content:"Home"}
+.profile-tab:nth-child(2)::before{content:"About"}
+.profile-tab:nth-child(3)::before{content:"Posts"}
+.profile-tab:nth-child(4)::before{content:"Notifications"}
+.profile-tab:nth-child(5)::before{content:"Bookmarks"}
 
-/* AUTO TAB TITLES */
-.profile-tab:nth-child(1)::before { content: "Home"; }
-.profile-tab:nth-child(2)::before { content: "About"; }
-.profile-tab:nth-child(3)::before { content: "Posts"; }
-.profile-tab:nth-child(4)::before { content: "Notifications"; }
-.profile-tab:nth-child(5)::before { content: "Bookmarks"; }
+/* content wrapper */
+.profile-content{display:flex;justify-content:space-between;padding:20px;max-width:1000px;margin:0 auto}
+.profile-info{width:55%}
+.profile-info-text{padding:10px 20px;color:var(--text)}
 
-/* =========================
-   TITLES
-   ========================= */
-.profile-section-title {
-  margin-top: 20px;
-  padding: 0 0 2px 10px;
-  color: #999;
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  border-bottom: 1px solid #555;
-  text-shadow: 0 0 20px #999;
-}
+/* section title base (text inserted via pseudo-classes in HTML classes) */
+.profile-section-title{color:var(--muted);font-size:13px;font-weight:600;text-transform:uppercase;padding:0 0 2px 10px;border-bottom:1px solid #555;text-shadow:0 0 20px #999;display:block;width:fit-content}
 
-/* AUTO TITLES */
-.profile-title-personal::before { content: "Personal Information"; }
-.profile-title-gallery::before { content: "Our Gallery"; }
-.profile-title-personality::before { content: "Personality and Traits"; }
-.profile-title-bio::before { content: "Biography"; }
-.profile-title-appendix::before { content: "Appendix"; }
-.profile-title-tmi::before { content: "TMI"; }
-.profile-title-relationship::before { content: "Relationship"; }
+/* section titles inserted in CSS by class names */
+.profile-title-personal::before{content:"Personal Information"}
+.profile-title-gallery::before{content:"Our Gallery"}
+.profile-title-personality::before{content:"Personality and Traits"}
+.profile-title-bio::before{content:"Biography"}
+.profile-title-appendix::before{content:"Appendix"}
+.profile-title-tmi::before{content:"TMI"}
+.profile-title-relationship::before{content:"Relationship"}
 
-/* =========================
-   CONTENT
-   ========================= */
-.profile-content {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
+/* gallery */
+.profile-gallery{width:43%;box-sizing:border-box;margin:0 20px -20px 0}
+.profile-gallery-head{display:flex;justify-content:space-between;align-items:flex-end;padding-right:10px}
+.profile-gallery-seemore::before{content:"see more >>";font-size:12px;color:var(--muted)}
+.profile-gallery-row{display:flex;gap:2px;padding:5px;filter:saturate(.8)}
+.profile-gallery-img{width:150px;aspect-ratio:1;border:1px solid #555;background:center/cover no-repeat}
 
-.profile-info {
-  width: 55%;
-}
-.profile-info-text {
-  padding: 10px 20px;
-}
+/* long text blocks */
+.profile-longtext{padding:10px 20px;text-align:left}
+.profile-longtext div{margin-bottom:10px}
 
-/* =========================
-   GALLERY
-   ========================= */
-.profile-gallery {
-  width: 43%;
-}
+/* appendix color dot (will inherit color-main by default) */
+.profile-color-dot{width:13px;aspect-ratio:1;border-radius:999px;display:inline-block;background:var(--color-main);margin-left:6px;vertical-align:middle;position:relative;top:1px}
 
-.profile-gallery-head {
-  display: flex;
-  justify-content: space-between;
-  padding-right: 10px;
-}
+/* relationship grid */
+.profile-relationship-grid{padding:0 12px 50px 10px;max-height:410px;display:grid;grid-template-columns:repeat(4,24%);gap:12px;overflow-y:scroll;-webkit-mask:linear-gradient(to bottom, black 70%, transparent 100%);scrollbar-width:none}
+.profile-rel-name{color:#b6b6b6;font-size:min(1vw,12px);font-weight:700;margin-bottom:6px}
+.profile-rel-box{background:#fff;border-radius:7px;box-shadow:0 5px 7px rgba(0,0,0,0.6);overflow:hidden}
+.profile-rel-img{width:100%;aspect-ratio:2.3/1;background:center/cover no-repeat;position:relative}
+.profile-rel-time{position:absolute;right:0;bottom:0;background:rgba(0,0,0,0.6);padding:0 6px;font-size:min(.9vw,12px)}
+.profile-rel-desc{padding:6px 10px;color:#555;font-size:min(.8vw,12px)}
 
-.profile-gallery-seemore {
-  display: block;
-}
-.profile-gallery-seemore::before {
-  content: "see more >>";
-  font-size: 12px;
-  color: #999;
-}
+/* auto icons (heart/arrow) - always present, user places plain text after these elements */
+.profile-rel-heart::before{content:"❤︎ ";margin-right:4px}
+.profile-rel-arrow::before{content:"▷ ";margin-right:4px}
 
-.profile-gallery-row {
-  display: flex;
-  gap: 2px;
-  padding: 5px;
-  filter: saturate(.8);
+/* small responsive tweak */
+@media (max-width:560px){
+  .profile-root{font-size:14px}
+  .profile-content{flex-direction:column;gap:12px}
+  .profile-gallery{width:100%;order:2}
+  .profile-info{width:100%;order:1}
+  .profile-relationship-grid{grid-template-columns:repeat(2,49%)}
 }
-
-.profile-gallery-img {
-  width: 150px;
-  aspect-ratio: 1;
-  border: 1px solid #555;
-  background: center/cover no-repeat;
-}
-
-/* =========================
-   LONG TEXT
-   ========================= */
-.profile-longtext {
-  padding: 10px 20px;
-  text-align: left;
-}
-
-/* =========================
-   APPENDIX DOT
-   ========================= */
-.profile-color-dot {
-  width: 13px;
-  aspect-ratio: 1;
-  border-radius: 100%;
-  display: inline-block;
-  background: #fff;
-  position: relative;
-  top: 2px;
-  margin-left: 3px;
-}
-
-/* =========================
-   RELATIONSHIP
-   ========================= */
-.profile-relationship-grid {
-  padding: 0 12px 50px 10px;
-  max-height: 410px;
-  display: grid;
-  grid-template-columns: 24% 24% 24% 24%;
-  gap: 12px;
-  overflow-y: scroll;
-  -webkit-mask: linear-gradient(to bottom, black 70%, transparent 100%);
-  scrollbar-width: none;
-}
-
-.profile-rel-name {
-  color: #bbb;
-  font-size: min(1vw, 12px);
-  font-weight: 700;
-}
-
-.profile-rel-box {
-  background: #fff;
-  border-radius: 7px;
-  box-shadow: 0 5px 7px #444;
-}
-
-.profile-rel-img {
-  width: 100%;
-  aspect-ratio: 2.3/1;
-  border-radius: 7px 7px 0 0;
-  background: center/cover no-repeat;
-  position: relative;
-}
-.profile-rel-time {
-  padding: 0 5px;
-  font-size: min(0.9vw, 12px);
-  background: #000a;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
-
-.profile-rel-desc {
-  padding: 5px 10px;
-  color: #555;
-  font-size: min(0.8vw, 12px);
-}
-
-/* ICONS AUTO */
-.profile-rel-heart::before { content: "❤︎ "; }
-.profile-rel-arrow::before { content: "▷ "; }
