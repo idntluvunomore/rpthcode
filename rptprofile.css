@@ -1,23 +1,21 @@
 /* rptprofile.css.css
-   Converted from inline -> keep layout identical; user edits only --- placeholders
-   Variables user sets in root element:
+   Converted from inline -> locked labels & layout.
+   Editable vars (set on .rp-root inline style):
      --main-color, --sub-color, --tail-color,
-     --image-cover, --image-main, --image-gallery1, --image-gallery2, --image-gallery3
+     --image-cover, --image-main, --gallery1, --gallery2, --gallery3
 */
 
+/* ---------- defaults (safe fallback) ---------- */
 .rp-root {
-  /* user variables (set in HTML inline style on wrapper) */
   --main-color: #582828;
   --sub-color: #ccc;
   --tail-color: #550000;
-
   --image-cover: none;
   --image-main: none;
-  --image-gallery1: none;
-  --image-gallery2: none;
-  --image-gallery3: none;
+  --gallery1: none;
+  --gallery2: none;
+  --gallery3: none;
 
-  /* layout (from original inline) */
   font-family: "Bai Jamjuree", sans-serif;
   font-size: min(1.3vw, 15px);
   text-align: justify;
@@ -30,61 +28,76 @@
   font-weight: 300;
   box-sizing: border-box;
   color: #000;
+  position: relative;
 }
 
-/* cover image */
-.rp-cover {
-  width: 100%;
-  margin: auto;
-  box-sizing: border-box;
-  background: #000 var(--image-cover) 50% 50% / cover;
-  height: 350px;
-  border-radius: 10px 10px 0 0;
+/* credit locked (removed from HTML) */
+.rp-root::after{
+  content: "© Lucine F. Varner";
+  position: absolute;
+  bottom: 7px;
+  width:100%;
+  text-align:center;
+  font-size:9px;
+  color:#222;
+  font-style:oblique;
+  user-select:none;
+  pointer-events:none;
 }
 
-/* top bar row: search + actions */
-.rp-toprow {
+/* ---------- cover ---------- */
+.rp-cover{
+  width:100%;
+  margin:auto;
+  box-sizing:border-box;
+  background: #000 var(--image-cover) 50% 50%/cover;
+  height:350px;
+  border-radius:10px 10px 0 0;
+}
+
+/* ---------- top row: search + actions ---------- */
+.rp-toprow{
   display:flex;
-  justify-content: space-between;
-  max-width: 1000px;
-  min-width: 400px;
-  box-sizing: border-box;
-  margin: auto;
+  justify-content:space-between;
+  max-width:1000px;
+  min-width:400px;
+  box-sizing:border-box;
+  margin:auto;
 }
 
-/* left: search box */
-.rp-search-wrap {
-  box-sizing: border-box;
-  font-family: "Work Sans", sans-serif;
-  font-weight: 500;
-  font-size: 13px;
+/* left search box wrapper */
+.rp-search-wrap{
+  box-sizing:border-box;
+  font-family:"Work Sans", sans-serif;
+  font-weight:500;
+  font-size:13px;
 }
-.rp-search {
-  width: fit-content;
-  padding: 0 20px 4px 20px;
+.rp-search{
+  width:fit-content;
+  padding:0 20px 4px 20px;
   background: var(--main-color);
-  border-radius: 20px;
+  border-radius:20px;
   color: var(--sub-color);
-  margin-left: 20px;
-  margin-top: 20px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  margin-left:20px;
+  margin-top:20px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
   cursor: pointer;
 }
-.rp-search .icon {
-  width: 20px;
-  aspect-ratio: 1/1;
-  display: inline-block;
+.rp-search .icon{
+  width:20px;
+  aspect-ratio:1/1;
+  display:inline-block;
   -webkit-mask: url(https://i.imgur.com/IAWUsAq.png) center / cover;
   mask: url(https://i.imgur.com/IAWUsAq.png) center / cover;
   background: var(--sub-color);
   position: relative;
-  top: 6px;
+  top:6px;
 }
 
-/* right: follow / subscribe */
-.rp-actions {
+/* right actions: follow / subscribe */
+.rp-actions{
   display:flex;
   justify-content:flex-end;
   width:50%;
@@ -97,221 +110,140 @@
   margin-right:20px;
 }
 .rp-btn {
-  width: fit-content;
-  min-width: 75px;
-  border-radius: 5px;
-  padding: 5px;
-  box-sizing: border-box;
-  cursor: pointer;
+  width:fit-content;
+  min-width:75px;
+  border-radius:5px;
+  padding:5px;
+  box-sizing:border-box;
+  cursor:pointer;
 }
 .rp-follow { background: var(--main-color); color: var(--sub-color); }
 .rp-sub { background: var(--sub-color); color: var(--main-color); }
 
-/* avatar */
-.rp-avatar {
-  width: 130px;
-  aspect-ratio: 1/1;
-  margin: auto;
-  border: 3px solid var(--main-color);
-  border-radius: 100%;
-  margin-top: -100px;
+/* ---------- avatar ---------- */
+.rp-avatar{
+  width:130px;
+  aspect-ratio:1/1;
+  margin:auto;
+  border:3px solid var(--main-color);
+  border-radius:100%;
+  margin-top:-100px;
   background: var(--image-main);
   background-position: center;
   background-size: cover;
-  /* preserve original image filters if needed, but not applied by default */
+  filter: none;
 }
 
-/* name and race */
-.rp-name {
-  margin: auto;
-  text-align: center;
-  margin-top: 10px;
-  font-weight: 600;
-  font-size: 20px;
-}
-.rp-race {
-  margin: auto;
-  text-align: center;
-  font-style: oblique;
-  color: #505050;
-  margin-top: -5px;
-}
+/* name + race */
+.rp-name{ margin:auto; text-align:center; margin-top:10px; font-weight:600; font-size:20px; }
+.rp-race{ margin:auto; text-align:center; font-style:oblique; color:#505050; margin-top:-5px; }
 
-/* top navigation */
-.rp-tabs {
-  width: 100%;
-  margin: auto;
-  display:flex;
-  justify-content: space-around;
-  box-sizing: border-box;
-}
-.rp-tabs > div {
-  box-sizing: border-box;
-  padding: 1px 8px 4px 8px;
-  cursor: pointer;
-}
-.rp-tabs > .active {
-  border-bottom: 2px solid var(--main-color);
-}
-
-/* content area */
-.rp-content {
+/* ---------- tabs ---------- */
+.rp-tabs{
   width:100%;
-  box-sizing: border-box;
-  padding:20px;
-  margin-top:10px;
-}
-.rp-columns {
+  margin:auto;
   display:flex;
+  justify-content:space-around;
+  box-sizing:border-box;
 }
-.rp-left { width:55%; box-sizing: border-box; }
-.rp-right { width:43%; box-sizing: border-box; margin:0 20px -20px 0; }
+.rp-tabs > div{ box-sizing:border-box; padding:1px 8px 4px 8px; cursor:pointer; }
+.rp-tabs > .active{ border-bottom:2px solid var(--main-color); }
 
-/* section title style (fixed) */
-.rp-section-title {
+/* ---------- content area ---------- */
+.rp-content{ width:100%; box-sizing:border-box; padding:20px; margin-top:10px; }
+.rp-flex{ display:flex; }
+.rp-left{ width:55%; }
+.rp-right{ width:43%; box-sizing:border-box; margin:0 20px -20px 0; }
+
+/* ---------- section titles (locked) ---------- */
+.rp-sec-title{
   font-size:13px;
   font-weight:600;
-  color:#939393;           /* fixed per original */
+  color:#939393;         /* fixed per original */
   border-bottom:1px solid #555;
   width: fit-content;
-  padding-bottom: 2px;
-  padding-left: 10px;
+  padding-bottom:2px;
+  padding-left:10px;
   text-transform: uppercase;
   text-shadow: 0 0 20px #999;
 }
 
-/* info text */
-.rp-info {
-  padding: 0 20px;
+/* ---------- info block (values editable in HTML) ---------- */
+.rp-info{
+  padding:0 20px;
   margin-top:10px;
   font-size: min(1.3vw, 15px);
-  text-align: left;
-  color: #000;
+  text-align:left;
+  color:#000;
 }
+/* labels are locked via pseudo-elements (no label text in HTML) */
+.label.eng::before{ content: "ชื่อตัวละครภาษาอังกฤษ:"; color: var(--main-color); display:inline-block; width:220px; }
+.label.th::before { content: "ชื่อตัวละครภาษาไทย:"; color: var(--main-color); display:inline-block; width:220px; }
+.label.nick::before { content: "ชื่อเล่น:"; color: var(--main-color); display:inline-block; width:220px; }
+.label.bday::before { content: "วัน/เดือน/ปีเกิด:"; color: var(--main-color); display:inline-block; width:220px; }
+.label.race::before { content: "เผ่าพันธุ์:"; color: var(--main-color); display:inline-block; width:220px; }
 
-/* gallery */
-.rp-gallery-head { display:flex; justify-content: space-between; align-items: center; }
-.rp-gallery-title { font-size:13px; font-weight:600; color:#939393; border-bottom:1px solid #555; padding-left:10px; text-transform:uppercase; text-shadow:0 0 20px #999; width:fit-content; }
-.rp-see-more { font-size:12px; color:#939393; text-transform:lowercase; text-align:right; cursor: pointer; }
-.rp-gallery {
-  display:flex;
-  box-sizing:border-box;
-  padding:5px;
-  margin:auto;
-  gap:2px;
-  filter: saturate(0.8);
-}
-.rp-gallery .pic {
-  aspect-ratio:1/1;
-  border:1px solid #555;
-  width:150px;
-  background-position:50% 50%;
-  background-size: cover;
-}
-.rp-gallery .pic.g1 { background: var(--image-gallery1) 50% 50% / cover; }
-.rp-gallery .pic.g2 { background: var(--image-gallery2) 50% 50% / cover; }
-.rp-gallery .pic.g3 { background: var(--image-gallery3) 50% 50% / cover; }
+/* ---------- gallery ---------- */
+.rp-gallery-head{ display:flex; justify-content:space-between; align-items:center; }
+.rp-gallery-title::before{ content:"Our gallery"; font-size:13px; font-weight:600; color:#939393; border-bottom:1px solid #555; padding-left:10px; text-transform:uppercase; text-shadow:0 0 20px #999; width: fit-content; display:inline-block; }
+.rp-see-more::before{ content:"see more >>"; font-size:12px; color:#939393; text-transform:lowercase; text-align:right; cursor:pointer; }
 
-/* headings for sections like Personality / Biography (fixed text color header style) */
-.rp-heading {
-  font-size:13px;
-  font-weight:600;
-  color:#939393;
-  border-bottom:1px solid #555;
-  width: fit-content;
-  padding-bottom: 2px;
-  padding-left: 10px;
-  text-transform: uppercase;
-  text-shadow: 0 0 20px #999;
-}
+/* gallery thumbs (background from vars) */
+.rp-gallery{ display:flex; box-sizing:border-box; padding:5px; margin:auto; gap:2px; filter:saturate(0.8); }
+.rp-gallery .g{ aspect-ratio:1/1; border:1px solid #555; width:150px; background-position:50% 50%; background-size:cover; }
+.rp-gallery .g.g1 { background: #000 var(--gallery1) 50% 50%/cover; }
+.rp-gallery .g.g2 { background: #000 var(--gallery2) 50% 50%/cover; }
+.rp-gallery .g.g3 { background: #000 var(--gallery3) 50% 50%/cover; }
 
-/* paragraphs with indent */
-.rp-indent { text-indent:30px; margin-top: 8px; }
+/* ---------- headings like Personality / Biography / Appendix / TMI / Relationship (locked) ---------- */
+.rp-heading.personality::before{ content: "Personality and traits"; display:block; font-size:13px; font-weight:600; color:#939393; border-bottom:1px solid #555; padding-bottom:2px; padding-left:10px; text-transform:uppercase; text-shadow:0 0 20px #999; width: fit-content; }
+.rp-heading.biography::before{ content: "Biography"; display:block; /* same style */ font-size:13px; font-weight:600; color:#939393; border-bottom:1px solid #555; padding-bottom:2px; padding-left:10px; text-transform:uppercase; text-shadow:0 0 20px #999; width: fit-content; }
+.rp-heading.appendix::before{ content: "Appendix"; display:block; font-size:13px; font-weight:600; color:#939393; border-bottom:1px solid #555; padding-bottom:2px; padding-left:10px; text-transform:uppercase; text-shadow:0 0 20px #999; width: fit-content; }
+.rp-heading.tmi::before{ content: "TMI"; display:block; font-size:13px; font-weight:600; color:#939393; border-bottom:1px solid #555; padding-bottom:2px; padding-left:15px; text-transform:uppercase; text-shadow:0 0 20px #999; width: fit-content; }
+.rp-heading.relationship::before{ content: "Relationship"; display:block; font-size:13px; font-weight:600; color:#939393; border-bottom:1px solid #555; padding-bottom:2px; padding-left:10px; text-transform:uppercase; text-shadow:0 0 20px #999; width: fit-content; }
 
-/* appendix: label + value - LABELS are fixed (move to CSS), values are editable via --- placeholders in HTML */
-.label { color: var(--main-color); display:inline-block; margin-right:6px; font-weight:600; }
-.label.small { padding-left:15px; } /* matches some inline differences */
+/* ---------- appendix labels (locked) ---------- */
+.label.tail::before { content: "สีหาง:"; color: var(--main-color); display:inline-block; width:120px; }
+.label.tail-value { display:inline-block; font-weight:700; margin-left:6px; }
+.label.animal::before { content: "สัตว์แฝง:"; color: var(--main-color); display:inline-block; width:120px; }
+.label.mbti::before { content: "ลักษณะบุคลิกภาพ (MBTI):"; color: var(--main-color); display:inline-block; width:120px; }
+.label.pet::before { content: "สัตว์เลี้ยง:"; color: var(--main-color); display:inline-block; width:120px; }
+.label.like::before { content: "สิ่งที่ชอบ:"; color: var(--main-color); display:inline-block; width:120px; }
+.label.dislike::before { content: "สิ่งที่ไม่ชอบ:"; color: var(--main-color); display:inline-block; width:120px; }
+.label.claim::before { content: "เฟซเคลม:"; color: var(--main-color); display:inline-block; width:120px; }
 
-/* tail color dot (user sets --tail-color in root) */
-.tail-dot {
-  aspect-ratio: 1/1;
-  width:13px;
-  display:inline-block;
-  background: var(--tail-color);
-  border-radius: 1000%;
-  position: relative;
-  top: 1px;
-  margin-left: 3px;
-}
+/* tail dot (color controlled by --tail-color set in rp-root inline style) */
+.rp-tail-dot { aspect-ratio:1/1; width:13px; display:inline-block; background: var(--tail-color); border-radius:1000%; position:relative; top:1px; margin-left:3px; }
 
-/* TMI block */
-.rp-tmi { padding: 0 20px; margin-top:10px; text-align:left; font-size: min(1.3vw, 15px); }
+/* ---------- text indent blocks ---------- */
+.rp-indent { text-indent:30px; margin-top:8px; }
 
-/* Relationship grid */
-.rp-rel-wrap {
+/* ---------- Relationship grid ---------- */
+.rp-rel-grid{
   width:100%;
   max-height:410px;
-  padding: 0 12px 0 10px;
-  margin-top: -10px;
-  box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 24% 24% 24% 24%;
-  text-transform: uppercase;
-  font-weight: 400;
-  text-align: left;
-  gap: 12px;
-  justify-content: space-between;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  scrollbar-width: none;
+  padding:0 12px 0 10px;
+  margin-top:-10px;
+  box-sizing:border-box;
+  display:grid;
+  grid-template-columns:24% 24% 24% 24%;
+  text-transform:uppercase;
+  font-weight:400;
+  text-align:left;
+  gap:12px;
+  justify-content:space-between;
+  overflow-y:scroll;
+  overflow-x:hidden;
+  scrollbar-width:none;
   -webkit-mask: linear-gradient(to bottom, black 70%, transparent 100%);
-  padding-bottom: 50px;
+  padding-bottom:50px;
 }
-.rp-rel-item { width:100%; box-sizing: border-box; }
+.rp-rel-item{ width:100%; box-sizing:border-box; }
 .rp-rel-name { color:#b6b6b6; font-size: min(1vw,12px); font-weight:700; }
-.rp-rel-card {
-  border-radius:7px;
-  background:#fff;
-  box-shadow: 0 5px 7px 0 #4b4b4b;
-}
-.rp-rel-img {
-  width:100%;
-  aspect-ratio:2.3/1;
-  border-radius:7px 7px 0 0;
-  background-position:50% 50%;
-  background-size: cover;
-  position: relative;
-}
-.rp-rel-time {
-  width: fit-content;
-  box-sizing: border-box;
-  padding: 0 5px;
-  background: #00000099;
-  margin-left: auto;
-  font-size: min(0.9vw, 12px);
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
-.rp-rel-desc {
-  width:100%;
-  box-sizing: border-box;
-  border-radius: 0 0 7px 7px;
-  padding: 5px 10px;
-  color: #555;
-  font-size: min(0.8vw, 12px);
-}
+.rp-rel-card { border-radius:7px; background:#fff; box-shadow: 0 5px 7px 0 #4b4b4b; }
+.rp-rel-img { width:100%; aspect-ratio:2.3/1; border-radius:7px 7px 0 0; background-position:50% 50%; background-size:cover; position:relative; }
+.rp-rel-time { width: fit-content; box-sizing: border-box; padding: 0 5px; background: #00000099; margin-left: auto; font-size: min(0.9vw,12px); position:absolute; right:0; bottom:0; color:#fff; }
+.rp-rel-desc { width:100%; box-sizing:border-box; border-radius:0 0 7px 7px; padding:5px 10px; color:#555; font-size: min(0.8vw,12px); }
 
-/* footer credit (restored) */
-.rp-credit {
-  text-align: center;
-  font-size: 9px;
-  color: #222;
-  font-style: oblique;
-  margin-top: 7px;
-  user-select: none;
-  pointer-events: none;
-}
-
-/* small utilities */
-.hide-scrollbar::-webkit-scrollbar { display: none; }
+/* small utilities to hide scrollbar on webkit if needed */
+.rp-rel-grid::-webkit-scrollbar { display:none; }
