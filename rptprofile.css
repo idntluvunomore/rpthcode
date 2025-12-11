@@ -1,53 +1,60 @@
-/* ----------------------------------------------
-   FONT IMPORTS
------------------------------------------------ */
-@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&family=Work+Sans:wght@100..900&display=swap");
+/* =========================
+   FONT IMPORT
+   ========================= */
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-/* ----------------------------------------------
-   ROOT VARIABLES (เคทสามารถแก้ค่าเหล่านี้ได้เลย)
------------------------------------------------ */
-:root {
-  --img-cover: url(---ลิงก์รูปภาพปก);
-  --img-avatar: url(---ลิงก์รูปเมจ);
-  --img-gallery-1: url(---ลิงก์รูปgallery1);
-  --img-gallery-2: url(---ลิงก์รูปgallery2);
-  --img-gallery-3: url(---ลิงก์รูปgallery3);
-
-  --ui-search-bg: #cccccc;
-  --ui-search-fg: #000;
-  --ui-search-icon: #000;
-
-  --ui-follow-bg: #333;
-  --ui-follow-fg: #fff;
-
-  --ui-sub-bg: #333;
-  --ui-sub-fg: #fff;
-
-  --ui-border-circle: #aaa;
-  --ui-line: #666;
+/* =========================
+   RESET
+   ========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* ----------------------------------------------
-   BASE WRAPPER
------------------------------------------------ */
+/* =========================
+   VARIABLES
+   ========================= */
+:root {
+  --img-cover: url(https://via.placeholder.com/800x500/111/fff?text=COVER);
+  --img-avatar: url(https://via.placeholder.com/300/222/fff?text=AVATAR);
+
+  --img-gallery-1: url(https://via.placeholder.com/300/444/fff?text=G1);
+  --img-gallery-2: url(https://via.placeholder.com/300/555/fff?text=G2);
+  --img-gallery-3: url(https://via.placeholder.com/300/666/fff?text=G3);
+
+  --ui-search-bg: #222;
+  --ui-search-fg: #fff;
+
+  --ui-follow-bg: #444;
+  --ui-follow-fg: #fff;
+
+  --ui-sub-bg: #777;
+  --ui-sub-fg: #fff;
+
+  --ui-border-circle: #777;
+  --ui-line: #555;
+}
+
+/* =========================
+   ROOT CARD
+   ========================= */
 .profile-root {
-  font-family: "Bai Jamjuree";
+  font-family: "Bai Jamjuree", sans-serif;
   font-size: min(1.3vw, 15px);
-  text-align: justify;
+  color: #ddd;
   max-width: 1000px;
   min-width: 450px;
-  line-height: 1.6;
   margin: auto;
   border: 1px solid #333;
   border-radius: 10px 10px 0 0;
-  font-weight: 300;
   background: #000;
-  color: #ddd;
+  line-height: 1.6;
 }
 
-/* ----------------------------------------------
-   HEADER COVER IMAGE
------------------------------------------------ */
+/* =========================
+   COVER
+   ========================= */
 .profile-cover {
   width: 100%;
   height: 350px;
@@ -55,206 +62,224 @@
   border-radius: 10px 10px 0 0;
 }
 
-/* ----------------------------------------------
-   TOP BAR (Search + Follow/Subscribe)
------------------------------------------------ */
+/* =========================
+   TOP BAR
+   ========================= */
 .profile-topbar {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  min-width: 400px;
-  box-sizing: border-box;
-  margin: auto;
+  padding: 20px;
 }
 
 .profile-search {
-  font-family: "Work Sans";
-  font-weight: 500;
-  font-size: 13px;
-  margin-left: 20px;
-  margin-top: 20px;
   background: var(--ui-search-bg);
   color: var(--ui-search-fg);
-  padding: 0px 20px 4px 20px;
+  padding: 4px 20px;
   border-radius: 20px;
-  width: fit-content;
+  font-family: "Work Sans";
+  font-size: 13px;
+  font-weight: 500;
 }
-
 .profile-search-icon {
   width: 20px;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1;
+  background: var(--ui-search-fg);
+  -webkit-mask: url(https://i.imgur.com/IAWUsAq.png) center/cover no-repeat;
+  margin-right: 6px;
   display: inline-block;
-  -webkit-mask: url(https://i.imgur.com/IAWUsAq.png) center / cover no-repeat;
-  background: var(--ui-search-icon);
   position: relative;
-  top: 6px;
+  top: 4px;
 }
 
-/* FOLLOW + SUBSCRIBE BUTTONS */
 .profile-buttons {
   display: flex;
-  justify-content: flex-end;
-  width: 50%;
-  gap: 5px;
-  margin-top: 20px;
-  margin-right: 20px;
+  gap: 6px;
   font-family: "Work Sans";
-  font-weight: 500;
   font-size: 13px;
+  font-weight: 500;
 }
-
 .profile-btn-follow {
+  min-width: 75px;
+  padding: 5px 10px;
   background: var(--ui-follow-bg);
   color: var(--ui-follow-fg);
   border-radius: 5px;
-  padding: 5px;
-  min-width: 75px;
   text-align: center;
 }
-
 .profile-btn-sub {
+  min-width: 75px;
+  padding: 5px 10px;
   background: var(--ui-sub-bg);
   color: var(--ui-sub-fg);
   border-radius: 5px;
-  padding: 5px;
-  min-width: 75px;
   text-align: center;
 }
 
-/* ----------------------------------------------
+/* =========================
    AVATAR + NAME
------------------------------------------------ */
+   ========================= */
 .profile-avatar {
   width: 130px;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1;
+  background: var(--img-avatar) center/cover no-repeat;
   border: 3px solid var(--ui-border-circle);
   border-radius: 100%;
-  background: var(--img-avatar) center/cover no-repeat;
   margin: auto;
   margin-top: -100px;
 }
-
 .profile-displayname {
-  margin: auto;
-  text-align: center;
   margin-top: 10px;
-  font-weight: 600;
-  font-size: 20px;
-}
-
-.profile-race {
-  margin: auto;
   text-align: center;
-  font-style: oblique;
+  font-size: 20px;
+  font-weight: 600;
+}
+.profile-race {
+  text-align: center;
+  color: #aaa;
   margin-top: -5px;
-  color: #505050;
+  font-style: italic;
 }
 
-/* ----------------------------------------------
-   NAV TABS
------------------------------------------------ */
+/* =========================
+   TABS
+   ========================= */
 .profile-tabs {
   display: flex;
   justify-content: space-around;
-  width: 100%;
-  box-sizing: border-box;
+  padding: 10px 0;
+  margin-top: 10px;
 }
-
 .profile-tab {
-  padding: 1px 8px 4px 8px;
+  padding: 2px 8px 4px;
+  font-family: "Work Sans";
+  font-size: 13px;
+  font-weight: 500;
+  color: #ccc;
 }
-
 .profile-tab.active {
   border-bottom: 2px solid var(--ui-line);
 }
 
-/* ----------------------------------------------
-   MAIN CONTENT GRID (INFO + GALLERY)
------------------------------------------------ */
-.profile-content {
-  width: 100%;
-  padding: 20px;
-  margin-top: 10px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
+/* AUTO TAB TITLES */
+.profile-tab:nth-child(1)::before { content: "Home"; }
+.profile-tab:nth-child(2)::before { content: "About"; }
+.profile-tab:nth-child(3)::before { content: "Posts"; }
+.profile-tab:nth-child(4)::before { content: "Notifications"; }
+.profile-tab:nth-child(5)::before { content: "Bookmarks"; }
+
+/* =========================
+   TITLES
+   ========================= */
+.profile-section-title {
+  margin-top: 20px;
+  padding: 0 0 2px 10px;
+  color: #999;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-bottom: 1px solid #555;
+  text-shadow: 0 0 20px #999;
 }
 
-/* PERSONAL INFO */
+/* AUTO TITLES */
+.profile-title-personal::before { content: "Personal Information"; }
+.profile-title-gallery::before { content: "Our Gallery"; }
+.profile-title-personality::before { content: "Personality and Traits"; }
+.profile-title-bio::before { content: "Biography"; }
+.profile-title-appendix::before { content: "Appendix"; }
+.profile-title-tmi::before { content: "TMI"; }
+.profile-title-relationship::before { content: "Relationship"; }
+
+/* =========================
+   CONTENT
+   ========================= */
+.profile-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
 .profile-info {
   width: 55%;
 }
-
-.profile-section-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: #939393;
-  border-bottom: 1px solid #555;
-  padding-bottom: 2px;
-  padding-left: 10px;
-  text-transform: uppercase;
-  width: fit-content;
-  text-shadow: 0px 0px 20px #999;
-}
-
 .profile-info-text {
-  padding: 0px 20px;
-  margin-top: 10px;
-  text-align: left;
+  padding: 10px 20px;
 }
 
-/* GALLERY */
+/* =========================
+   GALLERY
+   ========================= */
 .profile-gallery {
   width: 43%;
-  margin-right: 20px;
-  margin-bottom: -20px;
+}
+
+.profile-gallery-head {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.profile-gallery-seemore {
+  display: block;
+}
+.profile-gallery-seemore::before {
+  content: "see more >>";
+  font-size: 12px;
+  color: #999;
 }
 
 .profile-gallery-row {
   display: flex;
   gap: 2px;
   padding: 5px;
+  filter: saturate(.8);
 }
 
 .profile-gallery-img {
   width: 150px;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1;
   border: 1px solid #555;
-  background: #000 center/cover no-repeat;
-  filter: saturate(0.8);
+  background: center/cover no-repeat;
 }
 
-/* ----------------------------------------------
-   LONG TEXT SECTIONS (Biography, Personality)
------------------------------------------------ */
+/* =========================
+   LONG TEXT
+   ========================= */
 .profile-longtext {
-  padding: 0px 20px;
-  margin-top: 10px;
+  padding: 10px 20px;
   text-align: left;
 }
 
-/* ----------------------------------------------
-   RELATIONSHIP GRID
------------------------------------------------ */
+/* =========================
+   APPENDIX DOT
+   ========================= */
+.profile-color-dot {
+  width: 13px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  display: inline-block;
+  background: #fff;
+  position: relative;
+  top: 2px;
+  margin-left: 3px;
+}
+
+/* =========================
+   RELATIONSHIP
+   ========================= */
 .profile-relationship-grid {
-  width: 100%;
+  padding: 0 12px 50px 10px;
   max-height: 410px;
-  padding: 0px 12px 0px 10px;
-  margin-top: -10px;
-  box-sizing: border-box;
   display: grid;
   grid-template-columns: 24% 24% 24% 24%;
   gap: 12px;
   overflow-y: scroll;
+  -webkit-mask: linear-gradient(to bottom, black 70%, transparent 100%);
   scrollbar-width: none;
 }
 
-.profile-rel-card {
-  width: 100%;
-}
-
 .profile-rel-name {
-  color: #b6b6b6;
+  color: #bbb;
   font-size: min(1vw, 12px);
   font-weight: 700;
 }
@@ -262,21 +287,20 @@
 .profile-rel-box {
   background: #fff;
   border-radius: 7px;
-  box-shadow: 0px 5px 7px #4b4b4b;
+  box-shadow: 0 5px 7px #444;
 }
 
 .profile-rel-img {
   width: 100%;
-  aspect-ratio: 2.3 / 1;
+  aspect-ratio: 2.3/1;
   border-radius: 7px 7px 0 0;
-  background: #000 center/cover no-repeat;
+  background: center/cover no-repeat;
   position: relative;
 }
-
 .profile-rel-time {
-  background: #00000099;
-  padding: 0px 5px;
+  padding: 0 5px;
   font-size: min(0.9vw, 12px);
+  background: #000a;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -287,3 +311,7 @@
   color: #555;
   font-size: min(0.8vw, 12px);
 }
+
+/* ICONS AUTO */
+.profile-rel-heart::before { content: "❤︎ "; }
+.profile-rel-arrow::before { content: "▷ "; }
