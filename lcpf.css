@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* Lucine Character Profile - external CSS version */
-/* พื้นที่ที่ user เปลี่ยนได้: ตัวแปร CSS ผ่าน inline style ที่ div.lcpf */
-
 .lcpf {
   font-family: "Bai Jamjuree", system-ui, -apple-system, sans-serif;
   font-size: min(1.3vw, 15px);
@@ -20,25 +17,23 @@
 }
 
 .lcpf {
-  --main: #939393;          /* สีตัวอักษรหัวข้อย่อย / label */
-  --sub: #555555;           /* สีเส้นใต้ About + สีปุ่มหลัก */
-  --search-bg: #ffffff;     /* กล่อง Search */
-  --search-text: #555555;   /* ตัวอักษร Search */
-  --search-icon: #b6b6b6;   /* ไอคอนแว่น */
-  --follow-bg: #ffffff;     /* กล่อง Follow */
-  --follow-text: #555555;   /* ตัวอักษร Follow */
-  --subscribe-bg: #ffffff;  /* กล่อง Subscribe */
-  --subscribe-text: #555555;/* ตัวอักษร Subscribe */
-  --avatar-border: #555555; /* ขอบวงกลมเมจ */
-  --tail: #555555;          /* สีหางใน Appendix */
+  --main: #939393;
+  --sub: #555555;
+  --search-bg: #ffffff;
+  --search-text: #555555;
+  --search-icon: #b6b6b6;
+  --follow-bg: #ffffff;
+  --follow-text: #555555;
+  --subscribe-bg: #ffffff;
+  --subscribe-text: #555555;
+  --avatar-border: #555555;
+  --tail: #555555;
   --cover: none;
   --avatar: none;
   --g1: none;
   --g2: none;
   --g3: none;
 }
-
-/* ========= ส่วน header ปกด้านบน ========= */
 
 .lcpf-header {
   width: 100%;
@@ -48,8 +43,6 @@
   height: 350px;
   border-radius: 10px 10px 0 0;
 }
-
-/* ========= แถบ Search + Follow / Subscribe ========= */
 
 .lcpf-topbar {
   display: flex;
@@ -96,8 +89,6 @@
   content: " Search";
 }
 
-/* ปุ่มด้านขวา */
-
 .lcpf-actions {
   display: flex;
   justify-content: flex-end;
@@ -120,7 +111,6 @@
   cursor: pointer;
 }
 
-/* FOLLOW */
 .lcpf-follow {
   background: var(--follow-bg);
   color: var(--follow-text);
@@ -135,7 +125,6 @@
   content: "Follow";
 }
 
-/* SUBSCRIBE */
 .lcpf-subscribe {
   background: var(--subscribe-bg);
   color: var(--subscribe-text);
@@ -144,8 +133,6 @@
 .lcpf-subscribe::before {
   content: "☆ Subscribe";
 }
-
-/* ========= Avatar กลม + Display name / species ========= */
 
 .lcpf-avatar {
   width: 130px;
@@ -173,8 +160,6 @@
   margin-top: -5px;
 }
 
-/* ========= Navbar ========= */
-
 .lcpf-nav {
   width: 100%;
   margin: auto;
@@ -200,8 +185,6 @@
   border-bottom: 2px solid var(--sub);
 }
 
-/* ========= Layout ภายใน ========= */
-
 .lcpf-inner {
   width: 100%;
   box-sizing: border-box;
@@ -212,8 +195,6 @@
 .lcpf-flex {
   display: flex;
 }
-
-/* ========= Headings ของแต่ละ section ========= */
 
 .lcpf-section-title {
   font-size: 13px;
@@ -227,8 +208,6 @@
   text-shadow: 0 0 20px #999;
 }
 
-/* ชื่อหัวข้อให้มาจาก CSS */
-
 .lcpf-title-personal::before     { content: "Personal Information"; }
 .lcpf-title-gallery::before      { content: "Our gallery"; }
 .lcpf-title-personality::before  { content: "Personality and traits"; }
@@ -236,8 +215,6 @@
 .lcpf-title-appendix::before     { content: "Appendix"; }
 .lcpf-title-tmi::before          { content: "TMI"; }
 .lcpf-title-rel::before          { content: "Relationship"; }
-
-/* ========= Personal Information ========= */
 
 .lcpf-left {
   width: 55%;
@@ -255,8 +232,6 @@
 .lcpf-info-line {
   display: block;
 }
-
-/* label ของ personal info จาก CSS */
 
 .lcpf-info-en::before {
   content: "ชื่อตัวละครภาษาอังกฤษ: ";
@@ -282,8 +257,6 @@
   content: "เผ่าพันธุ์: ";
   color: var(--main);
 }
-
-/* ========= Gallery ========= */
 
 .lcpf-right {
   width: 43%;
@@ -329,13 +302,9 @@
   background-repeat: no-repeat;
 }
 
-/* ดึงรูปจากตัวแปร */
-
 .lcpf-gallery-item.g1 { background-image: var(--g1); }
 .lcpf-gallery-item.g2 { background-image: var(--g2); }
 .lcpf-gallery-item.g3 { background-image: var(--g3); }
-
-/* ========= Personality & Traits ========= */
 
 .lcpf-paragraphs {
   padding: 0 20px;
@@ -347,12 +316,8 @@
   margin-top: 0;
 }
 
-/* ========= Biography ========= */
-
 .lcpf-bio { padding: 0 20px; margin-top: 10px; }
 .lcpf-bio .lcpf-p { text-indent: 30px; }
-
-/* ========= Appendix + TMI ========= */
 
 .lcpf-appendix {
   padding: 0 20px;
@@ -366,20 +331,17 @@
   gap: 6px;
 }
 
-/* "สีหาง:" */
 .lcpf-app-tail::before {
   content: "สีหาง: ";
   color: var(--main);
 }
 
-/* "#XXXXXX" */
 .lcpf-tail-code::before {
   content: var(--tail);
   color: var(--tail);
   font-weight: 700;
 }
 
-/* ● จุดสีหาง */
 .lcpf-tail-dot {
   width: 13px;
   height: 13px;
@@ -389,8 +351,6 @@
   position: relative;
   top: 1px;
 }
-
-/* label appendix */
 
 .lcpf-app-animal::before {
   content: "สัตว์แฝง: ";
@@ -422,8 +382,6 @@
   color: var(--main);
 }
 
-/* สีหางพิเศษ: ใช้ตัวแปร --tail ทั้งเป็น text และ dot */
-
 .lcpf-tail-code {
   color: var(--tail);
   font-weight: 700;
@@ -444,8 +402,6 @@
   position: relative;
   top: 2px; 
 }
-
-/* TMI */
 
 .lcpf-tmi-wrap {
   padding: 0 20px;
@@ -470,8 +426,6 @@
   position: absolute;
   left: 0;
 }
-
-/* ========= Relationship ========= */
 
 .lcpf-rel-title {
   font-size: 13px;
@@ -550,8 +504,6 @@
   line-height: 1.35;
 }
 
-/* สัญลักษณ์หัวใจ / ลูกศร / ตัว M */
-
 .lcpf-rel-role::before {
   content: "❤︎ ";
   margin-right: 3px;
@@ -568,16 +520,12 @@
   content: "M ";
 }
 
-/* กล่อง "เพิ่ม Relationship" */
-
 .lcpf-rel-more {
   width: 100%;
   box-sizing: border-box;
   color: #b6b6b6;
   font-size: min(1vw, 12px);
 }
-
-/* ========= เครดิตด้านล่าง ========= */
 
 .lcpf-credit {
   text-align: center;
