@@ -1,22 +1,8 @@
-/* rptprofile.css.css
-   Converted from inline -> locked labels & layout.
-   Editable vars (set on .rp-root inline style):
-     --main-color, --sub-color, --tail-color,
-     --image-cover, --image-main, --gallery1, --gallery2, --gallery3
-*/
+/* Lucine Character Profile - external CSS version */
+/* พื้นที่ที่ user เปลี่ยนได้: ตัวแปร CSS ผ่าน inline style ที่ div.lcpf */
 
-/* ---------- defaults (safe fallback) ---------- */
-.rp-root {
-  --main-color: #582828;
-  --sub-color: #ccc;
-  --tail-color: #550000;
-  --image-cover: none;
-  --image-main: none;
-  --gallery1: none;
-  --gallery2: none;
-  --gallery3: none;
-
-  font-family: "Bai Jamjuree", sans-serif;
+.lcpf {
+  font-family: "Bai Jamjuree", system-ui, -apple-system, sans-serif;
   font-size: min(1.3vw, 15px);
   text-align: justify;
   max-width: 1000px;
@@ -26,224 +12,561 @@
   border: 1px solid #333;
   border-radius: 10px 10px 0 0;
   font-weight: 300;
+  background: #000;
+  color: #ddd;
   box-sizing: border-box;
-  color: #000;
-  position: relative;
 }
 
-/* credit locked (removed from HTML) */
-.rp-root::after{
-  content: "© Lucine F. Varner";
-  position: absolute;
-  bottom: 7px;
-  width:100%;
-  text-align:center;
-  font-size:9px;
-  color:#222;
-  font-style:oblique;
-  user-select:none;
-  pointer-events:none;
+/* ========= ตัวแปรสี / รูป ที่ผู้ใช้กำหนดจาก HTML ========= */
+/* ตัวอย่างการเซ็ต:
+   style="
+     --main:#d46363;
+     --sub:#582828;
+     --avatar-border:#131313;
+     --cover:url(https://...);
+     --avatar:url(https://...);
+     --g1:url(https://...);
+     --g2:url(https://...);
+     --g3:url(https://...);
+     --tail:#550000;
+   "
+*/
+
+.lcpf {
+  --main: #d46363;            /* main color (label / highlight) */
+  --sub: #582828;             /* sub color (ปุ่ม / เส้น active) */
+  --avatar-border: #131313;   /* สีขอบวงกลมเมจ */
+  --cover: none;              /* url() ของภาพปก */
+  --avatar: none;             /* url() ของภาพโปรไฟล์วงกลม */
+  --g1: none;                 /* url() gallery 1 */
+  --g2: none;                 /* url() gallery 2 */
+  --g3: none;                 /* url() gallery 3 */
+  --tail: #550000;            /* สีหาง appendix */
 }
 
-/* ---------- cover ---------- */
-.rp-cover{
-  width:100%;
-  margin:auto;
-  box-sizing:border-box;
-  background: #000 var(--image-cover) 50% 50%/cover;
-  height:350px;
-  border-radius:10px 10px 0 0;
+/* ========= ส่วน header ปกด้านบน ========= */
+
+.lcpf-header {
+  width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+  background: #000 var(--cover) 50% 50% / cover no-repeat;
+  height: 350px;
+  border-radius: 10px 10px 0 0;
 }
 
-/* ---------- top row: search + actions ---------- */
-.rp-toprow{
-  display:flex;
-  justify-content:space-between;
-  max-width:1000px;
-  min-width:400px;
-  box-sizing:border-box;
-  margin:auto;
+/* ========= แถบ Search + Follow / Subscribe ========= */
+
+.lcpf-topbar {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  min-width: 400px;
+  box-sizing: border-box;
+  margin: auto;
 }
 
-/* left search box wrapper */
-.rp-search-wrap{
-  box-sizing:border-box;
-  font-family:"Work Sans", sans-serif;
-  font-weight:500;
-  font-size:13px;
+.lcpf-search-wrap {
+  box-sizing: border-box;
+  font-family: "Work Sans", system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 13px;
 }
-.rp-search{
-  width:fit-content;
-  padding:0 20px 4px 20px;
-  background: var(--main-color);
-  border-radius:20px;
-  color: var(--sub-color);
-  margin-left:20px;
-  margin-top:20px;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
+
+.lcpf-search {
+  width: fit-content;
+  padding: 0 20px 4px 20px;
+  background: var(--sub);
+  border-radius: 20px;
+  color: #ccc;
+  margin-left: 20px;
+  margin-top: 20px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
-.rp-search .icon{
-  width:20px;
-  aspect-ratio:1/1;
-  display:inline-block;
+
+.lcpf-search-icon {
+  width: 20px;
+  aspect-ratio: 1 / 1;
+  display: inline-block;
   -webkit-mask: url(https://i.imgur.com/IAWUsAq.png) center / cover;
   mask: url(https://i.imgur.com/IAWUsAq.png) center / cover;
-  background: var(--sub-color);
+  background: #ccc;
   position: relative;
-  top:6px;
+  top: 6px;
 }
 
-/* right actions: follow / subscribe */
-.rp-actions{
-  display:flex;
-  justify-content:flex-end;
-  width:50%;
-  text-align:center;
-  gap:5px;
-  margin-top:20px;
-  font-size:13px;
-  font-family:"Work Sans", sans-serif;
-  font-weight:500;
-  margin-right:20px;
-}
-.rp-btn {
-  width:fit-content;
-  min-width:75px;
-  border-radius:5px;
-  padding:5px;
-  box-sizing:border-box;
-  cursor:pointer;
-}
-.rp-follow { background: var(--main-color); color: var(--sub-color); }
-.rp-sub { background: var(--sub-color); color: var(--main-color); }
-
-/* ---------- avatar ---------- */
-.rp-avatar{
-  width:130px;
-  aspect-ratio:1/1;
-  margin:auto;
-  border:3px solid var(--main-color);
-  border-radius:100%;
-  margin-top:-100px;
-  background: var(--image-main);
-  background-position: center;
-  background-size: cover;
-  filter: none;
+.lcpf-search::after {
+  content: " Search";
 }
 
-/* name + race */
-.rp-name{ margin:auto; text-align:center; margin-top:10px; font-weight:600; font-size:20px; }
-.rp-race{ margin:auto; text-align:center; font-style:oblique; color:#505050; margin-top:-5px; }
+/* ปุ่มด้านขวา */
 
-/* ---------- tabs ---------- */
-.rp-tabs{
-  width:100%;
-  margin:auto;
-  display:flex;
-  justify-content:space-around;
-  box-sizing:border-box;
+.lcpf-actions {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  text-align: center;
+  gap: 5px;
+  margin-top: 20px;
+  font-size: 13px;
+  font-family: "Work Sans", system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  margin-right: 20px;
 }
-.rp-tabs > div{ box-sizing:border-box; padding:1px 8px 4px 8px; cursor:pointer; }
-.rp-tabs > .active{ border-bottom:2px solid var(--main-color); }
 
-/* ---------- content area ---------- */
-.rp-content{ width:100%; box-sizing:border-box; padding:20px; margin-top:10px; }
-.rp-flex{ display:flex; }
-.rp-left{ width:55%; }
-.rp-right{ width:43%; box-sizing:border-box; margin:0 20px -20px 0; }
-
-/* ---------- section titles (locked) ---------- */
-.rp-sec-title{
-  font-size:13px;
-  font-weight:600;
-  color:#939393;         /* fixed per original */
-  border-bottom:1px solid #555;
+.lcpf-btn {
   width: fit-content;
-  padding-bottom:2px;
-  padding-left:10px;
+  min-width: 75px;
+  border-radius: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* Follow */
+
+.lcpf-follow {
+  background: var(--sub);
+  color: #ccc;
+}
+
+.lcpf-follow::before {
+  content: "[b]+[/b] Follow";
+}
+
+/* Subscribe */
+
+.lcpf-subscribe {
+  background: #ccc;
+  color: var(--sub);
+}
+
+.lcpf-subscribe::before {
+  content: "☆ Subscribe";
+}
+
+/* ========= Avatar กลม + Display name / species ========= */
+
+.lcpf-avatar {
+  width: 130px;
+  aspect-ratio: 1/1;
+  margin: auto;
+  border: 3px solid var(--avatar-border);
+  border-radius: 100%;
+  margin-top: -100px;
+  background: var(--avatar) center / cover no-repeat;
+}
+
+.lcpf-display {
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.lcpf-species {
+  margin: auto;
+  text-align: center;
+  font-style: oblique;
+  color: #505050;
+  margin-top: -5px;
+}
+
+/* ========= Navbar ========= */
+
+.lcpf-nav {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  font-family: "Work Sans", system-ui, -apple-system, sans-serif;
+}
+
+.lcpf-nav-item {
+  box-sizing: border-box;
+  padding: 1px 8px 4px 8px;
+  cursor: pointer;
+}
+
+.lcpf-nav-home::before    { content: "Home"; }
+.lcpf-nav-about::before   { content: "About"; }
+.lcpf-nav-posts::before   { content: "Posts"; }
+.lcpf-nav-noti::before    { content: "Notifications"; }
+.lcpf-nav-bookmark::before{ content: "Bookmarks"; }
+
+/* tab ที่ active (About) */
+
+.lcpf-nav-about {
+  border-bottom: 2px solid var(--sub);
+}
+
+/* ========= Layout ภายใน ========= */
+
+.lcpf-inner {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.lcpf-flex {
+  display: flex;
+}
+
+/* ========= Headings ของแต่ละ section ========= */
+
+.lcpf-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #939393;
+  border-bottom: 1px solid #555;
+  width: fit-content;
+  padding-bottom: 2px;
+  padding-left: 10px;
   text-transform: uppercase;
   text-shadow: 0 0 20px #999;
 }
 
-/* ---------- info block (values editable in HTML) ---------- */
-.rp-info{
-  padding:0 20px;
-  margin-top:10px;
+/* ชื่อหัวข้อให้มาจาก CSS */
+
+.lcpf-title-personal::before     { content: "Personal Information"; }
+.lcpf-title-gallery::before      { content: "Our gallery"; }
+.lcpf-title-personality::before  { content: "Personality and traits"; }
+.lcpf-title-bio::before          { content: "Biography"; }
+.lcpf-title-appendix::before     { content: "Appendix"; }
+.lcpf-title-tmi::before          { content: "TMI"; }
+.lcpf-title-rel::before          { content: "Relationship"; }
+
+/* ========= Personal Information ========= */
+
+.lcpf-left {
+  width: 55%;
+}
+
+.lcpf-personal-list {
+  padding: 0 20px;
+  margin-top: 10px;
   font-size: min(1.3vw, 15px);
-  text-align:left;
-  color:#000;
+  text-align: left;
 }
-/* labels are locked via pseudo-elements (no label text in HTML) */
-.label.eng::before{ content: "ชื่อตัวละครภาษาอังกฤษ:"; color: var(--main-color); display:inline-block; width:220px; }
-.label.th::before { content: "ชื่อตัวละครภาษาไทย:"; color: var(--main-color); display:inline-block; width:220px; }
-.label.nick::before { content: "ชื่อเล่น:"; color: var(--main-color); display:inline-block; width:220px; }
-.label.bday::before { content: "วัน/เดือน/ปีเกิด:"; color: var(--main-color); display:inline-block; width:220px; }
-.label.race::before { content: "เผ่าพันธุ์:"; color: var(--main-color); display:inline-block; width:220px; }
 
-/* ---------- gallery ---------- */
-.rp-gallery-head{ display:flex; justify-content:space-between; align-items:center; }
-.rp-gallery-title::before{ content:"Our gallery"; font-size:13px; font-weight:600; color:#939393; border-bottom:1px solid #555; padding-left:10px; text-transform:uppercase; text-shadow:0 0 20px #999; width: fit-content; display:inline-block; }
-.rp-see-more::before{ content:"see more >>"; font-size:12px; color:#939393; text-transform:lowercase; text-align:right; cursor:pointer; }
+.lcpf-info-line {
+  display: block;
+}
 
-/* gallery thumbs (background from vars) */
-.rp-gallery{ display:flex; box-sizing:border-box; padding:5px; margin:auto; gap:2px; filter:saturate(0.8); }
-.rp-gallery .g{ aspect-ratio:1/1; border:1px solid #555; width:150px; background-position:50% 50%; background-size:cover; }
-.rp-gallery .g.g1 { background: #000 var(--gallery1) 50% 50%/cover; }
-.rp-gallery .g.g2 { background: #000 var(--gallery2) 50% 50%/cover; }
-.rp-gallery .g.g3 { background: #000 var(--gallery3) 50% 50%/cover; }
+/* label ของ personal info จาก CSS */
 
-/* ---------- headings like Personality / Biography / Appendix / TMI / Relationship (locked) ---------- */
-.rp-heading.personality::before{ content: "Personality and traits"; display:block; font-size:13px; font-weight:600; color:#939393; border-bottom:1px solid #555; padding-bottom:2px; padding-left:10px; text-transform:uppercase; text-shadow:0 0 20px #999; width: fit-content; }
-.rp-heading.biography::before{ content: "Biography"; display:block; /* same style */ font-size:13px; font-weight:600; color:#939393; border-bottom:1px solid #555; padding-bottom:2px; padding-left:10px; text-transform:uppercase; text-shadow:0 0 20px #999; width: fit-content; }
-.rp-heading.appendix::before{ content: "Appendix"; display:block; font-size:13px; font-weight:600; color:#939393; border-bottom:1px solid #555; padding-bottom:2px; padding-left:10px; text-transform:uppercase; text-shadow:0 0 20px #999; width: fit-content; }
-.rp-heading.tmi::before{ content: "TMI"; display:block; font-size:13px; font-weight:600; color:#939393; border-bottom:1px solid #555; padding-bottom:2px; padding-left:15px; text-transform:uppercase; text-shadow:0 0 20px #999; width: fit-content; }
-.rp-heading.relationship::before{ content: "Relationship"; display:block; font-size:13px; font-weight:600; color:#939393; border-bottom:1px solid #555; padding-bottom:2px; padding-left:10px; text-transform:uppercase; text-shadow:0 0 20px #999; width: fit-content; }
+.lcpf-info-en::before {
+  content: "ชื่อตัวละครภาษาอังกฤษ: ";
+  color: var(--main);
+}
 
-/* ---------- appendix labels (locked) ---------- */
-.label.tail::before { content: "สีหาง:"; color: var(--main-color); display:inline-block; width:120px; }
-.label.tail-value { display:inline-block; font-weight:700; margin-left:6px; }
-.label.animal::before { content: "สัตว์แฝง:"; color: var(--main-color); display:inline-block; width:120px; }
-.label.mbti::before { content: "ลักษณะบุคลิกภาพ (MBTI):"; color: var(--main-color); display:inline-block; width:120px; }
-.label.pet::before { content: "สัตว์เลี้ยง:"; color: var(--main-color); display:inline-block; width:120px; }
-.label.like::before { content: "สิ่งที่ชอบ:"; color: var(--main-color); display:inline-block; width:120px; }
-.label.dislike::before { content: "สิ่งที่ไม่ชอบ:"; color: var(--main-color); display:inline-block; width:120px; }
-.label.claim::before { content: "เฟซเคลม:"; color: var(--main-color); display:inline-block; width:120px; }
+.lcpf-info-th::before {
+  content: "ชื่อตัวละครภาษาไทย: ";
+  color: var(--main);
+}
 
-/* tail dot (color controlled by --tail-color set in rp-root inline style) */
-.rp-tail-dot { aspect-ratio:1/1; width:13px; display:inline-block; background: var(--tail-color); border-radius:1000%; position:relative; top:1px; margin-left:3px; }
+.lcpf-info-nick::before {
+  content: "ชื่อเล่น: ";
+  color: var(--main);
+}
 
-/* ---------- text indent blocks ---------- */
-.rp-indent { text-indent:30px; margin-top:8px; }
+.lcpf-info-birth::before {
+  content: "วัน/เดือน/ปีเกิด: ";
+  color: var(--main);
+}
 
-/* ---------- Relationship grid ---------- */
-.rp-rel-grid{
-  width:100%;
-  max-height:410px;
-  padding:0 12px 0 10px;
-  margin-top:-10px;
-  box-sizing:border-box;
-  display:grid;
-  grid-template-columns:24% 24% 24% 24%;
-  text-transform:uppercase;
-  font-weight:400;
-  text-align:left;
-  gap:12px;
-  justify-content:space-between;
-  overflow-y:scroll;
-  overflow-x:hidden;
-  scrollbar-width:none;
+.lcpf-info-race::before {
+  content: "เผ่าพันธุ์: ";
+  color: var(--main);
+}
+
+/* ========= Gallery ========= */
+
+.lcpf-right {
+  width: 43%;
+  box-sizing: border-box;
+  margin: 0 20px -20px 0;
+}
+
+.lcpf-gallery-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.lcpf-gallery-more {
+  font-size: 12px;
+  color: #939393;
+  width: fit-content;
+  text-transform: lowercase;
+  text-align: right;
+  cursor: pointer;
+}
+
+.lcpf-gallery-more::before {
+  content: "see more >>";
+}
+
+.lcpf-gallery-grid {
+  display: flex;
+  box-sizing: border-box;
+  padding: 5px;
+  margin: auto;
+  gap: 2px;
+  filter: saturate(0.8);
+}
+
+.lcpf-gallery-item {
+  aspect-ratio: 1 / 1;
+  border: 1px solid #555;
+  width: 150px;
+  background-color: #000;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* ดึงรูปจากตัวแปร */
+
+.lcpf-gallery-item.g1 { background-image: var(--g1); }
+.lcpf-gallery-item.g2 { background-image: var(--g2); }
+.lcpf-gallery-item.g3 { background-image: var(--g3); }
+
+/* ========= Personality & Traits ========= */
+
+.lcpf-paragraphs {
+  padding: 0 20px;
+  margin-top: 10px;
+}
+
+.lcpf-p {
+  text-indent: 30px;
+  margin-top: 0;
+}
+
+/* ========= Biography ========= */
+
+.lcpf-bio { padding: 0 20px; margin-top: 10px; }
+.lcpf-bio .lcpf-p { text-indent: 30px; }
+
+/* ========= Appendix + TMI ========= */
+
+.lcpf-appendix {
+  padding: 0 20px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.lcpf-appendix-line {
+  display: block;
+}
+
+/* label appendix */
+
+.lcpf-app-tail::before {
+  content: "สีหาง: ";
+  color: var(--main);
+}
+
+.lcpf-app-animal::before {
+  content: "สัตว์แฝง: ";
+  color: var(--main);
+}
+
+.lcpf-app-mbti::before {
+  content: "ลักษณะบุคลิกภาพ (MBTI): ";
+  color: var(--main);
+}
+
+.lcpf-app-pet::before {
+  content: "สัตว์เลี้ยง: ";
+  color: var(--main);
+}
+
+.lcpf-app-like::before {
+  content: "สิ่งที่ชอบ: ";
+  color: var(--main);
+}
+
+.lcpf-app-dislike::before {
+  content: "สิ่งที่ไม่ชอบ: ";
+  color: var(--main);
+}
+
+.lcpf-app-fc::before {
+  content: "เฟซเคลม: ";
+  color: var(--main);
+}
+
+/* สีหางพิเศษ: ใช้ตัวแปร --tail ทั้งเป็น text และ dot */
+
+.lcpf-tail-code {
+  color: var(--tail);
+  font-weight: 700;
+}
+
+.lcpf-tail-code::before {
+  content: var(--tail);
+}
+
+.lcpf-tail-dot {
+  aspect-ratio: 1 / 1;
+  width: 13px;
+  display: inline-block;
+  background: var(--tail);
+  border-radius: 1000%;
+  text-indent: 0;
+  position: relative;
+  top: 1px;
+  margin-left: 3px;
+}
+
+/* TMI */
+
+.lcpf-tmi-wrap {
+  padding: 0 20px;
+  margin-top: 10px;
+  text-align: left;
+  font-size: min(1.3vw, 15px);
+}
+
+.lcpf-tmi {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.lcpf-tmi li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.lcpf-tmi li::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+}
+
+/* ========= Relationship ========= */
+
+.lcpf-rel-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #939393;
+  border-bottom: 1px solid #555;
+  width: fit-content;
+  padding: 0 0 2px 10px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px #999;
+}
+
+.lcpf-rel-grid {
+  width: 100%;
+  max-height: 410px;
+  padding: 0 12px 0 10px;
+  margin-top: -10px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 24% 24% 24% 24%;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: left;
+  gap: 12px;
+  justify-content: space-between;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
   -webkit-mask: linear-gradient(to bottom, black 70%, transparent 100%);
-  padding-bottom:50px;
+  padding-bottom: 50px;
 }
-.rp-rel-item{ width:100%; box-sizing:border-box; }
-.rp-rel-name { color:#b6b6b6; font-size: min(1vw,12px); font-weight:700; }
-.rp-rel-card { border-radius:7px; background:#fff; box-shadow: 0 5px 7px 0 #4b4b4b; }
-.rp-rel-img { width:100%; aspect-ratio:2.3/1; border-radius:7px 7px 0 0; background-position:50% 50%; background-size:cover; position:relative; }
-.rp-rel-time { width: fit-content; box-sizing: border-box; padding: 0 5px; background: #00000099; margin-left: auto; font-size: min(0.9vw,12px); position:absolute; right:0; bottom:0; color:#fff; }
-.rp-rel-desc { width:100%; box-sizing:border-box; border-radius:0 0 7px 7px; padding:5px 10px; color:#555; font-size: min(0.8vw,12px); }
 
-/* small utilities to hide scrollbar on webkit if needed */
-.rp-rel-grid::-webkit-scrollbar { display:none; }
+.lcpf-rel-card-wrap {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.lcpf-rel-name {
+  color: #b6b6b6;
+  font-size: min(1vw, 12px);
+  font-weight: 700;
+}
+
+.lcpf-rel-card {
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 0 5px 7px 0 #4b4b4b;
+}
+
+.lcpf-rel-img {
+  width: 100%;
+  aspect-ratio: 2.3 / 1;
+  border-radius: 7px 7px 0 0;
+  background: var(--rel-img) 50% 50% / cover no-repeat;
+  position: relative;
+}
+
+.lcpf-rel-time {
+  width: fit-content;
+  box-sizing: border-box;
+  padding: 0 5px;
+  background: #00000099;
+  margin-left: auto;
+  font-size: min(0.9vw, 12px);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.lcpf-rel-body {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0 0 7px 7px;
+  padding: 5px 10px 8px;
+  color: #555;
+  font-size: min(0.8vw, 12px);
+}
+
+/* สัญลักษณ์หัวใจ / ลูกศร / ตัว M */
+
+.lcpf-rel-role::before {
+  content: "❤︎ ";
+}
+
+.lcpf-rel-id::before {
+  content: "▷ ";
+}
+
+.lcpf-rel-num::after {
+  content: "M ";
+}
+
+/* กล่อง "เพิ่ม Relationship" */
+
+.lcpf-rel-more {
+  width: 100%;
+  box-sizing: border-box;
+  color: #b6b6b6;
+  font-size: min(1vw, 12px);
+}
+
+/* ========= เครดิตด้านล่าง ========= */
+
+.lcpf-credit {
+  text-align: center;
+  font-size: 9px;
+  color: #222;
+  font-style: oblique;
+  margin-top: 7px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.lcpf-credit::before {
+  content: "© Lucine F. Varner";
+}
