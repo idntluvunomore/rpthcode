@@ -1,24 +1,20 @@
-/* profile.css - minimal vars (change only --color-main / --color-sub) */
+/* rptprofile.css — corrected title underline behavior + full profile css (use to replace existing file) */
 
-/* import fonts */
+/* import fonts (keep) */
 @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 /* reset */
 *{box-sizing:border-box;margin:0;padding:0}
 
-/* core variables (change only these two) */
+/* core variables (minimal) */
 :root{
-  --color-main:#6b2e2e;   /* primary accent (edit this) */
-  --color-sub:#222;       /* secondary / panels (edit this) */
-
-  /* images (placeholders; override with correct urls) */
+  --color-main:#6b2e2e;
+  --color-sub:#222;
   --img-cover: url("https://via.placeholder.com/1200x400/111/fff?text=COVER");
   --img-avatar: url("https://via.placeholder.com/300/222/fff?text=AVATAR");
   --img-gallery-1: url("https://via.placeholder.com/300/300/333/fff?text=G1");
   --img-gallery-2: url("https://via.placeholder.com/300/300/444/fff?text=G2");
   --img-gallery-3: url("https://via.placeholder.com/300/300/555/fff?text=G3");
-
-  /* derived */
   --ui-search-bg: var(--color-sub);
   --ui-search-fg: #fff;
   --ui-follow-bg: var(--color-main);
@@ -54,48 +50,16 @@
   border-radius:10px 10px 0 0;
 }
 
-/* topbar (search + actions) */
-.profile-topbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  padding:20px;
-  max-width:1000px;
-  margin:0 auto;
-}
-.profile-search{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  background:var(--ui-search-bg);
-  color:var(--ui-search-fg);
-  padding:6px 20px;
-  border-radius:20px;
-  font-family:"Work Sans",sans-serif;
-  font-weight:500;
-  font-size:13px;
-}
-.profile-search-icon{
-  width:20px;height:20px;
-  display:inline-block;
-  -webkit-mask: url(https://i.imgur.com/IAWUsAq.png) center/cover no-repeat;
-  background:var(--ui-search-fg);
-  margin-right:2px;
-}
+/* topbar */
+.profile-topbar{display:flex;justify-content:space-between;align-items:flex-start;padding:20px;max-width:1000px;margin:0 auto}
+.profile-search{display:inline-flex;align-items:center;gap:8px;background:var(--ui-search-bg);color:var(--ui-search-fg);padding:6px 20px;border-radius:20px;font-family:"Work Sans",sans-serif;font-weight:500;font-size:13px}
+.profile-search-icon{width:20px;height:20px;display:inline-block;-webkit-mask: url(https://i.imgur.com/IAWUsAq.png) center/cover no-repeat;background:var(--ui-search-fg);margin-right:2px}
 .profile-buttons{display:flex;gap:8px;align-items:center}
 .profile-btn-follow{min-width:75px;padding:6px 10px;background:var(--ui-follow-bg);color:var(--ui-follow-fg);border-radius:5px;font-family:"Work Sans";font-weight:500;text-align:center}
 .profile-btn-sub{min-width:75px;padding:6px 10px;background:var(--ui-sub-bg);color:var(--ui-sub-fg);border-radius:5px;font-family:"Work Sans";font-weight:500;text-align:center}
 
 /* avatar / name / race */
-.profile-avatar{
-  width:130px;height:130px;
-  border-radius:50%;
-  margin:auto;
-  margin-top:-100px;
-  background: var(--img-avatar) center/cover no-repeat;
-  border:3px solid var(--ui-border-circle);
-  box-shadow:0 2px 6px rgba(0,0,0,0.6);
-}
+.profile-avatar{width:130px;height:130px;border-radius:50%;margin:auto;margin-top:-100px;background:var(--img-avatar) center/cover no-repeat;border:3px solid var(--ui-border-circle);box-shadow:0 2px 6px rgba(0,0,0,0.6)}
 .profile-displayname{text-align:center;font-weight:600;font-size:20px;margin-top:10px}
 .profile-race{text-align:center;color:#8f8f8f;font-style:oblique;margin-top:-5px}
 
@@ -103,7 +67,6 @@
 .profile-tabs{display:flex;justify-content:space-around;padding:10px 0;margin-top:6px}
 .profile-tab{padding:1px 8px 4px;font-family:"Work Sans";font-weight:500;font-size:13px;color:#ccc}
 .profile-tab.active{border-bottom:2px solid var(--ui-line)}
-/* auto tab labels */
 .profile-tab:nth-child(1)::before{content:"Home"}
 .profile-tab:nth-child(2)::before{content:"About"}
 .profile-tab:nth-child(3)::before{content:"Posts"}
@@ -115,10 +78,26 @@
 .profile-info{width:55%}
 .profile-info-text{padding:10px 20px;color:var(--text)}
 
-/* section title base (text inserted via pseudo-classes in HTML classes) */
-.profile-section-title{color:var(--muted);font-size:13px;font-weight:600;text-transform:uppercase;padding:0 0 2px 10px;border-bottom:1px solid #555;text-shadow:0 0 20px #999;display:block;width:fit-content}
+/* ********** FIXED: section title styling (inline-like, underline only under text) ********** */
+/* Use inline-block + auto width so border-bottom only spans text width */
+.profile-section-title{
+  display:inline-block;
+  width:auto;
+  color:var(--muted);
+  font-size:13px;
+  font-weight:600;
+  text-transform:uppercase;
+  padding:0 0 2px 10px; /* left padding like original */
+  border-bottom:1px solid #555;
+  text-shadow:0 0 20px #999;
+  margin-bottom:12px;          /* spacing below title */
+  vertical-align:middle;      /* align nicely if next to see-more */
+}
 
-/* section titles inserted in CSS by class names */
+/* If wrapped in a flex row with see-more, ensure container doesn't stretch the title */
+.profile-section-row{display:flex;justify-content:space-between;align-items:flex-end}
+
+/* section titles injected */
 .profile-title-personal::before{content:"Personal Information"}
 .profile-title-gallery::before{content:"Our Gallery"}
 .profile-title-personality::before{content:"Personality and Traits"}
@@ -130,6 +109,7 @@
 /* gallery */
 .profile-gallery{width:43%;box-sizing:border-box;margin:0 20px -20px 0}
 .profile-gallery-head{display:flex;justify-content:space-between;align-items:flex-end;padding-right:10px}
+.profile-gallery-seemore{display:inline-block}
 .profile-gallery-seemore::before{content:"see more >>";font-size:12px;color:var(--muted)}
 .profile-gallery-row{display:flex;gap:2px;padding:5px;filter:saturate(.8)}
 .profile-gallery-img{width:150px;aspect-ratio:1;border:1px solid #555;background:center/cover no-repeat}
@@ -138,7 +118,7 @@
 .profile-longtext{padding:10px 20px;text-align:left}
 .profile-longtext div{margin-bottom:10px}
 
-/* appendix color dot (will inherit color-main by default) */
+/* appendix dot */
 .profile-color-dot{width:13px;aspect-ratio:1;border-radius:999px;display:inline-block;background:var(--color-main);margin-left:6px;vertical-align:middle;position:relative;top:1px}
 
 /* relationship grid */
@@ -149,11 +129,11 @@
 .profile-rel-time{position:absolute;right:0;bottom:0;background:rgba(0,0,0,0.6);padding:0 6px;font-size:min(.9vw,12px)}
 .profile-rel-desc{padding:6px 10px;color:#555;font-size:min(.8vw,12px)}
 
-/* auto icons (heart/arrow) - always present, user places plain text after these elements */
+/* auto icons */
 .profile-rel-heart::before{content:"❤︎ ";margin-right:4px}
 .profile-rel-arrow::before{content:"▷ ";margin-right:4px}
 
-/* small responsive tweak */
+/* responsive */
 @media (max-width:560px){
   .profile-root{font-size:14px}
   .profile-content{flex-direction:column;gap:12px}
