@@ -78,7 +78,7 @@
   font-family: "Work Sans", system-ui, sans-serif;
   font-weight: 500;
   font-size: 13px;
-
+  cursor: pointer;
   background: var(--search-bg);
   color: var(--search-text);
 }
@@ -90,8 +90,6 @@
   -webkit-mask: url(https://i.imgur.com/IAWUsAq.png) center / cover;
   mask: url(https://i.imgur.com/IAWUsAq.png) center / cover;
   background: var(--search-icon);
-  position: relative;
-  top: 6px;
 }
 
 .lcpf-search::after {
