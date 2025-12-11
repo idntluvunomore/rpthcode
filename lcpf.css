@@ -19,39 +19,23 @@
   box-sizing: border-box;
 }
 
-/* ========= ตัวแปรสี / รูป ที่ผู้ใช้กำหนดจาก HTML ========= */
-/* ตัวอย่างการเซ็ต:
-   style="
-     --main:#d46363;
-     --sub:#582828;
-     --avatar-border:#131313;
-     --cover:url(https://...);
-     --avatar:url(https://...);
-     --g1:url(https://...);
-     --g2:url(https://...);
-     --g3:url(https://...);
-     --tail:#550000;
-   "
-*/
-
 .lcpf {
-  /* default theme = เทาตาม code เปล่า */
   --main: #939393;          /* สีตัวอักษรหัวข้อย่อย / label */
   --sub: #555555;           /* สีเส้นใต้ About + สีปุ่มหลัก */
-
   --search-bg: #ffffff;     /* กล่อง Search */
   --search-text: #555555;   /* ตัวอักษร Search */
   --search-icon: #b6b6b6;   /* ไอคอนแว่น */
-
   --follow-bg: #ffffff;     /* กล่อง Follow */
   --follow-text: #555555;   /* ตัวอักษร Follow */
-
   --subscribe-bg: #ffffff;  /* กล่อง Subscribe */
   --subscribe-text: #555555;/* ตัวอักษร Subscribe */
-
   --avatar-border: #555555; /* ขอบวงกลมเมจ */
-
   --tail: #555555;          /* สีหางใน Appendix */
+  --cover: none;
+  --avatar: none;
+  --g1: none;
+  --g2: none;
+  --g3: none;
 }
 
 /* ========= ส่วน header ปกด้านบน ========= */
