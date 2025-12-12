@@ -502,7 +502,7 @@
 .lcpf-rel-img {
   width: 100%;
   aspect-ratio: 2.3 / 1;
-  background: var(--rel-img) center/cover no-repeat;
+  background: var(--rel-img) var(--rel-ctl);
   position: relative;
   border-radius: 7px 7px 0 0;
 }
