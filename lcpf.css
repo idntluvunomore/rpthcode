@@ -33,8 +33,14 @@
   --avatar-ctl: center / cover no-repeat;
   --avatar-fil: none;
   --g1: none;
+  --g1-ctl: center / cover no-repeat;
+  --g1-fil: none;
   --g2: none;
+  --g2-ctl: center / cover no-repeat;
+  --g2-fil: none;
   --g3: none;
+  --g3-ctl: center / cover no-repeat;
+  --g3-fil: none;
 }
 
 .lcpf-header {
@@ -300,14 +306,26 @@
   border: 1px solid #555;
   width: 150px;
   background-color: #000;
-  background-position: 50% 50%;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  filter: none;
 }
 
-.lcpf-gallery-item.g1 { background-image: var(--g1); }
-.lcpf-gallery-item.g2 { background-image: var(--g2); }
-.lcpf-gallery-item.g3 { background-image: var(--g3); }
+.lcpf-gallery-item.g1 {
+  background: var(--g1) var(--g1-ctl);
+  filter: var(--g1-fil);
+}
+
+.lcpf-gallery-item.g2 { 
+  background: var(--g2) var(--g2-ctl);
+  filter: var(--g2-fil);
+}
+
+.lcpf-gallery-item.g3 {
+  background: var(--g3) var(--g3-ctl);
+  filter: var(--g3-fil);
+}
 
 .lcpf-paragraphs {
   padding: 0 20px;
