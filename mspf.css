@@ -199,3 +199,27 @@
   pointer-events: none;
   user-select: none;
 }
+/* ===== restore film stack exactly like original ===== */
+
+/* บังคับให้ .am99-film เป็น stacking context ของตัวเอง */
+.am99-wrap .am99-film{
+  position: relative !important;
+  isolation: isolate;            /* กันธีมเว็บสร้าง stacking แปลก ๆ */
+}
+
+/* รูปทั้ง 3 อยู่ชั้น 1 */
+.am99-wrap .am99-photo{
+  position: absolute !important;
+  z-index: 1 !important;
+}
+
+/* กรอบทับอยู่ชั้น 10 (ตามต้นฉบับ) แต่ "ไม่กินพื้นที่/ไม่บัง layout" */
+.am99-wrap .am99-film-frame{
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 207px !important;
+  height: 500px !important;
+  z-index: 10 !important;
+  pointer-events: none !important;
+}
