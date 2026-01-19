@@ -170,19 +170,3 @@
   pointer-events: none;
   user-select: none;
 }
-
-.am99-wrap .am99-line::before { content: none !important; }
-
-.am99-wrap .am99-scroll{
-  padding-left: 22px !important;
-}
-
-.am99-wrap .am99-line{
-  display: list-item !important;
-  list-style-type: disc !important;
-  list-style-position: outside !important;
-  margin: 0 0 10px 0 !important;
-
-  padding-left: 0 !important;
-  position: static !important;
-}
