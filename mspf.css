@@ -1,167 +1,172 @@
-@import url('https://fonts.cdnfonts.com/css/hellios');
-@import url('https://fonts.cdnfonts.com/css/minion-sc');
-@import url('https://fonts.cdnfonts.com/css/molgen');
+@import url("https://fonts.cdnfonts.com/css/hellios");
+@import url("https://fonts.cdnfonts.com/css/minion-sc");
+@import url("https://fonts.cdnfonts.com/css/molgen");
 
-:root{
-  --wrap-max: 1000px;
-  --wrap-min: 600px;
-
-  --bg: #222;
-  --paper: #f5f4f6;
-  --text: #555;
-  --muted: #858585;
-  --line: #ccc;
-  --sep: #cccccc;
-
-  --card-pad-y: 50px;
-  --inner-w: 75%;
-  --inner-mt: 70px;
-
-  --slot-img-default: url('https://i.pinimg.com/736x/48/c6/42/48c6427d0e53b39199e0be2732babcd1.jpg');
-  --badge-img-default: url('https://i.imgur.com/8RKIxPd.png');
+.am99-wrap,
+.am99-wrap * {
+  box-sizing: border-box;
 }
 
-.cardWrap{
-  max-width: var(--wrap-max);
-  min-width: var(--wrap-min);
-  background: var(--bg);
-  margin: auto;
-  padding: var(--card-pad-y) 0;
+.am99-wrap {
+  --am99-thumb: url("https://i.pinimg.com/736x/48/c6/42/48c6427d0e53b39199e0be2732babcd1.jpg");
+  --am99-record: url("https://i.imgur.com/8RKIxPd.png");
+
+  --am99-thumb1: var(--am99-thumb);
+  --am99-thumb2: var(--am99-thumb);
+  --am99-thumb3: var(--am99-thumb);
+
+  /* Theme */
+  --am99-bg: #222;
+  --am99-panel-bg: #f5f4f6;
+  --am99-text: #555;
+  --am99-sep: #cccccc;
+
+  max-width: 1000px;
+  min-width: 600px;
+  background: var(--am99-bg);
+  margin: 0 auto;
+  padding: 50px 0;
 }
-.cardInner{
-  width: var(--inner-w);
-  margin: auto;
+
+.am99-inner {
+  width: 75%;
+  margin: 70px auto 0;
   display: flex;
   align-items: flex-start;
-  margin-top: var(--inner-mt);
 }
 
-.frameStack{
+.am99-film {
   position: relative;
   width: 207px;
   height: 500px;
   margin-left: 100px;
+  flex: 0 0 auto;
 }
 
-.slot{
-  background-image: var(--slot-img, var(--slot-img-default));
+.am99-photo {
+  position: absolute;
+  left: 25px;
+  width: 160px;
+  height: 160px;
+  z-index: 1;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-
-  width: 160px;
-  height: 160px;
-
-  position: absolute;
-  left: 25px;
-  z-index: 1;
 }
-.slot--1{ top: 15px; }
-.slot--2{ top: 170px; }
-.slot--3{ top: 325px; }
 
-.frameOverlay{
+.am99-photo--1 {
+  top: 15px;
+  background-image: var(--am99-thumb1);
+}
+.am99-photo--2 {
+  top: 170px;
+  background-image: var(--am99-thumb2);
+}
+.am99-photo--3 {
+  top: 325px;
+  background-image: var(--am99-thumb3);
+}
+
+.am99-film-frame {
   position: absolute;
-  top: 0; left: 0;
-  width: 207px; height: 500px;
+  inset: 0;
   z-index: 10;
-
-  background-image: url('https://i.imgur.com/Tcsm9qH.png') !important;
-  background-position: center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-
+  background: url("https://i.imgur.com/Tcsm9qH.png") center/cover no-repeat;
   pointer-events: none;
 }
 
-/* ขวา */
-.infoCol{
+.am99-main {
   width: 350px;
   margin-top: 30px;
+  position: relative;
 }
 
-.badge{
+.am99-record {
   width: 300px;
   height: 300px;
   margin-left: 20px;
-  position: relative;
-
-  background-image: var(--badge-img, var(--badge-img-default));
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
+  background: var(--am99-record) center/cover no-repeat;
   filter: drop-shadow(0px 0px 10px #000000);
 }
 
-.paper{
+.am99-panel {
   width: 350px;
-  background: var(--paper);
-  padding: 30px 20px 30px 0px;
-
+  height: 200px;
+  background: var(--am99-panel-bg);
+  color: var(--am99-text);
+  padding: 30px 20px 30px 0;
   position: relative;
   top: -140px;
   left: -20px;
-
-  border-radius: 0px 40px 40px 0px;
-
-  height: 200px;
-  color: var(--text);
+  border-radius: 0 40px 40px 0;
 
   font-size: 14px;
-  font-family: 'Minion SC', sans-serif;
+  font-family: "Minion SC", "Times New Roman", serif;
   text-align: justify;
   line-height: 1.5;
   word-spacing: 2px;
 }
 
-.name{
-  font-family: 'hellios', sans-serif;
+.am99-title {
+  font-family: "Hellios", sans-serif;
   font-size: 25px;
   text-align: center;
+  color: var(--am99-text);
 }
 
-.rule{
-  border-top: 1px solid var(--line);
-  margin-top: 5px;
-  margin-bottom: 10px;
+.am99-rule {
+  border-top: 1px solid #ccc;
+  margin: 5px 0 10px;
 }
 
-.scrollBox{
+.am99-scroll {
   max-height: 150px;
   overflow-y: auto;
   padding-right: 12px;
-
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.scrollBox::-webkit-scrollbar{ width:0; height:0; }
-
-.shipList{ margin:0; padding-left:18px; }
-.shipList li{ margin:0 0 6px 0; }
-
-.ship{ display:inline; }
-.ship + .ship::before{
-  content: " • ";
-  color: var(--sep);
-  user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  pointer-events: none;
+  scrollbar-width: thin;
 }
 
-.credit{
-  font-size: 12px;
-  color: var(--muted);
+.am99-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.am99-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.am99-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.am99-line {
   position: relative;
-  top: -130px;
+  padding-left: 18px;
+  margin: 0 0 10px;
+}
+
+.am99-line::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  color: var(--am99-text);
+}
+
+.am99-name + .am99-name::before {
+  content: "•";
+  color: var(--am99-sep);
+  margin: 0 10px;
+}
+
+.am99-main::after {
+  content: "@ almostninetynine";
+  position: absolute;
   left: 70px;
+  top: calc(300px + 70px);
+  font-size: 12px;
+  color: #858585;
   letter-spacing: 5px;
   font-style: italic;
-  font-family: 'Molgen', sans-serif;
-
+  font-family: "Molgen", sans-serif;
+  pointer-events: none;
   user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 }
-.credit::before{ content: "@ almostninetynine"; }
