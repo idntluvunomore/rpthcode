@@ -2,20 +2,27 @@
 @import url("https://fonts.cdnfonts.com/css/minion-sc");
 @import url("https://fonts.cdnfonts.com/css/molgen");
 
+/* ================================
+   almostninetynine - MSPF Card
+   RPTH-safe version (no [list])
+   ================================ */
+
 .am99-wrap,
 .am99-wrap * {
   box-sizing: border-box;
 }
 
 .am99-wrap {
+  /* USER EDITABLE (รูปเปลี่ยนได้) */
   --am99-thumb: url("https://i.pinimg.com/736x/48/c6/42/48c6427d0e53b39199e0be2732babcd1.jpg");
   --am99-record: url("https://i.imgur.com/8RKIxPd.png");
 
+  /* optional: แยก 3 รูปได้ */
   --am99-thumb1: var(--am99-thumb);
   --am99-thumb2: var(--am99-thumb);
   --am99-thumb3: var(--am99-thumb);
 
-  /* Theme */
+  /* theme */
   --am99-bg: #222;
   --am99-panel-bg: #f5f4f6;
   --am99-text: #555;
@@ -35,6 +42,7 @@
   align-items: flex-start;
 }
 
+/* ===== Left film strip ===== */
 .am99-film {
   position: relative;
   width: 207px;
@@ -54,19 +62,11 @@
   background-repeat: no-repeat;
 }
 
-.am99-photo--1 {
-  top: 15px;
-  background-image: var(--am99-thumb1);
-}
-.am99-photo--2 {
-  top: 170px;
-  background-image: var(--am99-thumb2);
-}
-.am99-photo--3 {
-  top: 325px;
-  background-image: var(--am99-thumb3);
-}
+.am99-photo--1 { top: 15px;  background-image: var(--am99-thumb1); }
+.am99-photo--2 { top: 170px; background-image: var(--am99-thumb2); }
+.am99-photo--3 { top: 325px; background-image: var(--am99-thumb3); }
 
+/* LOCKED FRAME (ห้ามแก้) */
 .am99-film-frame {
   position: absolute;
   inset: 0;
@@ -75,6 +75,7 @@
   pointer-events: none;
 }
 
+/* ===== Right side ===== */
 .am99-main {
   width: 350px;
   margin-top: 30px;
@@ -89,6 +90,7 @@
   filter: drop-shadow(0px 0px 10px #000000);
 }
 
+/* panel */
 .am99-panel {
   width: 350px;
   height: 200px;
@@ -102,9 +104,11 @@
 
   font-size: 14px;
   font-family: "Minion SC", "Times New Roman", serif;
-  text-align: justify;
   line-height: 1.5;
-  word-spacing: 2px;
+
+  /* สำคัญ: ทำเป็น flex เพื่อให้ scroll ไม่ดันหลุดกล่อง */
+  display: flex;
+  flex-direction: column;
 }
 
 .am99-title {
@@ -119,49 +123,74 @@
   margin: 5px 0 10px;
 }
 
+/* scroll area */
 .am99-scroll {
-  max-height: 150px;
+  flex: 1 1 auto;
+  min-height: 0;
   overflow-y: auto;
   padding-right: 12px;
+
+  /* กัน justify ของเว็บทำให้ช่องไฟชื่อเพี้ยน */
+  text-align: left !important;
+  word-spacing: normal !important;
+
   scrollbar-width: thin;
 }
 
-.am99-scroll::-webkit-scrollbar {
-  width: 6px;
-}
-.am99-scroll::-webkit-scrollbar-track {
-  background: transparent;
-}
-.am99-scroll::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
+.am99-scroll::-webkit-scrollbar { width: 6px; }
+.am99-scroll::-webkit-scrollbar-track { background: transparent; }
+.am99-scroll::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.25); border-radius: 10px; }
+
+/* ===== THE IMPORTANT PART =====
+   Bullet หน้าแต่ละบรรทัด: ใช้ marker ของ list-item (ไม่ใช้ ::before)
+   เพราะ RPTH บางธีมปิด content ของ pseudo-element
+*/
+.am99-wrap .am99-line {
+  display: list-item !important;
+  list-style-type: disc !important;
+  list-style-position: outside !important;
+
+  margin: 0 0 10px 0 !important;
+
+  /* ให้ marker มีที่ว่าง */
+  padding-left: 0 !important;
 }
 
-.am99-line {
-  position: relative;
-  padding-left: 18px;
-  margin: 0 0 10px;
+/* เผื่อธีมเว็บทำ list-style:none ทับ */
+.am99-wrap .am99-scroll {
+  padding-left: 22px !important;
 }
 
-.am99-line::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  top: 0.1em;
+/* สีของจุดหน้า (marker) */
+.am99-wrap .am99-line::marker {
   color: var(--am99-text);
 }
 
-.am99-name + .am99-name::before {
-  content: "•";
-  color: var(--am99-sep);
-  margin: 0 10px;
+/* ชื่อในบรรทัด */
+.am99-wrap .am99-name {
+  display: inline !important;
+  white-space: nowrap;       /* กันแตกกลางคำ */
+  hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
+/* จุดคั่นระหว่างชื่อ (ฝังให้ ไม่ต้องพิมพ์โค้ดสี) */
+.am99-wrap .am99-name + .am99-name::before {
+  content: "•" !important;
+  color: var(--am99-sep) !important;
+  margin: 0 10px !important;
+  white-space: normal;
+}
+
+/* CREDIT (ฝัง ไม่ให้แก้ใน HTML) */
 .am99-main::after {
   content: "@ almostninetynine";
-  position: absolute;
+  display: block;
+  position: relative;
+  top: -130px;
   left: 70px;
-  top: calc(300px + 70px);
+
   font-size: 12px;
   color: #858585;
   letter-spacing: 5px;
