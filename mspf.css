@@ -17,8 +17,8 @@
   --inner-w: 75%;
   --inner-mt: 70px;
 
-  --img-slot: url('https://i.pinimg.com/736x/48/c6/42/48c6427d0e53b39199e0be2732babcd1.jpg');
-  --img-badge: url('https://i.imgur.com/8RKIxPd.png');
+  --slot-img-default: url('https://i.pinimg.com/736x/48/c6/42/48c6427d0e53b39199e0be2732babcd1.jpg');
+  --badge-img-default: url('https://i.imgur.com/8RKIxPd.png');
 }
 
 .cardWrap{
@@ -44,7 +44,7 @@
 }
 
 .slot{
-  background-image: var(--img-slot);
+  background-image: var(--slot-img, var(--slot-img-default));
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -74,6 +74,7 @@
   pointer-events: none;
 }
 
+/* ขวา */
 .infoCol{
   width: 350px;
   margin-top: 30px;
@@ -85,7 +86,7 @@
   margin-left: 20px;
   position: relative;
 
-  background-image: var(--img-badge);
+  background-image: var(--badge-img, var(--badge-img-default));
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -131,31 +132,18 @@
   overflow-y: auto;
   padding-right: 12px;
 
-  scrollbar-width: none;      /* Firefox */
-  -ms-overflow-style: none;   /* Edge เก่า/IE */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-.scrollBox::-webkit-scrollbar{
-  width: 0;
-  height: 0;
-}
+.scrollBox::-webkit-scrollbar{ width:0; height:0; }
 
-/* list */
-.shipList{
-  margin: 0;
-  padding-left: 18px;
-}
-.shipList li{
-  margin: 0 0 6px 0;
-}
+.shipList{ margin:0; padding-left:18px; }
+.shipList li{ margin:0 0 6px 0; }
 
-.ship{
-  display: inline;
-}
-
+.ship{ display:inline; }
 .ship + .ship::before{
   content: " • ";
   color: var(--sep);
-
   user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -176,11 +164,4 @@
   -webkit-user-select: none;
   -ms-user-select: none;
 }
-.credit::before{
-  content: "@ almostninetynine";
-
-  user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  pointer-events: none;
-}
+.credit::before{ content: "@ almostninetynine"; }
