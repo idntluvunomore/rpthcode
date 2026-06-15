@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans+Thai:wght@100..800&display=swap');
+
+.gpp-main {
+  text-align: justify; 
+  max-width: 700px; 
+  min-width: 450px; 
+  margin: auto; 
+  line-height: 1.6;
+  width: 80%; 
+  box-sizing: border-box; 
+  background: var(--gpp-bg, #222); 
+  padding: 50px 20px;
+}
+
+.gpp-search {
+  border: 1px solid var(--gpp-border, #444); 
+  width: 90%; 
+  padding: 10px; 
+  margin: auto; 
+  border-radius: 50px; 
+  display: flex; 
+  align-items: center;
+}
+.gpp-search img {
+  width: 15px; 
+  height: 15px; 
+  margin-left: 10px; 
+  object-fit: contain;
+}
+.gpp-placeholder {
+  margin-left: 10px; 
+  margin-right: auto; 
+  color: var(--gpp-txt-search, #666); 
+  font-size: 15px;
+}
+.gpp-clear {
+  margin-right: 10px; 
+  color: var(--gpp-txt-x, #6c6c6c); 
+  font-size: 15px; 
+  cursor: pointer;
+}
+
+.gpp-gallery {
+  display: flex; 
+  justify-content: center; 
+  gap: 15px; 
+  margin: 30px auto;
+}
+.gpp-gallery img {
+  width: 120px; 
+  height: 120px; 
+  object-fit: cover; 
+  border-radius: 5px; 
+  filter: grayscale(100%);
+}
+
+.gpp-title {
+  font-size: 40px; 
+  margin: auto; 
+  color: var(--gpp-name, #556655); 
+  text-align: center; 
+  font-family: 'Nothing You Could Do', cursive; 
+  font-weight: bold;
+}
+.gpp-desc {
+  width: 90%; 
+  margin: auto; 
+  color: var(--gpp-desc, #999); 
+  margin-top: 15px; 
+  font-size: 14.8px; 
+  text-align: justify; 
+  font-family: 'Bai Jamjuree', sans-serif; 
+  line-height: 1.8;
+}
+
+.gpp-note {
+  font-family: 'Playpen Sans Thai', cursive; 
+  margin-top: 10px; 
+  margin-right: 10px; 
+  width: fit-content; 
+  padding: 5px 10px; 
+  float: right; 
+  background: var(--gpp-note-bg, #999); 
+  color: var(--gpp-note-txt, #222); 
+  font-size: 13.5px; 
+  border-radius: 5px; 
+  text-align: center; 
+  font-weight: bold;
+}
