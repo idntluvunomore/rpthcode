@@ -89,3 +89,8 @@
   text-align: center; 
   font-weight: bold;
 }
+
+.gpp-desc b {
+  color: var(--gpp-hex);
+  font-weight: bold;
+}
