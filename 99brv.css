@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@200;600&display=swap');
 @import url('https://fonts.cdnfonts.com/css/ldr-manufacture');
+
 .brv-main {
   text-align: justify;
   max-width: 700px;
@@ -28,20 +29,29 @@
   font-weight: 200;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   white-space: nowrap;
+  width: 100%;
+  padding-right: 15px;
+  box-sizing: border-box;
+  margin-top: 5px;
 }
-.brv-nv {
+.brv-nv-left {
   display: flex;
   align-items: center;
 }
-.brv-nv::before {
+.brv-nv-left::before {
   content: "Home \00a0\00a0|\00a0\00a0 My Books \00a0\00a0|\00a0\00a0 Browse \00a0\00a0|\00a0\00a0 Community";
   color: #1e1915;
+}
+.brv-nv-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
 }
 .brv-sch {
   display: flex;
   align-items: center;
-  margin-left: 60px;
 }
 .brv-sch::before {
   content: "Search Book";
@@ -61,8 +71,7 @@
   height: 50px;
   background: center center / cover no-repeat;
   border-radius: 50%;
-  margin-left: auto;
-  margin-right: 15px;
+  flex-shrink: 0;
 }
 .brv-ct {
   display: flex;
@@ -72,6 +81,8 @@
   color: #1e1915;
   gap: 20px;
 }
+
+/* Sidebar Left */
 .brv-sd {
   width: 220px;
   display: flex;
