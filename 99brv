@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,700;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@200;600&display=swap');
+@import url('https://fonts.cdnfonts.com/css/ldr-manufacture');
+
+.brv-main {
+  text-align: justify;
+  max-width: 700px;
+  min-width: 450px;
+  margin: auto;
+  line-height: 1.6;
+  background: #fff;
+  box-sizing: border-box;
+}
+.brv-hd {
+  width: auto;
+  height: fit-content;
+  color: #1e1915;
+  margin-left: 15px;
+  font-size: 18px;
+}
+.brv-lg {
+  font-size: 23px;
+  font-family: 'LDR MANUFACTURE', sans-serif;
+  padding: 15px 0 0 0;
+}
+.brv-nav-wrap {
+  font-family: 'IBM Plex Sans Thai', sans-serif;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.brv-nv {
+  display: flex;
+  align-items: center;
+}
+.brv-nv::before {
+  content: "Home \00a0|\00a0 My Books \00a0|\00a0 Browse \00a0|\00a0 Community";
+  color: #1e1915;
+  margin-right: 60px;
+}
+.brv-nv::after {
+  display: none;
+}
+.brv-sch::before {
+  content: "Search Book";
+  color: #a0a0a0;
+  margin-right: 10px;
+}
+.brv-sch {
+  display: flex;
+  align-items: center;
+}
+.brv-sch img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+.brv-av {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: center center / cover no-repeat;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: 15px;
+}
+.brv-ct {
+  display: flex;
+  margin: 30px 15px 20px 20px;
+  font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+  font-weight: 300;
+  color: #1e1915;
+  gap: 20px;
+}
+.brv-sd {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.brv-cv {
+  width: 200px;
+  height: 300px;
+  background: center center / cover no-repeat;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.brv-btn::before {
+  content: "Want to Read";
+}
+.brv-btn {
+  width: 100%;
+  height: 40px;
+  background-color: #377458;
+  color: #fff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 390;
+  cursor: pointer;
+}
+.brv-prc::after {
+  content: " THB";
+}
+.brv-prc {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #377458;
+  color: #377458;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  cursor: pointer;
+}
+.brv-rt {
+  text-align: center;
+  margin-top: 5px;
+}
+.brv-st {
+  font-size: 24px;
+  color: #FF851B;
+  letter-spacing: 5px;
+  line-height: 1;
+}
+.brv-rtt::before {
+  content: "Rate this book";
+  font-size: 12px;
+  color: #666;
+  display: block;
+  margin-top: 5px;
+}
+.brv-dt {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 10px;
+}
+.brv-ttl {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: 'IBM Plex Sans Thai', sans-serif;
+  line-height: 1.3;
+}
+.brv-aut::before {
+  content: " ";
+}
+.brv-aut::after {
+  content: " เขียน";
+  font-style: normal;
+}
+.brv-aut {
+  font-size: 18px;
+  color: #444;
+  font-style: italic;
+}
+.brv-syn {
+  max-width: 400px;
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #222;
+  text-align: justify;
+}
+.brv-mt {
+  color: #808080;
+  font-size: 15px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.brv-pg::after {
+  content: " pages";
+}
+.brv-pbl::before {
+  content: "Published ";
+}
+.brv-tg::before {
+  content: "Tag ";
+}
+.brv-rv {
+  margin: 0 15px 0 20px;
+  font-family: 'Sarabun', sans-serif;
+}
+.brv-hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+.brv-rvt::before {
+  content: "⌵ Reviews";
+}
+.brv-rvt {
+  font-size: 20px;
+  color: #1e1915;
+  margin: 0;
+  font-weight: bold;
+}
+.brv-rvb {
+  color: #000;
+  margin-top: 10px;
+  font-size: 14px;
+  margin-right: 10px;
+  text-align: justify;
+}
+.brv-rvn {
+  text-align: center;
+  font-size: 13px;
+  color: #888888;
+  font-style: italic;
+  margin-bottom: 20px;
+}
