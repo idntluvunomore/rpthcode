@@ -5,7 +5,6 @@
   font-style: normal;
 }
 
-/* พื้นหลังและกล่องหลัก */
 .wspxp-container {
   max-width: 1200px;
   min-width: 650px;
@@ -37,7 +36,6 @@
   -webkit-user-drag: none;
 }
 
-/* หน้าต่าง Window */
 .wspxp-window {
   box-sizing: border-box;
   width: 70%;
@@ -52,7 +50,6 @@
   font-family: Tahoma, 'Segoe UI', sans-serif;
 }
 
-/* Title Bar */
 .wspxp-titlebar {
   box-sizing: border-box;
   height: 30px;
@@ -121,7 +118,6 @@
   line-height: 1;
 }
 
-/* Menu Bar */
 .wspxp-menubar {
   box-sizing: border-box;
   height: 20px;
@@ -141,7 +137,6 @@
   cursor: pointer;
 }
 
-/* พื้นที่ด้านใน */
 .wspxp-main {
   box-sizing: border-box;
   flex: 1;
@@ -159,7 +154,6 @@
   color: #434e40;
 }
 
-/* ฝั่งซ้าย */
 .wspxp-col-left {
   box-sizing: border-box;
   width: 52%;
@@ -244,7 +238,6 @@
   font-family: 'WSPpixel', monospace, sans-serif;
 }
 
-/* ฝั่งขวา */
 .wspxp-col-right {
   box-sizing: border-box;
   width: 48%;
@@ -387,7 +380,6 @@
   top: 0;
 }
 
-/* Taskbar ล่าง */
 .wspxp-taskbar {
   box-sizing: border-box;
   height: 32px;
