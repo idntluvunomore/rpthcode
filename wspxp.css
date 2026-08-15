@@ -1,4 +1,10 @@
-/* wspxp.css */
+@font-face {
+  font-family: 'KyleDis';
+  src: url('https://cdn.jsdelivr.net/gh/idntluvunomore/rpthcode@main/KyleDis.woff2') format('woff2');
+  font-weight: normal;
+  font-display: swap;
+}
+
 .wspxp-container {
   max-width: 1200px;
   min-width: 650px;
