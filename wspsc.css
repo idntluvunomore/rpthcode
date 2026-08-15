@@ -5,7 +5,7 @@
   font-style: normal;
 }
 
-.wspxp-container {
+.wspsc-container {
   max-width: 1200px;
   min-width: 650px;
   box-sizing: border-box;
@@ -14,18 +14,18 @@
   scrollbar-width: none;
 }
 
-.wspxp-bg {
+.wspsc-bg {
   width: 100%;
   min-width: 650px;
   background: url(https://i.imgur.com/njpSbPJ.jpeg) center/cover no-repeat;
-  margin: 0 auto;
+  margin: 0px auto;
   box-sizing: border-box;
   padding: 60px 20px 60px 20px; 
   position: relative;
 }
 
 /* ฝังเครดิต Footer */
-.wspxp-bg::after {
+.wspsc-bg::after {
   content: "Simon Kyle • Asteria Leuruna";
   display: block;
   position: static; 
@@ -37,13 +37,13 @@
   font-style: italic;
 }
 
-.wspxp-logo-wrap {
+.wspsc-logo-wrap {
   width: 100%;
   margin: 100px auto 100px auto;
   text-align: center;
 }
 
-.wspxp-logo-img {
+.wspsc-logo-img {
   filter: drop-shadow(0px 1px 5px #555);
   max-width: 500px;
   height: auto;
@@ -54,7 +54,7 @@
 }
 
 /* หน้าต่าง Window */
-.wspxp-window {
+.wspsc-window {
   box-sizing: border-box;
   width: 580px;
   min-height: 420px;
@@ -68,7 +68,7 @@
   font-family: Tahoma, 'Segoe UI', sans-serif;
 }
 
-.wspxp-titlebar {
+.wspsc-titlebar {
   box-sizing: border-box;
   height: 30px;
   background: linear-gradient(180deg, #0058ee 0%, #3593ff 4%, #288eff 6%, #1277ef 8%, #0055ea 14%, #0055ea 68%, #0d6cf5 84%, #0055ea 100%);
@@ -80,7 +80,7 @@
   flex-shrink: 0;
 }
 
-.wspxp-title-space {
+.wspsc-title-space {
   color: #fff;
   font-weight: bold;
   font-size: 12px;
@@ -88,13 +88,13 @@
   letter-spacing: 0.5px;
 }
 
-.wspxp-controls {
+.wspsc-controls {
   display: flex;
   gap: 2px;
   align-items: center;
 }
 
-.wspxp-btn-ctrl {
+.wspsc-btn-ctrl {
   width: 21px;
   height: 21px;
   background: linear-gradient(180deg, #388cfc 0%, #1066e6 100%);
@@ -106,21 +106,21 @@
   justify-content: center;
 }
 
-.wspxp-ico-min {
+.wspsc-ico-min {
   width: 8px;
   height: 2px;
   background: #fff;
   margin-top: 6px;
 }
 
-.wspxp-ico-max {
+.wspsc-ico-max {
   width: 9px;
   height: 8px;
   border: 1px solid #fff;
   border-top-width: 2px;
 }
 
-.wspxp-btn-close {
+.wspsc-btn-close {
   width: 21px;
   height: 21px;
   background: linear-gradient(180deg, #f27258 0%, #d83a1b 50%, #b82307 100%);
@@ -136,7 +136,7 @@
   line-height: 1;
 }
 
-.wspxp-menubar {
+.wspsc-menubar {
   box-sizing: border-box;
   height: 20px;
   background: #ece9d8;
@@ -151,12 +151,12 @@
   user-select: none;
 }
 
-.wspxp-menubar span {
+.wspsc-menubar span {
   cursor: pointer;
 }
 
-/* เนื้อหาหลัก */
-.wspxp-main {
+/* พื้นที่ด้านใน (เฉพาะ Showcase เป็นแบบคอลัมน์ดิ่ง) */
+.wspsc-main {
   box-sizing: border-box;
   flex: 1;
   background: #c2ceba;
@@ -175,7 +175,7 @@
 }
 
 /* ================= WINAMP RETRO PLAYER ================= */
-.wspxp-player {
+.wspsc-player {
   box-sizing: border-box;
   width: 100%;
   background: #c0c0c0;
@@ -191,8 +191,7 @@
   user-select: none;
 }
 
-/* แถวที่ 1: หน้าจอแสดงชื่อเพลง (เว้นระยะ *** ไปชิดขวาสุด) */
-.wspxp-player-title {
+.wspsc-player-title {
   box-sizing: border-box;
   width: 100%;
   height: 22px;
@@ -213,14 +212,13 @@
   white-space: nowrap;
 }
 
-/* แถวที่ 2: Status Boxes (mono stereo เป็นสีเทาเหมือนกัน) */
-.wspxp-player-stats {
+.wspsc-player-stats {
   display: flex;
   gap: 4px;
   width: 100%;
 }
 
-.wspxp-stat-box {
+.wspsc-stat-box {
   box-sizing: border-box;
   height: 18px;
   background: #c8c8c8;
@@ -236,28 +234,27 @@
   color: #000000;
 }
 
-.wspxp-stat-box.rate { width: 75px; }
-.wspxp-stat-box.khz  { width: 75px; }
+.wspsc-stat-box.rate { width: 75px; }
+.wspsc-stat-box.khz  { width: 75px; }
 
-.wspxp-stat-box.channel {
+.wspsc-stat-box.channel {
   flex: 1;
   display: flex;
   gap: 8px;
-  color: #888888; /* สีเทาเท่ากันทั้งคู่ */
+  color: #888888;
 }
 
-/* แถวที่ 3: Sliders + Buttons (slider แถบข้างเป็นสีเทา) */
-.wspxp-player-middle {
+.wspsc-player-middle {
   display: flex;
   gap: 5px;
   align-items: center;
   width: 100%;
 }
 
-.wspxp-vol-slider {
+.wspsc-vol-slider {
   flex: 1;
   height: 12px;
-  background: #9c9bdc; /* แถบ Volume สีม่วงเต็มหลอด */
+  background: #9c9bdc;
   border-top: 1px solid #404070;
   border-left: 1px solid #404070;
   border-right: 1px solid #ffffff;
@@ -265,7 +262,7 @@
   position: relative;
 }
 
-.wspxp-vol-thumb {
+.wspsc-vol-thumb {
   position: absolute;
   top: -1px;
   right: 0;
@@ -285,10 +282,10 @@
   line-height: 1;
 }
 
-.wspxp-pan-slider {
+.wspsc-pan-slider {
   width: 55px;
   height: 12px;
-  background: #a8a8a8; /* พื้นหลัง Balance เป็นสีเทาทั้งซ้าย-ขวา */
+  background: #a8a8a8;
   border-top: 1px solid #606060;
   border-left: 1px solid #606060;
   border-right: 1px solid #ffffff;
@@ -296,7 +293,7 @@
   position: relative;
 }
 
-.wspxp-pan-thumb {
+.wspsc-pan-thumb {
   position: absolute;
   top: -1px;
   left: 50%;
@@ -317,7 +314,7 @@
   line-height: 1;
 }
 
-.wspxp-btn-opt {
+.wspsc-btn-opt {
   box-sizing: border-box;
   height: 14px;
   padding: 0 5px;
@@ -335,12 +332,10 @@
   cursor: pointer;
 }
 
-/* แถวที่ 4: Trackbar ด้านล่าง (สีม่วงขึ้นตาม progress ที่เหลือเป็นสีเทา) */
-.wspxp-seekbar-wrap {
+.wspsc-seekbar-wrap {
   box-sizing: border-box;
   width: 100%;
   height: 14px;
-  /* ปรับเปอร์เซ็นต์ progress สีม่วงตรง 10% ได้ตามต้องการ */
   background: linear-gradient(to right, #9c9bdc 0%, #9c9bdc 10%, #a8a8a8 10%, #a8a8a8 100%);
   border-top: 1.5px solid #505050;
   border-left: 1.5px solid #505050;
@@ -349,10 +344,10 @@
   position: relative;
 }
 
-.wspxp-seekbar-thumb {
+.wspsc-seekbar-thumb {
   position: absolute;
   top: -1px;
-  left: 6%; /* ตำแหน่งของหัวเลื่อน */
+  left: 6%;
   width: 32px;
   height: 14px;
   background: #c8c8e8;
@@ -369,16 +364,16 @@
   line-height: 1;
 }
 
-/* ตารางหมวดหมู่ 6 ช่อง (2 แถว แถวละ 3 ช่อง) */
-.wspxp-showcase-grid {
+/* Showcase Grid 6 ช่อง */
+.wspsc-showcase-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 4px;
 }
 
-.wspxp-cat-card {
+.wspsc-cat-card {
   box-sizing: border-box;
   background: #d7e0ce;
   border: 2px solid #8e9a85;
@@ -389,12 +384,12 @@
   height: 48px;
 }
 
-.wspxp-cat-card.empty {
+.wspsc-cat-card.empty {
   border: 2px dashed #8e9a85;
   opacity: 0.5;
 }
 
-.wspxp-cat-icon {
+.wspsc-cat-icon {
   box-sizing: border-box;
   width: 32px;
   height: 32px;
@@ -407,7 +402,7 @@
   overflow: hidden;
 }
 
-.wspxp-cat-icon img {
+.wspsc-cat-icon img {
   width: 75%;
   height: 75%;
   object-fit: contain;
@@ -415,29 +410,29 @@
   image-rendering: pixelated;
 }
 
-.wspxp-cat-name {
+.wspsc-cat-name {
   font-weight: bold;
   font-size: 11px;
   letter-spacing: 0.5px;
   white-space: nowrap;
 }
 
-/* แถบ Loading Bar XP */
-.wspxp-loading-wrap {
+/* Loading Bar */
+.wspsc-loading-wrap {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 6px;
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.wspxp-loading-txt {
+.wspsc-loading-txt {
   font-size: 11px;
   color: #2b3329;
   font-weight: bold;
 }
 
-.wspxp-loading-track {
+.wspsc-loading-track {
   box-sizing: border-box;
   width: 100%;
   height: 14px;
@@ -452,21 +447,21 @@
   align-items: center;
 }
 
-.wspxp-loading-blocks {
+.wspsc-loading-blocks {
   display: flex;
   gap: 2px;
   height: 100%;
 }
 
-.wspxp-loading-blocks div {
+.wspsc-loading-blocks div {
   width: 8px;
   height: 100%;
   background: #0000a8;
   flex-shrink: 0;
 }
 
-/* Taskbar (START Active) */
-.wspxp-taskbar {
+/* Taskbar */
+.wspsc-taskbar {
   box-sizing: border-box;
   height: 32px;
   background: #9c9a9c;
@@ -483,14 +478,13 @@
   font-family: monospace, 'Courier New', sans-serif;
 }
 
-.wspxp-taskbar-left {
+.wspsc-taskbar-left {
   display: flex;
   gap: 4px;
   align-items: center;
 }
 
-/* ปุ่ม START ถูกกด (Sunken Style) */
-.wspxp-btn-start-active {
+.wspsc-btn-start-active {
   box-sizing: border-box;
   height: 22px;
   padding: 0 8px;
@@ -510,8 +504,7 @@
   user-select: none;
 }
 
-/* ปุ่ม HOME สถานะปกติ */
-.wspxp-btn-home-normal {
+.wspsc-btn-home-normal {
   box-sizing: border-box;
   height: 22px;
   padding: 0 8px;
@@ -531,7 +524,7 @@
   user-select: none;
 }
 
-.wspxp-btn-back {
+.wspsc-btn-back {
   box-sizing: border-box;
   height: 22px;
   padding: 0 8px;
