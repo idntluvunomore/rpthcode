@@ -2,15 +2,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const containers = document.querySelectorAll(".wspxp-card-layout");
   
   containers.forEach(container => {
-    const name1 = container.getAttribute("data-name1") || "MR. PROXY";
-    const status1 = container.getAttribute("data-status1") || "■ ONLINE";
-    const role1 = container.getAttribute("data-role1") || "customer service";
+    // ดึงข้อความตามคลาสที่กำหนดไว้
+    const n1 = container.querySelector(".c1-name");
+    const s1 = container.querySelector(".c1-status");
+    const r1 = container.querySelector(".c1-role");
 
-    const name2 = container.getAttribute("data-name2") || "MS. CIPHER";
-    const status2 = container.getAttribute("data-status2") || "■ ONLINE";
-    const role2 = container.getAttribute("data-role2") || "technician";
+    const n2 = container.querySelector(".c2-name");
+    const s2 = container.querySelector(".c2-status");
+    const r2 = container.querySelector(".c2-role");
 
-    const descHTML = container.innerHTML;
+    const desc = container.querySelector(".main-desc");
+
+    const name1 = n1 ? n1.innerHTML : "MR. PROXY";
+    const status1 = s1 ? s1.innerHTML : "■ ONLINE";
+    const role1 = r1 ? r1.innerHTML : "customer service";
+
+    const name2 = n2 ? n2.innerHTML : "MS. CIPHER";
+    const status2 = s2 ? s2.innerHTML : "■ ONLINE";
+    const role2 = r2 ? r2.innerHTML : "technician";
+
+    const descHTML = desc ? desc.innerHTML : container.innerHTML;
 
     container.innerHTML = `
       <div class="wspxp-container">
@@ -96,6 +107,8 @@ document.addEventListener("DOMContentLoaded", () => {
               <div class="wspxp-btn-back">BACK</div>
             </div>
           </div>
+
+
 
           <div class="wspxp-footer">Simon Kyle • Asteria Leuruna</div>
         </div>
