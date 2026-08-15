@@ -1,28 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
   const containers = document.querySelectorAll(".wspxp-card-layout");
-  
+
   containers.forEach(container => {
-    // ดึงข้อความตามคลาสที่กำหนดไว้
-    const n1 = container.querySelector(".c1-name");
-    const s1 = container.querySelector(".c1-status");
-    const r1 = container.querySelector(".c1-role");
+    // ดึงเฉพาะเนื้อหาใน .wspxp-content
+    const rawBox = container.querySelector(".wspxp-content");
+    const rawHTML = rawBox ? rawBox.innerHTML : container.innerHTML;
 
-    const n2 = container.querySelector(".c2-name");
-    const s2 = container.querySelector(".c2-status");
-    const r2 = container.querySelector(".c2-role");
+    // แยกข้อมูลด้วย Comment Marker
+    const getVal = (marker) => {
+      const regex = new RegExp(`<!--\\s*${marker}\\s*-->([\\s\\S]*?)<!--\\s*\\/${marker}\\s*-->`, 'i');
+      const match = rawHTML.match(regex);
+      return match ? match[1].trim() : '';
+    };
 
-    const desc = container.querySelector(".main-desc");
+    const name1 = getVal('name1') || "MR. PROXY";
+    const status1 = getVal('status1') || "■ ONLINE";
+    const role1 = getVal('role1') || "customer service";
 
-    const name1 = n1 ? n1.innerHTML : "MR. PROXY";
-    const status1 = s1 ? s1.innerHTML : "■ ONLINE";
-    const role1 = r1 ? r1.innerHTML : "customer service";
+    const name2 = getVal('name2') || "MS. CIPHER";
+    const status2 = getVal('status2') || "■ ONLINE";
+    const role2 = getVal('role2') || "technician";
 
-    const name2 = n2 ? n2.innerHTML : "MS. CIPHER";
-    const status2 = s2 ? s2.innerHTML : "■ ONLINE";
-    const role2 = r2 ? r2.innerHTML : "technician";
+    const descHTML = getVal('desc') || rawHTML;
 
-    const descHTML = desc ? desc.innerHTML : container.innerHTML;
-
+    // สร้างโครงสร้างหน้าต่างใหม่
     container.innerHTML = `
       <div class="wspxp-container">
         <div class="wspxp-bg">
@@ -107,8 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
               <div class="wspxp-btn-back">BACK</div>
             </div>
           </div>
-
-
 
           <div class="wspxp-footer">Simon Kyle • Asteria Leuruna</div>
         </div>
