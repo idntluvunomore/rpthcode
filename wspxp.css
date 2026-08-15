@@ -15,7 +15,7 @@
 .wspxp-bg {
   width: 100%;
   background: url(https://i.imgur.com/njpSbPJ.jpeg) center/cover no-repeat;
-  margin: 0 auto;
+  margin: 50 auto;
   box-sizing: border-box;
   padding: 100px;
 }
@@ -31,8 +31,8 @@
 }
 
 .wspxp-logo-wrap {
-  width: 90%;
-  margin: 0 auto 15px auto;
+  width: 80%;
+  margin: 0px auto 50px auto;
   text-align: center;
 }
 
@@ -50,7 +50,7 @@
   box-sizing: border-box;
   width: 70%;
   height: 380px;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
   background: #0055ea;
   border: 3px solid #0055ea;
   border-radius: 8px 8px 0 0;
