@@ -24,7 +24,7 @@
 .wspxp-bg::after {
   content: "Simon Kyle • Asteria Leuruna";
   position: absolute;
-  bottom: 20px;
+  bottom: 15px;
   left: 0;
   width: 100%;
   font-size: 10px;
@@ -54,7 +54,7 @@
   box-sizing: border-box;
   width: 70%;
   height: 380px;
-  margin: 0 auto 50px auto;
+  margin: 0 auto 150px auto;
   background: #0055ea;
   border: 3px solid #0055ea;
   border-radius: 8px 8px 0 0;
