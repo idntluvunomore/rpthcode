@@ -18,7 +18,7 @@
   width: 100%;
   min-width: 650px;
   background: url(https://i.imgur.com/njpSbPJ.jpeg) center/cover no-repeat;
-  margin: 150px auto;
+  margin: 0px auto;
   box-sizing: border-box;
   padding: 60px 20px 60px 20px; /* เพิ่มระยะ padding-bottom ขอบล่างภาพพื้นหลัง */
   position: relative;
