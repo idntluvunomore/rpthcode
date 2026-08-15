@@ -24,7 +24,6 @@
   position: relative;
 }
 
-/* ฝังเครดิต Footer */
 .wspsc-bg::after {
   content: "Simon Kyle • Asteria Leuruna";
   display: block;
@@ -53,7 +52,6 @@
   -webkit-user-drag: none;
 }
 
-/* หน้าต่าง Window */
 .wspsc-window {
   box-sizing: border-box;
   width: 580px;
@@ -155,7 +153,6 @@
   cursor: pointer;
 }
 
-/* พื้นที่ด้านใน (เฉพาะ Showcase เป็นแบบคอลัมน์ดิ่ง) */
 .wspsc-main {
   box-sizing: border-box;
   flex: 1;
@@ -174,7 +171,6 @@
   color: #434e40;
 }
 
-/* ================= WINAMP RETRO PLAYER ================= */
 .wspsc-player {
   box-sizing: border-box;
   width: 100%;
@@ -364,7 +360,6 @@
   line-height: 1;
 }
 
-/* Showcase Grid 6 ช่อง */
 .wspsc-showcase-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -382,11 +377,24 @@
   align-items: center;
   gap: 8px;
   height: 48px;
+  cursor: pointer;
+  transition: transform 0.05s ease, filter 0.05s ease;
+}
+
+.wspsc-cat-card:hover {
+  filter: brightness(1.05);
+}
+
+.wspsc-cat-card:active {
+  transform: translateY(1px);
 }
 
 .wspsc-cat-card.empty {
   border: 2px dashed #8e9a85;
   opacity: 0.5;
+  cursor: default;
+  filter: none;
+  transform: none;
 }
 
 .wspsc-cat-icon {
@@ -417,7 +425,6 @@
   white-space: nowrap;
 }
 
-/* Loading Bar */
 .wspsc-loading-wrap {
   width: 100%;
   margin-top: 6px;
@@ -460,7 +467,6 @@
   flex-shrink: 0;
 }
 
-/* Taskbar */
 .wspsc-taskbar {
   box-sizing: border-box;
   height: 32px;
