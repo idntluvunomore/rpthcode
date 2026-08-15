@@ -258,6 +258,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   width: 100%;
+  margin-top: 10px;
 }
 
 .wspxp-cat-card {
@@ -307,7 +308,7 @@
 /* แถบ Loading Bar XP */
 .wspxp-loading-wrap {
   width: 100%;
-  margin-top: 2px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   gap: 4px;
