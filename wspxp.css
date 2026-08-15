@@ -28,10 +28,9 @@
   color: #fff;
   opacity: 0.5;
   font-style: italic;
-  margin-top: 10px;
+  margin-top: 50px;
 }
 
-/* โลโก้ */
 .wspxp-logo-wrap {
   width: 90%;
   margin: 0 auto 15px auto;
@@ -48,7 +47,6 @@
   -webkit-user-drag: none;
 }
 
-/* กรอบหน้าต่าง Windows */
 .wspxp-window {
   box-sizing: border-box;
   width: 70%;
@@ -394,7 +392,6 @@
   top: 0;
 }
 
-/* Taskbar */
 .wspxp-taskbar {
   box-sizing: border-box;
   height: 32px;
