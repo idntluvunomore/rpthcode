@@ -382,7 +382,7 @@
   font-weight: bold;
   font-size: 12px;
   letter-spacing: 0.5px;
-  white-space: nowrap; /* ป้องกันตัวอักษร CATEGORIES ตัดคำแยกแถว */
+  white-space: nowrap;
 }
 
 .wspxp-scrollbar {
