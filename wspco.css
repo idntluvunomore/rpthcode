@@ -338,11 +338,11 @@
   scrollbar-width: none;
 }
 
-/* Taskbar */
+/* ================= WSPCO STATUS/TASKBAR ================= */
 .wspco-taskbar {
   box-sizing: border-box;
-  height: 32px;
-  background: #9c9a9c;
+  height: 30px;
+  background: #a6a4a6;
   border-top: 2px solid #dfdfdf;
   border-left: 2px solid #dfdfdf;
   border-right: 2px solid #000;
@@ -351,73 +351,60 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2px 4px;
+  padding: 0 4px;
   flex-shrink: 0;
   font-family: monospace, 'Courier New', sans-serif;
+  user-select: none;
 }
 
-.wspco-taskbar-left {
+.wspco-status-info {
+  font-size: 11px;
+  font-weight: bold;
+  color: #000000;
+  letter-spacing: 0.5px;
+  padding-left: 4px;
+}
+
+.wspco-taskbar-right {
   display: flex;
   gap: 4px;
   align-items: center;
 }
 
-.wspco-btn-start {
+.wspco-btn-shop {
   box-sizing: border-box;
-  height: 22px;
-  padding: 0 8px;
-  background: #9c9a9c;
-  border-top: 2px solid #fff;
-  border-left: 2px solid #fff;
-  border-right: 2px solid #404040;
-  border-bottom: 2px solid #404040;
+  height: 20px;
+  padding: 0 6px;
+  background: #a6a4a6;
+  border-top: 1.5px solid #fff;
+  border-left: 1.5px solid #fff;
+  border-right: 1.5px solid #404040;
+  border-bottom: 1.5px solid #404040;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 900;
-  font-size: 12px;
-  color: #2e263d;
+  font-weight: bold;
+  font-size: 11px;
+  color: #000000;
   cursor: pointer;
-  letter-spacing: 1px;
-  user-select: none;
+  letter-spacing: 0.5px;
 }
 
 .wspco-btn-home {
   box-sizing: border-box;
-  height: 22px;
-  padding: 0 8px;
-  background: #888688;
-  border-top: 2px solid #404040;
-  border-left: 2px solid #404040;
-  border-right: 2px solid #fff;
-  border-bottom: 2px solid #fff;
+  height: 20px;
+  padding: 0 6px;
+  background: #a6a4a6;
+  border-top: 1.5px solid #fff;
+  border-left: 1.5px solid #fff;
+  border-right: 1.5px solid #404040;
+  border-bottom: 1.5px solid #404040;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 900;
-  font-size: 12px;
-  color: #2e263d;
+  font-weight: bold;
+  font-size: 11px;
+  color: #000000;
   cursor: pointer;
-  letter-spacing: 1px;
-  user-select: none;
-}
-
-.wspco-btn-back {
-  box-sizing: border-box;
-  height: 22px;
-  padding: 0 8px;
-  background: #9c9a9c;
-  border-top: 2px solid #fff;
-  border-left: 2px solid #fff;
-  border-right: 2px solid #404040;
-  border-bottom: 2px solid #404040;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 12px;
-  color: #2e263d;
-  cursor: pointer;
-  letter-spacing: 1px;
-  user-select: none;
+  letter-spacing: 0.5px;
 }
