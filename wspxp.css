@@ -10,7 +10,7 @@
   min-width: 650px;
   box-sizing: border-box;
   margin: auto;
-  overflow-x: auto; /* ป้องกันจอแคบบีบจนกล่องพัง */
+  overflow-x: auto;
   scrollbar-width: none;
 }
 
@@ -20,15 +20,15 @@
   background: url(https://i.imgur.com/njpSbPJ.jpeg) center/cover no-repeat;
   margin: 0px auto;
   box-sizing: border-box;
-  padding: 60px 20px 60px 20px; /* เพิ่มระยะ padding-bottom ขอบล่างภาพพื้นหลัง */
+  padding: 60px 20px 60px 20px; 
   position: relative;
 }
 
 .wspxp-bg::after {
   content: "Simon Kyle • Asteria Leuruna";
-  display: block; /* ให้อยู่ใต้หน้าต่างแบบปกติ */
-  position: static; /* ปิด absolute เพื่อให้อยู่ข้างในภาพพื้นหลัง */
-  margin-top: 300px; /* ปรับตัวเลขนี้ตามความห่างที่ต้องการ (ยิ่งเยอะยิ่งเว้นลงไปมาก) */
+  display: block;
+  position: static; 
+  margin-top: 250px;
   font-size: 10px;
   text-align: center;
   color: #fff;
@@ -170,10 +170,9 @@
   color: #434e40;
 }
 
-/* คอลัมน์ซ้าย */
 .wspxp-col-left {
   box-sizing: border-box;
-  width: 260px; /* ล็อกขนาดคอลัมน์ซ้าย */
+  width: 260px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -221,7 +220,7 @@
 .wspxp-card-info {
   display: flex;
   flex-direction: column;
-  white-space: nowrap; /* ป้องกันข้อความชื่อ/ตำแหน่งตกบรรทัด */
+  white-space: nowrap;
 }
 
 .wspxp-card-name {
@@ -257,10 +256,9 @@
   font-family: 'WSPpixel', monospace, sans-serif;
 }
 
-/* คอลัมน์ขวา */
 .wspxp-col-right {
   box-sizing: border-box;
-  width: 250px; /* ล็อกขนาดคอลัมน์ขวา */
+  width: 250px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
