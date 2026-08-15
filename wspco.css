@@ -24,7 +24,6 @@
   position: relative;
 }
 
-/* ฝังเครดิต Footer */
 .wspco-bg::after {
   content: "Simon Kyle • Asteria Leuruna";
   display: block;
@@ -53,7 +52,6 @@
   -webkit-user-drag: none;
 }
 
-/* หน้าต่าง Window */
 .wspco-window {
   box-sizing: border-box;
   width: 580px;
@@ -155,7 +153,6 @@
   cursor: pointer;
 }
 
-/* แถบ Address Bar */
 .wspco-address-bar {
   box-sizing: border-box;
   height: 26px;
@@ -230,7 +227,6 @@
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='7' fill='%2322a33c'/><path fill='%23fff' d='M6 4.5l5 3.5-5 3.5v-7z'/></svg>") center/contain no-repeat;
 }
 
-/* พื้นที่แสดงไอเทม: 2 คอลัมน์ (2x3) */
 .wspco-main {
   box-sizing: border-box;
   flex: 1;
@@ -263,7 +259,6 @@
   border-bottom: 1px solid #7f9db9;
 }
 
-/* การ์ดไอเทม */
 .wspco-item-card {
   box-sizing: border-box;
   background: #d7e0ce;
@@ -276,7 +271,6 @@
   scroll-snap-align: start;
 }
 
-/* กรอบแสดงภาพไอเทมทรงจัตุรัส */
 .wspco-item-imgbox {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -341,7 +335,6 @@
   scrollbar-width: none;
 }
 
-/* ================= WSPCO STATUS/TASKBAR ================= */
 .wspco-taskbar {
   box-sizing: border-box;
   height: 30px;
