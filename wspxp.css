@@ -5,145 +5,169 @@
   font-style: normal;
 }
 
-/* พื้นหลังหลัก + กล่องครอบ */
-.wspxp {
+/* พื้นหลังและกล่องหลัก */
+.wspxp-container {
   max-width: 1200px;
   min-width: 650px;
   box-sizing: border-box;
   margin: auto;
-  background: url(https://i.imgur.com/njpSbPJ.jpeg) center/cover no-repeat;
-  padding: 100px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: monospace, 'Courier New', sans-serif;
 }
 
-/* ล็อกโลโก้ด้านบน */
-.wspxp::before {
-  content: "";
-  display: block;
-  width: 500px;
-  max-width: 90%;
-  height: 90px;
-  margin-bottom: 15px;
-  background: url(https://i.imgur.com/euKLhSp.png) center/contain no-repeat;
+.wspxp-bg {
+  width: 100%;
+  background: url(https://i.imgur.com/njpSbPJ.jpeg) center/cover no-repeat;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 100px;
+}
+
+.wspxp-logo-wrap {
+  width: 90%;
+  margin: 0 auto 15px auto;
+  text-align: center;
+}
+
+.wspxp-logo-img {
   filter: drop-shadow(0px 1px 5px #555);
+  max-width: 500px;
+  height: auto;
+  display: inline-block;
   pointer-events: none;
   user-select: none;
+  -webkit-user-drag: none;
 }
 
-/* ล็อกเครดิต Footer */
-.wspxp::after {
-  content: "Simon Kyle • Asteria Leuruna";
-  display: block;
-  font-size: 10px;
-  text-align: center;
-  color: #fff;
-  opacity: 0.5;
-  font-style: italic;
-  margin-top: 10px;
-}
-
-/* กรอบหน้าต่าง Windows XP + ล็อก Titlebar / Menubar / Taskbar */
+/* หน้าต่าง Window */
 .wspxp-window {
   box-sizing: border-box;
   width: 70%;
-  min-width: 550px;
   height: 380px;
   margin: 0 auto;
-  background-color: #c2ceba;
+  background: #0055ea;
   border: 3px solid #0055ea;
   border-radius: 8px 8px 0 0;
   box-shadow: 2px 4px 15px rgba(0,0,0,0.4);
-  position: relative;
-  overflow: hidden;
-  padding: 62px 17px 44px 17px;
+  display: flex;
+  flex-direction: column;
+  font-family: Tahoma, 'Segoe UI', sans-serif;
 }
 
-/* ล็อก Titlebar และ Menubar ด้านบน */
-.wspxp-window::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50px;
-  background-color: #ece9d8;
-  background-image: 
-    /* ปุ่ม 3 ปุ่ม */
-    linear-gradient(to right, #388cfc, #1066e6),
-    linear-gradient(to right, #388cfc, #1066e6),
-    linear-gradient(180deg, #f27258 0%, #d83a1b 50%, #b82307 100%),
-    /* Titlebar ไล่สี */
-    linear-gradient(180deg, #0058ee 0%, #3593ff 4%, #288eff 6%, #1277ef 8%, #0055ea 14%, #0055ea 68%, #0d6cf5 84%, #0055ea 100%);
-  background-repeat: no-repeat;
-  background-size: 
-    21px 21px, 
-    21px 21px, 
-    21px 21px, 
-    100% 30px;
-  background-position: 
-    calc(100% - 54px) 4px, 
-    calc(100% - 29px) 4px, 
-    calc(100% - 4px) 4px, 
-    top left;
-  border-bottom: 1px solid #919b9c;
-  z-index: 5;
-}
-
-/* ล็อก Taskbar ด้านล่าง (START, HOME, BACK) */
-.wspxp-window::after {
-  content: "START   HOME                                   BACK";
+/* Title Bar */
+.wspxp-titlebar {
   box-sizing: border-box;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 32px;
-  background: #9c9a9c;
-  border-top: 2px solid #dfdfdf;
-  border-left: 2px solid #dfdfdf;
-  border-right: 2px solid #000;
-  border-bottom: 2px solid #000;
+  height: 30px;
+  background: linear-gradient(180deg, #0058ee 0%, #3593ff 4%, #288eff 6%, #1277ef 8%, #0055ea 14%, #0055ea 68%, #0d6cf5 84%, #0055ea 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6px 0 10px;
+  border-radius: 6px 6px 0 0;
+  flex-shrink: 0;
+}
+
+.wspxp-title-space {
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  text-shadow: 1px 1px #0f3d7a;
+  letter-spacing: 0.5px;
+}
+
+.wspxp-controls {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.wspxp-btn-ctrl {
+  width: 21px;
+  height: 21px;
+  background: linear-gradient(180deg, #388cfc 0%, #1066e6 100%);
+  border: 1px solid #fff;
+  border-radius: 3px;
+  box-shadow: inset 0 1px rgba(255,255,255,0.6);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 12px;
-  font-weight: 900;
-  font-size: 12px;
-  color: #2e263d;
-  letter-spacing: 1px;
-  user-select: none;
-  z-index: 5;
+  justify-content: center;
 }
 
-/* คอลัมน์ซ้าย */
-.wspxp-left {
+.wspxp-ico-min {
+  width: 8px;
+  height: 2px;
+  background: #fff;
+  margin-top: 6px;
+}
+
+.wspxp-ico-max {
+  width: 9px;
+  height: 8px;
+  border: 1px solid #fff;
+  border-top-width: 2px;
+}
+
+.wspxp-btn-close {
+  width: 21px;
+  height: 21px;
+  background: linear-gradient(180deg, #f27258 0%, #d83a1b 50%, #b82307 100%);
+  border: 1px solid #fff;
+  border-radius: 3px;
+  box-shadow: inset 0 1px rgba(255,255,255,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* Menu Bar */
+.wspxp-menubar {
+  box-sizing: border-box;
+  height: 20px;
+  background: #ece9d8;
+  border-bottom: 1px solid #919b9c;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 8px;
+  font-size: 11px;
+  color: #000;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.wspxp-menubar span {
+  cursor: pointer;
+}
+
+/* พื้นที่ด้านใน */
+.wspxp-main {
+  box-sizing: border-box;
+  flex: 1;
+  background: #c2ceba;
+  border: 2px solid #7f9db9;
+  border-top: 1px solid #7f9db9;
+  margin: 0 1px 0 1px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 12px 17px;
+  display: flex;
+  gap: 12px;
+  font-family: monospace, sans-serif;
+  color: #434e40;
+}
+
+/* ฝั่งซ้าย */
+.wspxp-col-left {
   box-sizing: border-box;
   width: 52%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  position: relative;
-  z-index: 2;
 }
 
-/* ล็อกคอลัมน์ขวาทั้งหมด (ถาดสี + หมวดหมู่ + ไอคอน + สกอบาร์) */
-.wspxp-left::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: calc(100% + 12px);
-  width: 90%;
-  height: 100%;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='230' height='265' viewBox='0 0 230 265'><rect x='0' y='0' width='230' height='34' fill='%23d4d0c8' stroke='%23808080' stroke-width='2'/><rect x='4' y='3' width='26' height='26' fill='%23d4d0c8' stroke='%23808080' stroke-width='1'/><rect x='6' y='5' width='11' height='11' fill='%23000'/><rect x='13' y='12' width='11' height='11' fill='%23fff' stroke='%23808080' stroke-width='1'/><g transform='translate(35, 4)'><rect x='0' y='0' width='12' height='11' fill='%23000'/><rect x='13' y='0' width='12' height='11' fill='%23808080'/><rect x='26' y='0' width='12' height='11' fill='%23800000'/><rect x='39' y='0' width='12' height='11' fill='%23808000'/><rect x='52' y='0' width='12' height='11' fill='%23008000'/><rect x='65' y='0' width='12' height='11' fill='%23008080'/><rect x='78' y='0' width='12' height='11' fill='%23000080'/><rect x='91' y='0' width='12' height='11' fill='%23800080'/><rect x='104' y='0' width='12' height='11' fill='%23808040'/><rect x='117' y='0' width='12' height='11' fill='%23004040'/><rect x='130' y='0' width='12' height='11' fill='%230080ff'/><rect x='143' y='0' width='12' height='11' fill='%23004080'/><rect x='156' y='0' width='12' height='11' fill='%234000ff'/><rect x='169' y='0' width='12' height='11' fill='%23804000'/><rect x='0' y='13' width='12' height='11' fill='%23fff'/><rect x='13' y='13' width='12' height='11' fill='%23c0c0c0'/><rect x='26' y='13' width='12' height='11' fill='%23ff0000'/><rect x='39' y='13' width='12' height='11' fill='%23ffff00'/><rect x='52' y='13' width='12' height='11' fill='%2300ff00'/><rect x='65' y='13' width='12' height='11' fill='%2300ffff'/><rect x='78' y='13' width='12' height='11' fill='%230000ff'/><rect x='91' y='13' width='12' height='11' fill='%23ff00ff'/><rect x='104' y='13' width='12' height='11' fill='%23ffff80'/><rect x='117' y='13' width='12' height='11' fill='%2300ff80'/><rect x='130' y='13' width='12' height='11' fill='%2380ffff'/><rect x='143' y='13' width='12' height='11' fill='%238080ff'/><rect x='156' y='13' width='12' height='11' fill='%23ff0080'/><rect x='169' y='13' width='12' height='11' fill='%23ff8040'/></g><text x='10' y='52' fill='%23434e40' font-family='monospace' font-size='12' font-weight='bold'>∨ CATEGORIES</text><g transform='translate(10, 60)'><rect x='0' y='0' width='26' height='26' fill='%23d7e0ce' stroke='%238e9a85' stroke-width='2'/><image href='https://i.imgur.com/2qB8hQS.png' x='4' y='4' width='18' height='18'/><text x='35' y='18' fill='%23434e40' font-family='monospace' font-size='11' font-weight='bold'>MAINTENANCE</text><rect x='0' y='34' width='26' height='26' fill='%23d7e0ce' stroke='%238e9a85' stroke-width='2'/><image href='https://i.imgur.com/5fD2uBO.png' x='4' y='38' width='18' height='18'/><text x='35' y='52' fill='%23434e40' font-family='monospace' font-size='11' font-weight='bold'>NETWORKING</text><rect x='0' y='68' width='26' height='26' fill='%23d7e0ce' stroke='%238e9a85' stroke-width='2'/><image href='https://i.imgur.com/uc6kjTG.png' x='4' y='72' width='18' height='18'/><text x='35' y='86' fill='%23434e40' font-family='monospace' font-size='11' font-weight='bold'>DEPLOYMENT</text><rect x='0' y='102' width='26' height='26' fill='%23d7e0ce' stroke='%238e9a85' stroke-width='2'/><image href='https://i.imgur.com/ylZDXuY.png' x='4' y='106' width='18' height='18'/><text x='35' y='120' fill='%23434e40' font-family='monospace' font-size='11' font-weight='bold'>PERIPHERALS</text><rect x='0' y='136' width='26' height='26' fill='%23d7e0ce' stroke='%238e9a85' stroke-width='2'/><image href='https://i.imgur.com/yLlIdL1.png' x='4' y='140' width='18' height='18'/><text x='35' y='154' fill='%23434e40' font-family='monospace' font-size='11' font-weight='bold'>DOCUMENTATION</text><rect x='210' y='0' width='6' height='162' rx='3' fill='%238e9a85'/><rect x='210' y='0' width='6' height='35' rx='2' fill='%235c6854'/></g></svg>") no-repeat top left;
-  background-size: contain;
-  pointer-events: none;
-}
-
-/* Card สไตล์ */
 .wspxp-card {
   box-sizing: border-box;
   background: #d7e0ce;
@@ -152,75 +176,306 @@
   display: flex;
   gap: 8px;
   align-items: center;
-  min-height: 60px;
 }
 
-/* รูปและ Overlay Card 1 */
-.wspxp-c1::before {
-  content: "";
+.wspxp-card-avatar {
   width: 46px;
   height: 46px;
-  background: 
-    url(https://i.imgur.com/7vymGa3.png) center/cover,
-    url(https://i.pinimg.com/1200x/14/fb/c3/14fbc355108a4ec2b1d66b781fad4bdb.jpg) center/cover;
-  background-blend-mode: multiply;
+  background: #3d344d;
   border: 2px solid #8e9a85;
-  box-sizing: border-box;
   flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
 }
 
-/* รูปและ Overlay Card 2 */
-.wspxp-c2::before {
-  content: "";
-  width: 46px;
-  height: 46px;
-  background: 
-    url(https://i.imgur.com/7vymGa3.png) center/cover,
-    url(https://i.pinimg.com/736x/8b/5d/6b/8b5d6b84b03760dcdec1ab78d3608aef.jpg) center/cover;
-  background-blend-mode: multiply;
-  border: 2px solid #8e9a85;
-  box-sizing: border-box;
-  flex-shrink: 0;
+.wspxp-card-avatar img:first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.wspxp-info {
+.wspxp-card-avatar .wspxp-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.wspxp-card-info {
   display: flex;
   flex-direction: column;
 }
 
-.wspxp-name {
+.wspxp-card-name {
   font-weight: bold;
   font-size: 13px;
   letter-spacing: 0.5px;
-  color: #434e40;
 }
 
-.wspxp-status {
+.wspxp-card-status {
   font-size: 10px;
   color: #438753;
   font-weight: bold;
   margin-top: -2px;
 }
 
-.wspxp-role {
+.wspxp-card-role {
   font-size: 10px;
   opacity: 0.8;
   margin-top: -3px;
-  color: #434e40;
 }
 
-/* กล่องข้อความรายละเอียดพร้อมฟอนต์ */
-.wspxp-desc {
+.wspxp-desc-box {
   box-sizing: border-box;
   height: 100px;
   background: #d7e0ce;
   border: 2px solid #8e9a85;
   padding: 8px;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.4;
   overflow-y: auto;
   text-align: justify;
   scrollbar-width: none;
   font-family: 'WSPpixel', monospace, sans-serif;
-  color: #434e40;
+}
+
+/* ฝั่งขวา */
+.wspxp-col-right {
+  box-sizing: border-box;
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wspxp-palette-bar {
+  box-sizing: border-box;
+  width: 100%;
+  background: #d4d0c8;
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  padding: 3px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.wspxp-palette-active {
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  background: #d4d0c8;
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.wspxp-sq-black {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  background: #000;
+  z-index: 2;
+  border: 1px solid #fff;
+}
+
+.wspxp-sq-white {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  z-index: 1;
+  border: 1px solid #808080;
+}
+
+.wspxp-palette-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: repeat(2, 12px);
+  gap: 1px;
+}
+
+.wspxp-palette-grid div {
+  box-sizing: border-box;
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.wspxp-cat-title {
+  font-weight: bold;
+  font-size: 13px;
+  margin: 2px 10px;
+}
+
+.wspxp-cat-wrap {
+  display: flex;
+  gap: 4px;
+  margin-left: 10px;
+}
+
+.wspxp-cat-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wspxp-cat-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wspxp-cat-icon {
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  background: #d7e0ce;
+  border: 2px solid #8e9a85;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.wspxp-cat-icon img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  display: block;
+  image-rendering: pixelated;
+}
+
+.wspxp-cat-name {
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.wspxp-scrollbar {
+  width: 6px;
+  background: #8e9a85;
+  border: 1px solid #73806b;
+  border-radius: 3px;
+  position: relative;
+}
+
+.wspxp-scrollbar-thumb {
+  width: 100%;
+  height: 35px;
+  background: #5c6854;
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+}
+
+/* Taskbar ล่าง */
+.wspxp-taskbar {
+  box-sizing: border-box;
+  height: 32px;
+  background: #9c9a9c;
+  border-top: 2px solid #dfdfdf;
+  border-left: 2px solid #dfdfdf;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  margin: 0 1px 1px 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 4px;
+  flex-shrink: 0;
+  font-family: monospace, 'Courier New', sans-serif;
+}
+
+.wspxp-taskbar-left {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.wspxp-btn-start {
+  box-sizing: border-box;
+  height: 22px;
+  padding: 0 8px;
+  background: #9c9a9c;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 12px;
+  color: #2e263d;
+  cursor: pointer;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.wspxp-btn-home {
+  box-sizing: border-box;
+  height: 22px;
+  padding: 0 8px;
+  background: #888688;
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 12px;
+  color: #2e263d;
+  cursor: pointer;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.wspxp-btn-back {
+  box-sizing: border-box;
+  height: 22px;
+  padding: 0 8px;
+  background: #9c9a9c;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 12px;
+  color: #2e263d;
+  cursor: pointer;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.wspxp-footer {
+  font-size: 10px;
+  text-align: center;
+  color: #fff;
+  opacity: 0.5;
+  font-style: italic;
+  margin-top: 10px;
 }
