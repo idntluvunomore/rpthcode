@@ -245,6 +245,8 @@
   gap: 10px;
   font-family: monospace, sans-serif;
   color: #434e40;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 .wspco-main::-webkit-scrollbar {
@@ -271,6 +273,7 @@
   flex-direction: column;
   gap: 6px;
   width: 100%;
+  scroll-snap-align: start;
 }
 
 /* กรอบแสดงภาพไอเทมทรงจัตุรัส */
