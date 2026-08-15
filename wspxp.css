@@ -16,20 +16,19 @@
 
 .wspxp-bg {
   width: 100%;
-  min-width: 650px; /* ล็อกความกว้างพื้นหลังไม่ให้หดเกินไป */
+  min-width: 650px;
   background: url(https://i.imgur.com/njpSbPJ.jpeg) center/cover no-repeat;
   margin: 50px auto;
   box-sizing: border-box;
-  padding: 60px 20px 80px 20px; /* ลดระยะ padding ด้านข้างไม่ให้ดันหน้าต่าง */
+  padding: 60px 20px 60px 20px; /* เพิ่มระยะ padding-bottom ขอบล่างภาพพื้นหลัง */
   position: relative;
 }
 
 .wspxp-bg::after {
   content: "Simon Kyle • Asteria Leuruna";
-  position: absolute;
-  bottom: 25px;
-  left: 0;
-  width: 100%;
+  display: block; /* ให้อยู่ใต้หน้าต่างแบบปกติ */
+  position: static; /* ปิด absolute เพื่อให้อยู่ข้างในภาพพื้นหลัง */
+  margin-top: 300px; /* ปรับตัวเลขนี้ตามความห่างที่ต้องการ (ยิ่งเยอะยิ่งเว้นลงไปมาก) */
   font-size: 10px;
   text-align: center;
   color: #fff;
@@ -57,7 +56,7 @@
   box-sizing: border-box;
   width: 580px;
   height: 380px;
-  margin: 0 auto 200px auto;
+  margin: 0 auto;
   background: #0055ea;
   border: 3px solid #0055ea;
   border-radius: 8px 8px 0 0;
