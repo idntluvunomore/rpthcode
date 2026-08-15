@@ -1,0 +1,434 @@
+@font-face {
+  font-family: 'WSPpixel';
+  src: url('https://cdn.jsdelivr.net/gh/idntluvunomore/rpthcode@main/WSPpixel.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.wspxp-container {
+  max-width: 1200px;
+  min-width: 650px;
+  box-sizing: border-box;
+  margin: auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.wspxp-bg {
+  width: 100%;
+  min-width: 650px;
+  background: url(https://i.imgur.com/njpSbPJ.jpeg) center/cover no-repeat;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 60px 20px 60px 20px; 
+  position: relative;
+}
+
+/* ฝังเครดิต Footer */
+.wspxp-bg::after {
+  content: "Simon Kyle • Asteria Leuruna";
+  display: block;
+  position: static; 
+  margin-top: 150px;
+  font-size: 10px;
+  text-align: center;
+  color: #fff;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.wspxp-logo-wrap {
+  width: 100%;
+  margin: 100px auto 100px auto;
+  text-align: center;
+}
+
+.wspxp-logo-img {
+  filter: drop-shadow(0px 1px 5px #555);
+  max-width: 500px;
+  height: auto;
+  display: inline-block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* หน้าต่าง Window */
+.wspxp-window {
+  box-sizing: border-box;
+  width: 580px;
+  min-height: 420px;
+  margin: 0 auto;
+  background: #0055ea;
+  border: 3px solid #0055ea;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 2px 4px 15px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  font-family: Tahoma, 'Segoe UI', sans-serif;
+}
+
+.wspxp-titlebar {
+  box-sizing: border-box;
+  height: 30px;
+  background: linear-gradient(180deg, #0058ee 0%, #3593ff 4%, #288eff 6%, #1277ef 8%, #0055ea 14%, #0055ea 68%, #0d6cf5 84%, #0055ea 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6px 0 10px;
+  border-radius: 6px 6px 0 0;
+  flex-shrink: 0;
+}
+
+.wspxp-title-space {
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  text-shadow: 1px 1px #0f3d7a;
+  letter-spacing: 0.5px;
+}
+
+.wspxp-controls {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.wspxp-btn-ctrl {
+  width: 21px;
+  height: 21px;
+  background: linear-gradient(180deg, #388cfc 0%, #1066e6 100%);
+  border: 1px solid #fff;
+  border-radius: 3px;
+  box-shadow: inset 0 1px rgba(255,255,255,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wspxp-ico-min {
+  width: 8px;
+  height: 2px;
+  background: #fff;
+  margin-top: 6px;
+}
+
+.wspxp-ico-max {
+  width: 9px;
+  height: 8px;
+  border: 1px solid #fff;
+  border-top-width: 2px;
+}
+
+.wspxp-btn-close {
+  width: 21px;
+  height: 21px;
+  background: linear-gradient(180deg, #f27258 0%, #d83a1b 50%, #b82307 100%);
+  border: 1px solid #fff;
+  border-radius: 3px;
+  box-shadow: inset 0 1px rgba(255,255,255,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.wspxp-menubar {
+  box-sizing: border-box;
+  height: 20px;
+  background: #ece9d8;
+  border-bottom: 1px solid #919b9c;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 8px;
+  font-size: 11px;
+  color: #000;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.wspxp-menubar span {
+  cursor: pointer;
+}
+
+/* เนื้อหาหลัก */
+.wspxp-main {
+  box-sizing: border-box;
+  flex: 1;
+  background: #c2ceba;
+  border: 2px solid #7f9db9;
+  border-top: 1px solid #7f9db9;
+  margin: 0 1px 0 1px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: monospace, sans-serif;
+  color: #434e40;
+}
+
+/* กล่อง Music Player (Winamp Style) */
+.wspxp-player {
+  box-sizing: border-box;
+  width: 100%;
+  background: #d4d0c8;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.wspxp-player-screen {
+  background: #000;
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  padding: 4px 8px;
+  color: #00ff00;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'WSPpixel', monospace, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.wspxp-player-info {
+  display: flex;
+  gap: 8px;
+  font-size: 10px;
+  color: #555;
+  padding: 0 2px;
+}
+
+.wspxp-player-bar-wrap {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.wspxp-trackbar {
+  flex: 1;
+  height: 10px;
+  background: #a0a0a0;
+  border-top: 1px solid #555;
+  border-left: 1px solid #555;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  position: relative;
+}
+
+.wspxp-track-thumb {
+  position: absolute;
+  top: -2px;
+  left: 30%;
+  width: 18px;
+  height: 12px;
+  background: #c0c0e0;
+  border: 1px solid #404060;
+}
+
+.wspxp-player-btn {
+  font-size: 9px;
+  font-weight: bold;
+  padding: 1px 4px;
+  background: #d4d0c8;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #808080;
+  border-bottom: 1px solid #808080;
+  cursor: pointer;
+}
+
+/* ตารางหมวดหมู่ 6 ช่อง (2 แถว แถวละ 3 ช่อง) */
+.wspxp-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+.wspxp-cat-card {
+  box-sizing: border-box;
+  background: #d7e0ce;
+  border: 2px solid #8e9a85;
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+}
+
+.wspxp-cat-card.empty {
+  border: 2px dashed #8e9a85;
+  opacity: 0.5;
+}
+
+.wspxp-cat-icon {
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  background: #d7e0ce;
+  border: 2px solid #8e9a85;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.wspxp-cat-icon img {
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+  display: block;
+  image-rendering: pixelated;
+}
+
+.wspxp-cat-name {
+  font-weight: bold;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* แถบ Loading Bar XP */
+.wspxp-loading-wrap {
+  width: 100%;
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wspxp-loading-txt {
+  font-size: 11px;
+  color: #2b3329;
+  font-weight: bold;
+}
+
+.wspxp-loading-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 14px;
+  background: #d7e0ce;
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 1px;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.wspxp-loading-blocks {
+  display: flex;
+  gap: 2px;
+  height: 100%;
+}
+
+.wspxp-loading-blocks div {
+  width: 8px;
+  height: 100%;
+  background: #0000a8;
+  flex-shrink: 0;
+}
+
+/* Taskbar (START Active) */
+.wspxp-taskbar {
+  box-sizing: border-box;
+  height: 32px;
+  background: #9c9a9c;
+  border-top: 2px solid #dfdfdf;
+  border-left: 2px solid #dfdfdf;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  margin: 0 1px 1px 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 4px;
+  flex-shrink: 0;
+  font-family: monospace, 'Courier New', sans-serif;
+}
+
+.wspxp-taskbar-left {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+/* ปุ่ม START ถูกกด (Sunken Style) */
+.wspxp-btn-start-active {
+  box-sizing: border-box;
+  height: 22px;
+  padding: 0 8px;
+  background: #888688;
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 12px;
+  color: #2e263d;
+  cursor: pointer;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+/* ปุ่ม HOME สถานะปกติ */
+.wspxp-btn-home-normal {
+  box-sizing: border-box;
+  height: 22px;
+  padding: 0 8px;
+  background: #9c9a9c;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 12px;
+  color: #2e263d;
+  cursor: pointer;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.wspxp-btn-back {
+  box-sizing: border-box;
+  height: 22px;
+  padding: 0 8px;
+  background: #9c9a9c;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 12px;
+  color: #2e263d;
+  cursor: pointer;
+  letter-spacing: 1px;
+  user-select: none;
+}
