@@ -1,11 +1,10 @@
 @font-face {
   font-family: 'WSPpixel';
-  src: url('https://cdn.jsdelivr.net/gh/idntluvunomore/rpthcode@main/WSPpixel.ttf') format('ttf');
+  src: url('https://cdn.jsdelivr.net/gh/idntluvunomore/rpthcode@main/WSPpixel.ttf') format('truetype');
   font-weight: normal;
-  font-display: swap;
+  font-style: normal;
 }
 
-/* wspxp.css */
 .wspxp {
   max-width: 1200px;
   min-width: 650px;
@@ -49,68 +48,24 @@
   box-shadow: 2px 4px 15px rgba(0,0,0,0.4);
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
-.wspxp-titlebar {
+.wspxp-window::before {
+  content: "— □ ✕";
   box-sizing: border-box;
   height: 30px;
   background: linear-gradient(180deg, #0058ee 0%, #3593ff 4%, #288eff 6%, #1277ef 8%, #0055ea 14%, #0055ea 68%, #0d6cf5 84%, #0055ea 100%);
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 6px 0 10px;
+  padding: 0 10px;
   border-radius: 6px 6px 0 0;
-  flex-shrink: 0;
-}
-
-.wspxp-controls {
-  display: flex;
-  gap: 2px;
-  align-items: center;
-}
-
-.wspxp-btn-min, .wspxp-btn-max {
-  width: 21px;
-  height: 21px;
-  background: linear-gradient(180deg, #388cfc 0%, #1066e6 100%);
-  border: 1px solid #fff;
-  border-radius: 3px;
-  box-shadow: inset 0 1px rgba(255,255,255,0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.wspxp-btn-close {
-  width: 21px;
-  height: 21px;
-  background: linear-gradient(180deg, #f27258 0%, #d83a1b 50%, #b82307 100%);
-  border: 1px solid #fff;
-  border-radius: 3px;
-  box-shadow: inset 0 1px rgba(255,255,255,0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: #fff;
   font-size: 11px;
   font-weight: bold;
-  line-height: 1;
-}
-
-.wspxp-menubar {
-  box-sizing: border-box;
-  height: 20px;
-  background: #ece9d8;
-  border-bottom: 1px solid #919b9c;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 0 8px;
-  font-size: 11px;
-  color: #000;
+  letter-spacing: 6px;
   flex-shrink: 0;
-  user-select: none;
-  font-family: Tahoma, 'Segoe UI', sans-serif;
 }
 
 .wspxp-content-area {
@@ -120,13 +75,30 @@
   border: 2px solid #7f9db9;
   border-top: 1px solid #7f9db9;
   margin: 0 1px 0 1px;
-  overflow-y: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding: 12px 17px;
+  overflow: hidden;
+  padding: 32px 17px 12px 17px;
   display: flex;
   gap: 12px;
-  color: #434e40;
+  position: relative;
+}
+
+.wspxp-content-area::before {
+  content: "File   Edit   View   Image   Options   Help";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: #ece9d8;
+  border-bottom: 1px solid #919b9c;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  font-size: 11px;
+  color: #000;
+  font-family: Tahoma, 'Segoe UI', sans-serif;
+  letter-spacing: 1px;
+  z-index: 5;
 }
 
 .wspxp-left-col {
@@ -135,6 +107,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  z-index: 2;
 }
 
 .wspxp-card {
@@ -145,32 +118,31 @@
   display: flex;
   gap: 8px;
   align-items: center;
+  min-height: 60px;
 }
 
-.wspxp-avatar-1, .wspxp-avatar-2 {
+.wspxp-card-1::before {
+  content: "";
   width: 46px;
   height: 46px;
-  background-color: #3d344d;
+  background: 
+    url(https://i.imgur.com/7vymGa3.png) center/cover,
+    url(https://i.pinimg.com/1200x/14/fb/c3/14fbc355108a4ec2b1d66b781fad4bdb.jpg) center/cover;
+  background-blend-mode: multiply;
   border: 2px solid #8e9a85;
   flex-shrink: 0;
-  position: relative;
-  background-size: cover;
-  background-position: center;
 }
 
-.wspxp-avatar-1 { background-image: url(https://i.pinimg.com/1200x/14/fb/c3/14fbc355108a4ec2b1d66b781fad4bdb.jpg); }
-.wspxp-avatar-2 { background-image: url(https://i.pinimg.com/736x/8b/5d/6b/8b5d6b84b03760dcdec1ab78d3608aef.jpg); }
-
-.wspxp-avatar-1::after, .wspxp-avatar-2::after {
+.wspxp-card-2::before {
   content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url(https://i.imgur.com/7vymGa3.png) center/cover;
-  mix-blend-mode: multiply;
-  pointer-events: none;
+  width: 46px;
+  height: 46px;
+  background: 
+    url(https://i.imgur.com/7vymGa3.png) center/cover,
+    url(https://i.pinimg.com/736x/8b/5d/6b/8b5d6b84b03760dcdec1ab78d3608aef.jpg) center/cover;
+  background-blend-mode: multiply;
+  border: 2px solid #8e9a85;
+  flex-shrink: 0;
 }
 
 .wspxp-card-info {
@@ -178,37 +150,40 @@
   flex-direction: column;
 }
 
-.wspxp-card-name {
+.wspxp-name {
   font-weight: bold;
   font-size: 13px;
   letter-spacing: 0.5px;
+  color: #434e40;
 }
 
-.wspxp-card-status {
+.wspxp-status {
   font-size: 10px;
   color: #438753;
   font-weight: bold;
   margin-top: -2px;
 }
 
-.wspxp-card-role {
+.wspxp-role {
   font-size: 10px;
   opacity: 0.8;
   margin-top: -3px;
+  color: #434e40;
 }
 
 .wspxp-desc-box {
-  font-family: 'WSPpixel', monospace, sans-serif;
   box-sizing: border-box;
   height: 100px;
   background: #d7e0ce;
   border: 2px solid #8e9a85;
   padding: 8px;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.4;
   overflow-y: auto;
   text-align: justify;
   scrollbar-width: none;
+  font-family: 'WSPpixel', monospace, sans-serif;
+  color: #434e40;
 }
 
 .wspxp-right-col {
@@ -219,140 +194,48 @@
   gap: 10px;
 }
 
-.wspxp-palette-bar {
+.wspxp-right-col::before {
+  content: "";
   box-sizing: border-box;
   width: 100%;
-  background: #d4d0c8;
+  height: 34px;
+  background: 
+    linear-gradient(to right, 
+      #000000 7.14%, #808080 7.14% 14.28%, #800000 14.28% 21.42%, #808000 21.42% 28.56%, 
+      #008000 28.56% 35.7%, #008080 35.7% 42.84%, #000080 42.84% 49.98%, #800080 49.98% 57.12%, 
+      #808040 57.12% 64.26%, #004040 64.26% 71.4%, #0080ff 71.4% 78.54%, #004080 78.54% 85.68%, 
+      #4000ff 85.68% 92.82%, #804000 92.82% 100%) top/100% 12px no-repeat,
+    linear-gradient(to right, 
+      #ffffff 7.14%, #c0c0c0 7.14% 14.28%, #ff0000 14.28% 21.42%, #ffff00 21.42% 28.56%, 
+      #00ff00 28.56% 35.7%, #00ffff 35.7% 42.84%, #0000ff 42.84% 49.98%, #ff00ff 49.98% 57.12%, 
+      #ffff80 57.12% 64.26%, #00ff80 64.26% 71.4%, #80ffff 71.4% 78.54%, #8080ff 78.54% 85.68%, 
+      #ff0080 85.68% 92.82%, #ff8040 92.82% 100%) bottom/100% 12px no-repeat,
+    #d4d0c8;
   border-top: 2px solid #808080;
   border-left: 2px solid #808080;
   border-right: 2px solid #fff;
   border-bottom: 2px solid #fff;
   padding: 3px;
-  display: flex;
-  gap: 4px;
-  align-items: center;
 }
 
-.wspxp-palette-active {
-  box-sizing: border-box;
-  width: 28px;
-  height: 28px;
-  background: #d4d0c8;
-  border-top: 2px solid #808080;
-  border-left: 2px solid #808080;
-  border-right: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  position: relative;
-  flex-shrink: 0;
-}
-
-.wspxp-palette-active::before {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 12px;
-  height: 12px;
-  background: #000;
-  z-index: 2;
-  border: 1px solid #fff;
-}
-
-.wspxp-palette-active::after {
-  content: "";
-  position: absolute;
-  bottom: 3px;
-  right: 3px;
-  width: 12px;
-  height: 12px;
-  background: #fff;
-  z-index: 1;
-  border: 1px solid #808080;
-}
-
-.wspxp-palette-grid {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(14, 1fr);
-  grid-template-rows: repeat(2, 12px);
-  gap: 1px;
-}
-
-.wspxp-palette-grid div {
-  box-sizing: border-box;
-  border-top: 1px solid #808080;
-  border-left: 1px solid #808080;
-  border-right: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-}
-
-.wspxp-cat-title {
-  font-weight: bold;
-  font-size: 13px;
-  margin: 2px 10px;
-}
-
-.wspxp-cat-wrap {
-  display: flex;
-  gap: 4px;
-  margin-left: 10px;
-}
-
-.wspxp-cat-list {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.wspxp-cat-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.wspxp-cat-icon {
-  box-sizing: border-box;
-  width: 28px;
-  height: 28px;
-  background: #d7e0ce center/70% no-repeat;
-  border: 2px solid #8e9a85;
-  flex-shrink: 0;
-  image-rendering: pixelated;
-}
-
-.wspxp-ico-maint { background-image: url(https://i.imgur.com/2qB8hQS.png); }
-.wspxp-ico-net   { background-image: url(https://i.imgur.com/5fD2uBO.png); }
-.wspxp-ico-dep   { background-image: url(https://i.imgur.com/uc6kjTG.png); }
-.wspxp-ico-peri  { background-image: url(https://i.imgur.com/ylZDXuY.png); }
-.wspxp-ico-doc   { background-image: url(https://i.imgur.com/yLlIdL1.png); }
-
-.wspxp-cat-name {
+.wspxp-right-col::after {
+  content: 
+    "∨ CATEGORIES\A\A"
+    "⚙  MAINTENANCE\A\A"
+    "🌐  NETWORKING\A\A"
+    "🚀  DEPLOYMENT\A\A"
+    "⌨  PERIPHERALS\A\A"
+    "📄  DOCUMENTATION";
+  white-space: pre-wrap;
   font-weight: bold;
   font-size: 12px;
-  letter-spacing: 0.5px;
+  line-height: 1.3;
+  color: #434e40;
+  padding-left: 10px;
 }
 
-.wspxp-scrollbar {
-  width: 6px;
-  background: #8e9a85;
-  border: 1px solid #73806b;
-  border-radius: 3px;
-  position: relative;
-}
-
-.wspxp-scrollbar::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 35px;
-  background: #5c6854;
-  border-radius: 2px;
-}
-
-.wspxp-taskbar {
+.wspxp-window::after {
+  content: "START   HOME                                   BACK";
   box-sizing: border-box;
   height: 32px;
   background: #9c9a9c;
@@ -364,43 +247,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2px 4px;
-  flex-shrink: 0;
-}
-
-.wspxp-taskbar-left {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-}
-
-.wspxp-btn-start, .wspxp-btn-home, .wspxp-btn-back {
-  box-sizing: border-box;
-  height: 22px;
-  padding: 0 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 0 12px;
   font-weight: 900;
   font-size: 12px;
   color: #2e263d;
   letter-spacing: 1px;
   user-select: none;
-  cursor: pointer;
-}
-
-.wspxp-btn-start, .wspxp-btn-back {
-  background: #9c9a9c;
-  border-top: 2px solid #fff;
-  border-left: 2px solid #fff;
-  border-right: 2px solid #404040;
-  border-bottom: 2px solid #404040;
-}
-
-.wspxp-btn-home {
-  background: #888688;
-  border-top: 2px solid #404040;
-  border-left: 2px solid #404040;
-  border-right: 2px solid #fff;
-  border-bottom: 2px solid #fff;
+  pointer-events: none;
 }
