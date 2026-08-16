@@ -31,7 +31,6 @@
   position: relative;
 }
 
-/* ฝัง Footer เครดิต */
 .wsprp-bg::after {
   content: "Simon Kyle • Asteria Leuruna";
   display: block;
@@ -60,7 +59,6 @@
   -webkit-user-drag: none;
 }
 
-/* หน้าต่าง Window */
 .wsprp-window {
   box-sizing: border-box;
   width: 580px;
@@ -155,7 +153,6 @@
   line-height: 1;
 }
 
-/* Menubar กลับมาใช้แบบมาตรฐาน */
 .wsprp-menubar {
   box-sizing: border-box;
   height: 20px;
@@ -175,7 +172,6 @@
   cursor: pointer;
 }
 
-/* ฝัง Action Bar ทั้งหมด 6 ช่อง (ภาพ + ข้อความ) */
 .wsprp-action-bar {
   box-sizing: border-box;
   background: #d4d0c8;
@@ -225,7 +221,6 @@
 .wsprp-act-item:nth-child(6)::before { background-image: url('https://i.imgur.com/OkNcsbD.png'); }
 .wsprp-act-item:nth-child(6)::after  { content: "Games"; }
 
-/* Main Area */
 .wsprp-main {
   box-sizing: border-box;
   background: #c2ceba;
@@ -290,7 +285,6 @@
   display: block;
 }
 
-/* ฝังลูกศรสามเหลี่ยมใต้ Avatar */
 .wsprp-dp-arrow::before {
   content: "▼";
   display: block;
@@ -305,7 +299,6 @@
   line-height: 1;
 }
 
-/* ฝังปุ่ม Send / Search */
 .wsprp-dp-btns {
   width: 100%;
   display: flex;
@@ -346,7 +339,6 @@
   background: #95a38b;
 }
 
-/* แถบหมายเหตุโรลเพลย์ */
 .wsprp-notebar {
   box-sizing: border-box;
   min-height: 24px;
