@@ -60,11 +60,11 @@
   -webkit-user-drag: none;
 }
 
-/* หน้าต่าง Window */
+/* หน้าต่าง Window: ตัด min-height ทิ้ง เพื่อให้หด-ยืดสัมพันธ์กับเนื้อหา */
 .wsprp-window {
   box-sizing: border-box;
   width: 580px;
-  min-height: 420px;
+  height: auto;
   margin: 0 auto;
   background: #0055ea;
   border: 3px solid #0055ea;
@@ -174,7 +174,7 @@
   cursor: pointer;
 }
 
-/* Action Bar ด้านบน: ปรับเป็นโทนสีเทาคลาสสิก */
+/* Action Bar ด้านบน */
 .wsprp-action-bar {
   box-sizing: border-box;
   background: #d4d0c8;
@@ -207,10 +207,9 @@
   display: block;
 }
 
-/* Main Area ด้านใน: คุมโทนสีเขียวเทา #c2ceba เหมือนโค้ดอื่น */
+/* Main Area ด้านใน: หดความสูงพอดี ไม่เหลือที่ว่างด้านล่าง */
 .wsprp-main {
   box-sizing: border-box;
-  flex: 1;
   background: #c2ceba;
   border: 2px solid #7f9db9;
   border-top: none;
@@ -219,20 +218,21 @@
   display: flex;
   gap: 8px;
   align-items: flex-start;
+  height: auto;
 }
 
-/* คอลัมน์ซ้าย (ขยายให้กว้างขึ้น) */
+/* คอลัมน์ซ้าย */
 .wsprp-chat-left {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* กล่องข้อความโรลเพลย์: สี #d7e0ce กรอบ #8e9a85 ฟอนต์ 16px */
+/* กล่องข้อความโรลเพลย์: min-height ตั้งไว้ที่ 155px พอดีกับขอบล่างของปุ่ม Search */
 .wsprp-chat-box {
   box-sizing: border-box;
   width: 100%;
-  min-height: 180px;
+  min-height: 155px;
   height: auto;
   background: #d7e0ce;
   border: 2px solid #8e9a85;
@@ -245,7 +245,7 @@
   overflow: visible;
 }
 
-/* คอลัมน์ขวา: Avatar กะทัดรัด (90px) เพื่อเพิ่มพื้นที่ให้กล่องโรลเพลย์ */
+/* คอลัมน์ขวา: Avatar + ปุ่มใต้รูป + ปุ่ม Send / Search */
 .wsprp-dp-right {
   width: 90px;
   display: flex;
@@ -275,7 +275,20 @@
   display: block;
 }
 
-/* ปุ่ม Send / Search ขอบเหลี่ยมสไตล์ Retro */
+/* ปุ่มลูกศรสามเหลี่ยมข้างล่าง Avatar ตามรูปที่ 1 */
+.wsprp-dp-arrow {
+  width: 100%;
+  text-align: center;
+  font-size: 8px;
+  color: #5c6854;
+  margin-top: -3px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
+}
+
+/* ปุ่ม Send / Search: สีเหมือน Showcase (#d7e0ce / #8e9a85) ขอบเหลี่ยม พร้อมเอฟเฟกต์ */
 .wsprp-dp-btns {
   width: 100%;
   display: flex;
@@ -286,33 +299,31 @@
 .wsprp-btn-rect {
   box-sizing: border-box;
   width: 100%;
-  height: 22px;
-  background: #9c9a9c;
-  border-top: 2px solid #ffffff;
-  border-left: 2px solid #ffffff;
-  border-right: 2px solid #404040;
-  border-bottom: 2px solid #404040;
+  height: 24px;
+  background: #d7e0ce;
+  border: 2px solid #8e9a85;
   border-radius: 0px;
   font-size: 11px;
   font-family: Tahoma, monospace, sans-serif;
   font-weight: bold;
-  color: #2e263d;
+  color: #434e40;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   user-select: none;
+  transition: transform 0.05s ease, filter 0.05s ease;
+}
+
+.wsprp-btn-rect:hover {
+  filter: brightness(1.05);
 }
 
 .wsprp-btn-rect:active {
-  border-top: 2px solid #404040;
-  border-left: 2px solid #404040;
-  border-right: 2px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
-  background: #888688;
+  transform: translateY(1px);
 }
 
-/* ================= NOTE / STATUSBAR (สีเทาเดิม) ================= */
+/* แถบหมายเหตุโรลเพลย์ (สีเทาเดิม) */
 .wsprp-notebar {
   box-sizing: border-box;
   min-height: 24px;
