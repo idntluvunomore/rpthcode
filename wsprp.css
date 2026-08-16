@@ -155,7 +155,7 @@
   line-height: 1;
 }
 
-/* Menubar แบบฝังข้อความพร้อมขีดเส้นใต้ตัวแรกเหมือนแท็ก <u> */
+/* Menubar กลับมาใช้แบบมาตรฐาน */
 .wsprp-menubar {
   box-sizing: border-box;
   height: 20px;
@@ -170,30 +170,9 @@
   flex-shrink: 0;
   user-select: none;
 }
-.wsprp-menubar::before {
-  content: "File\00a0\00a0\00a0\00a0Edit\00a0\00a0\00a0\00a0Actions\00a0\00a0\00a0\00a0Tools\00a0\00a0\00a0\00a0Help";
+
+.wsprp-menubar span {
   cursor: pointer;
-  
-  /* วาดขีดเส้นใต้ตัวแรก (F, E, A, T, H) */
-  background-image: 
-    linear-gradient(#000, #000),
-    linear-gradient(#000, #000),
-    linear-gradient(#000, #000),
-    linear-gradient(#000, #000),
-    linear-gradient(#000, #000);
-  background-repeat: no-repeat;
-  background-size: 
-    6px 1px,  /* ใต้ F */
-    6px 1px,  /* ใต้ E */
-    7px 1px,  /* ใต้ A */
-    6px 1px,  /* ใต้ T */
-    7px 1px;  /* ใต้ H */
-  background-position: 
-    0px 12px,   /* ตำแหน่งใต้ F */
-    39px 12px,  /* ตำแหน่งใต้ E */
-    79px 12px,  /* ตำแหน่งใต้ A */
-    136px 12px, /* ตำแหน่งใต้ T */
-    182px 12px; /* ตำแหน่งใต้ H */
 }
 
 /* ฝัง Action Bar ทั้งหมด 6 ช่อง (ภาพ + ข้อความ) */
@@ -311,7 +290,7 @@
   display: block;
 }
 
-/* ฝังลูกศรสามเหลี่ยมใต้ Avatar อัตโนมัติ */
+/* ฝังลูกศรสามเหลี่ยมใต้ Avatar */
 .wsprp-dp-arrow::before {
   content: "▼";
   display: block;
@@ -367,7 +346,7 @@
   background: #95a38b;
 }
 
-/* แถบหมายเหตุโรลเพลย์ (สีเทาเดิม) */
+/* แถบหมายเหตุโรลเพลย์ */
 .wsprp-notebar {
   box-sizing: border-box;
   min-height: 24px;
