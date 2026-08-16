@@ -1,0 +1,372 @@
+@font-face {
+  font-family: 'WSPpixel';
+  src: url('https://cdn.jsdelivr.net/gh/idntluvunomore/rpthcode@main/WSPpixel.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.wsprp-container {
+  max-width: 1200px;
+  min-width: 650px;
+  box-sizing: border-box;
+  margin: auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.wsprp-bg {
+  width: 100%;
+  min-width: 650px;
+  background: url(https://i.imgur.com/njpSbPJ.jpeg) center/cover no-repeat;
+  margin: 0px auto;
+  box-sizing: border-box;
+  padding: 60px 20px 60px 20px;
+  position: relative;
+}
+
+/* ฝัง Footer เครดิต */
+.wsprp-bg::after {
+  content: "Simon Kyle • Asteria Leuruna";
+  display: block;
+  position: static;
+  margin-top: 150px;
+  font-size: 10px;
+  text-align: center;
+  color: #fff;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.wsprp-logo-wrap {
+  width: 100%;
+  margin: 100px auto 100px auto;
+  text-align: center;
+}
+
+.wsprp-logo-img {
+  filter: drop-shadow(0px 1px 5px #555);
+  max-width: 500px;
+  height: auto;
+  display: inline-block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* หน้าต่าง Window */
+.wsprp-window {
+  box-sizing: border-box;
+  width: 580px;
+  min-height: 420px;
+  margin: 0 auto;
+  background: #0055ea;
+  border: 3px solid #0055ea;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 2px 4px 15px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  font-family: Tahoma, 'Segoe UI', sans-serif;
+}
+
+.wsprp-titlebar {
+  box-sizing: border-box;
+  height: 30px;
+  background: linear-gradient(180deg, #0058ee 0%, #3593ff 4%, #288eff 6%, #1277ef 8%, #0055ea 14%, #0055ea 68%, #0d6cf5 84%, #0055ea 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6px 0 8px;
+  border-radius: 6px 6px 0 0;
+  flex-shrink: 0;
+}
+
+.wsprp-title-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wsprp-msn-ico {
+  width: 16px;
+  height: 16px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23fff' d='M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z'/></svg>") center/contain no-repeat;
+}
+
+.wsprp-title-space {
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  text-shadow: 1px 1px #0f3d7a;
+  letter-spacing: 0.5px;
+}
+
+.wsprp-controls {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.wsprp-btn-ctrl {
+  width: 21px;
+  height: 21px;
+  background: linear-gradient(180deg, #388cfc 0%, #1066e6 100%);
+  border: 1px solid #fff;
+  border-radius: 3px;
+  box-shadow: inset 0 1px rgba(255,255,255,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wsprp-ico-min {
+  width: 8px;
+  height: 2px;
+  background: #fff;
+  margin-top: 6px;
+}
+
+.wsprp-ico-max {
+  width: 9px;
+  height: 8px;
+  border: 1px solid #fff;
+  border-top-width: 2px;
+}
+
+.wsprp-btn-close {
+  width: 21px;
+  height: 21px;
+  background: linear-gradient(180deg, #f27258 0%, #d83a1b 50%, #b82307 100%);
+  border: 1px solid #fff;
+  border-radius: 3px;
+  box-shadow: inset 0 1px rgba(255,255,255,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.wsprp-menubar {
+  box-sizing: border-box;
+  height: 20px;
+  background: #ece9d8;
+  border-bottom: 1px solid #dcdad0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 8px;
+  font-size: 11px;
+  color: #000;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.wsprp-menubar span {
+  cursor: pointer;
+}
+
+/* แถบ Action Bar ด้านบนสไตล์ MSN */
+.wsprp-action-bar {
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #f4f8fd 0%, #dcebfc 50%, #c8def9 100%);
+  border-bottom: 1px solid #9fbade;
+  padding: 4px 10px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: 10px;
+  color: #1a3e6f;
+  user-select: none;
+}
+
+.wsprp-action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.wsprp-act-ico {
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* Main Area ด้านใน */
+.wsprp-main {
+  box-sizing: border-box;
+  flex: 1;
+  background: #eef5fc;
+  border: 2px solid #7f9db9;
+  border-top: none;
+  margin: 0 1px 0 1px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+/* พื้นที่ซ้าย: กล่องพิมพ์/ข้อความโรลเพลย์ */
+.wsprp-chat-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wsprp-chat-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #444;
+  padding: 2px 4px;
+  user-select: none;
+}
+
+.wsprp-chat-toolbar span {
+  cursor: pointer;
+}
+
+.wsprp-chat-box {
+  box-sizing: border-box;
+  flex: 1;
+  min-height: 220px;
+  max-height: 260px;
+  background: #ffffff;
+  border: 1px solid #7f9db9;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #000;
+  text-align: justify;
+  overflow-y: auto;
+  font-family: 'WSPpixel', Tahoma, sans-serif;
+  scrollbar-width: thin;
+}
+
+/* ปุ่ม Send / Search ขวาล่างกล่องพิมพ์ */
+.wsprp-chat-bottom {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.wsprp-btn-send {
+  box-sizing: border-box;
+  height: 22px;
+  padding: 0 12px;
+  background: #ece9d8;
+  border-top: 1.5px solid #fff;
+  border-left: 1.5px solid #fff;
+  border-right: 1.5px solid #707070;
+  border-bottom: 1.5px solid #707070;
+  font-size: 11px;
+  font-family: Tahoma, sans-serif;
+  cursor: pointer;
+}
+
+/* พื้นที่ขวา: กรอบ Display Picture (DP) */
+.wsprp-dp-right {
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.wsprp-dp-frame {
+  box-sizing: border-box;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #fff;
+  border-radius: 8px;
+  border: 2px solid #b8cfe5;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.1), 1px 2px 4px rgba(0,0,0,0.05);
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.wsprp-dp-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.wsprp-dp-arrow {
+  width: 100%;
+  text-align: center;
+  font-size: 9px;
+  color: #7b9ebd;
+  margin-top: 2px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ================= RETRO STATUSBAR ================= */
+.wsprp-statusbar {
+  box-sizing: border-box;
+  height: 24px;
+  background: #d4d0c8;
+  border-top: 1.5px solid #808080;
+  border-bottom: 1.5px solid #404040;
+  border-left: 1.5px solid #808080;
+  border-right: 1.5px solid #404040;
+  margin: 0 1px 1px 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 4px;
+  flex-shrink: 0;
+  font-family: Tahoma, sans-serif;
+  user-select: none;
+}
+
+.wsprp-status-left {
+  flex: 1;
+  height: 16px;
+  background: #d4d0c8;
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  padding: 1px 6px;
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  color: #000;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.wsprp-status-right {
+  display: flex;
+  align-items: center;
+  height: 16px;
+  gap: 2px;
+}
+
+.wsprp-status-box-empty {
+  width: 20px;
+  height: 16px;
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+
+.wsprp-status-grip {
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle, #808080 1.5px, transparent 1.5px);
+  background-size: 4px 4px;
+  background-position: bottom right;
+  margin-left: 2px;
+}
