@@ -506,7 +506,7 @@
   user-select: none;
 }
 
-/* ================= MODAL WINDOW (RETRO XP) ================= */
+/* ================= MODAL WINDOW ================= */
 .wspxp-modal-toggle {
   display: none;
 }
@@ -609,33 +609,4 @@
   font-family: monospace, sans-serif;
   color: #000;
   user-select: none;
-}
-
-/* ปุ่มคัดลอกทั้งหมดใน Taskbar ของ Modal */
-.wspxp-btn-copy {
-  box-sizing: border-box;
-  height: 20px;
-  padding: 0 8px;
-  background: #9c9a9c;
-  border-top: 1.5px solid #fff;
-  border-left: 1.5px solid #fff;
-  border-right: 1.5px solid #404040;
-  border-bottom: 1.5px solid #404040;
-  font-size: 10px;
-  font-weight: bold;
-  font-family: Tahoma, monospace, sans-serif;
-  color: #000;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-}
-
-.wspxp-btn-copy:active {
-  background: #888688;
-  border-top: 1.5px solid #404040;
-  border-left: 1.5px solid #404040;
-  border-right: 1.5px solid #fff;
-  border-bottom: 1.5px solid #fff;
 }
