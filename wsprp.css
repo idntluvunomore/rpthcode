@@ -60,7 +60,7 @@
   -webkit-user-drag: none;
 }
 
-/* หน้าต่าง Window: ตัด min-height ทิ้ง เพื่อให้หด-ยืดสัมพันธ์กับเนื้อหา */
+/* หน้าต่าง Window */
 .wsprp-window {
   box-sizing: border-box;
   width: 580px;
@@ -155,6 +155,7 @@
   line-height: 1;
 }
 
+/* ฝัง Menubar อัตโนมัติ */
 .wsprp-menubar {
   box-sizing: border-box;
   height: 20px;
@@ -162,7 +163,6 @@
   border-bottom: 1px solid #919b9c;
   display: flex;
   align-items: center;
-  gap: 12px;
   padding: 0 8px;
   font-size: 11px;
   color: #000;
@@ -170,44 +170,52 @@
   user-select: none;
 }
 
-.wsprp-menubar span {
+.wsprp-menubar::before {
+  content: "File    Edit    Actions    Tools    Help";
+  word-spacing: 12px;
   cursor: pointer;
 }
 
-/* Action Bar ด้านบน */
+/* ฝัง Action Bar พร้อมไอคอนทั้ง 6 ตัวผ่าน CSS Grid/Flex */
 .wsprp-action-bar {
   box-sizing: border-box;
   background: #d4d0c8;
   border-bottom: 1px solid #808080;
   padding: 4px 6px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  text-align: center;
   font-size: 10px;
   color: #000000;
   user-select: none;
 }
 
-.wsprp-action-item {
-  flex: 1;
+.wsprp-action-bar span {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2px;
   cursor: pointer;
-  text-align: center;
 }
 
-.wsprp-act-img {
-  width: auto;
-  height: 32px; /* ขนาดความสูงมาตรฐาน สามารถปรับเปลี่ยนได้ */
-  max-width: 48px;
-  max-height: 48px;
-  object-fit: contain;
+.wsprp-action-bar span::before {
+  content: "";
   display: block;
+  height: 25px;
+  width: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-/* Main Area ด้านใน: หดความสูงพอดี ไม่เหลือที่ว่างด้านล่าง */
+.wsprp-action-bar span:nth-child(1)::before { background-image: url('https://i.imgur.com/ifIidSQ.png'); }
+.wsprp-action-bar span:nth-child(2)::before { background-image: url('https://i.imgur.com/0LsmALo.png'); }
+.wsprp-action-bar span:nth-child(3)::before { background-image: url('https://i.imgur.com/ZbXpS8T.png'); }
+.wsprp-action-bar span:nth-child(4)::before { background-image: url('https://i.imgur.com/HUAIASa.png'); }
+.wsprp-action-bar span:nth-child(5)::before { background-image: url('https://i.imgur.com/GS9xPvY.png'); }
+.wsprp-action-bar span:nth-child(6)::before { background-image: url('https://i.imgur.com/OkNcsbD.png'); }
+
+/* Main Area */
 .wsprp-main {
   box-sizing: border-box;
   background: #c2ceba;
@@ -221,14 +229,12 @@
   height: auto;
 }
 
-/* คอลัมน์ซ้าย */
 .wsprp-chat-left {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* กล่องข้อความโรลเพลย์: min-height ตั้งไว้ที่ 155px พอดีกับขอบล่างของปุ่ม Search */
 .wsprp-chat-box {
   box-sizing: border-box;
   width: 100%;
@@ -245,7 +251,6 @@
   overflow: visible;
 }
 
-/* คอลัมน์ขวา: Avatar + ปุ่มใต้รูป + ปุ่ม Send / Search */
 .wsprp-dp-right {
   width: 90px;
   display: flex;
@@ -275,59 +280,58 @@
   display: block;
 }
 
-/* ปุ่มลูกศรสามเหลี่ยมข้างล่าง Avatar ตามรูปที่ 1 */
-.wsprp-dp-arrow {
-  width: 100%;
-  text-align: center;
-  font-size: 8px;
-  color: #5c6854;
-  margin-top: -3px;
-  margin-bottom: 2px;
-  cursor: pointer;
-  user-select: none;
-  line-height: 1;
+/* ฝังปุ่มสามเหลี่ยมใต้ Avatar */
+.wsprp-dp-frame::after {
+  /* จัดการ layout ใน container */
 }
 
-/* ปุ่ม Send / Search: สีเหมือน Showcase (#d7e0ce / #8e9a85) ขอบเหลี่ยม พร้อมเอฟเฟกต์ */
+/* ฝังปุ่ม Send และ Search ผ่าน CSS โดยไม่ต้องเขียนแท็ก button ใน HTML */
 .wsprp-dp-btns {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 4px;
+  user-select: none;
 }
 
-/* ปุ่ม Send / Search ขอบเหลี่ยมแท้จริง + สีเข้มขึ้น */
-.wsprp-btn-rect {
-  box-sizing: border-box !important;
-  width: 100% !important;
-  height: 24px !important;
-  background: #a6b39d !important; /* ปรับพื้นหลังให้เข้มขึ้นชัดเจน */
-  border: 2px solid #73806b !important; /* ขอบสีเข้ม */
-  border-radius: 0px !important; /* ล็อกขอบเหลี่ยม 100% */
-  -webkit-border-radius: 0px !important;
-  outline: none !important;
-  font-size: 11px !important;
-  font-family: Tahoma, monospace, sans-serif !important;
-  font-weight: bold !important;
-  color: #2b3329 !important;
-  cursor: pointer !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  user-select: none !important;
+.wsprp-dp-btns::before,
+.wsprp-dp-btns::after {
+  box-sizing: border-box;
+  width: 100%;
+  height: 24px;
+  background: #a6b39d;
+  border: 2px solid #73806b;
+  font-size: 11px;
+  font-family: Tahoma, monospace, sans-serif;
+  font-weight: bold;
+  color: #2b3329;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.05s ease, filter 0.05s ease;
 }
 
-.wsprp-btn-rect:hover {
-  filter: brightness(1.08) !important;
+.wsprp-dp-btns::before {
+  content: "Send";
 }
 
-.wsprp-btn-rect:active {
-  transform: translateY(1px) !important;
-  background: #95a38b !important;
+.wsprp-dp-btns::after {
+  content: "Search";
 }
 
-/* แถบหมายเหตุโรลเพลย์ (สีเทาเดิม) */
+.wsprp-dp-btns::before:hover,
+.wsprp-dp-btns::after:hover {
+  filter: brightness(1.08);
+}
+
+.wsprp-dp-btns::before:active,
+.wsprp-dp-btns::after:active {
+  transform: translateY(1px);
+  background: #95a38b;
+}
+
+/* แถบหมายเหตุโรลเพลย์ */
 .wsprp-notebar {
   box-sizing: border-box;
   min-height: 24px;
