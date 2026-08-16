@@ -403,7 +403,6 @@
   top: 0;
 }
 
-/* ================= TASKBAR ================= */
 .wspxp-taskbar {
   box-sizing: border-box;
   height: 32px;
@@ -507,7 +506,6 @@
   user-select: none;
 }
 
-/* ================= MODAL WINDOW ================= */
 .wspxp-modal-toggle {
   display: none;
 }
