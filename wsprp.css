@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'WSPbasic';
-  src: url('https://cdn.jsdelivr.net/gh/idntluvunomore/rpthcode@main/WSPbasic.otf') format('truetype');
+  src: url('https://cdn.jsdelivr.net/gh/idntluvunomore/rpthcode@main/WSPbasic.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -159,7 +159,7 @@
   box-sizing: border-box;
   height: 20px;
   background: #ece9d8;
-  border-bottom: 1px solid #dcdad0;
+  border-bottom: 1px solid #919b9c;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -174,17 +174,17 @@
   cursor: pointer;
 }
 
-/* Action Bar ด้านบน */
+/* Action Bar ด้านบน: ปรับเป็นโทนสีเทาคลาสสิก */
 .wsprp-action-bar {
   box-sizing: border-box;
-  background: linear-gradient(180deg, #f4f8fd 0%, #dcebfc 50%, #c8def9 100%);
-  border-bottom: 1px solid #9fbade;
+  background: #d4d0c8;
+  border-bottom: 1px solid #808080;
   padding: 4px 6px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-size: 10px;
-  color: #1a3e6f;
+  color: #000000;
   user-select: none;
 }
 
@@ -199,59 +199,59 @@
 }
 
 .wsprp-act-img {
-  width: 22px !important;
-  height: 22px !important;
-  max-width: 22px !important;
-  max-height: 22px !important;
+  width: 20px !important;
+  height: 20px !important;
+  max-width: 20px !important;
+  max-height: 20px !important;
   object-fit: contain;
   display: block;
 }
 
-/* Main Area ด้านใน */
+/* Main Area ด้านใน: คุมโทนสีเขียวเทา #c2ceba เหมือนโค้ดอื่น */
 .wsprp-main {
   box-sizing: border-box;
   flex: 1;
-  background: #eef5fc;
+  background: #c2ceba;
   border: 2px solid #7f9db9;
   border-top: none;
   margin: 0 1px 0 1px;
-  padding: 10px 12px;
+  padding: 10px;
   display: flex;
-  gap: 12px;
+  gap: 8px;
   align-items: flex-start;
 }
 
-/* คอลัมน์ซ้าย */
+/* คอลัมน์ซ้าย (ขยายให้กว้างขึ้น) */
 .wsprp-chat-left {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* กล่องพิมพ์โรลเพลย์: ฟอนต์ WSPbasic 20px ขยายตามเนื้อหา */
+/* กล่องข้อความโรลเพลย์: สี #d7e0ce กรอบ #8e9a85 ฟอนต์ 16px */
 .wsprp-chat-box {
   box-sizing: border-box;
   width: 100%;
   min-height: 180px;
   height: auto;
-  background: #ffffff;
-  border: 1px solid #7f9db9;
-  padding: 12px;
-  font-size: 20px;
+  background: #d7e0ce;
+  border: 2px solid #8e9a85;
+  padding: 10px;
+  font-size: 16px;
   line-height: 1.6;
-  color: #000000;
+  color: #434e40;
   text-align: justify;
   font-family: 'WSPbasic', Tahoma, sans-serif;
   overflow: visible;
 }
 
-/* คอลัมน์ขวา: Avatar + ปุ่ม Send / Search ด้านล่าง */
+/* คอลัมน์ขวา: Avatar กะทัดรัด (90px) เพื่อเพิ่มพื้นที่ให้กล่องโรลเพลย์ */
 .wsprp-dp-right {
-  width: 130px;
+  width: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   flex-shrink: 0;
 }
 
@@ -259,11 +259,9 @@
   box-sizing: border-box;
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #fff;
-  border-radius: 8px;
-  border: 2px solid #b8cfe5;
-  box-shadow: inset 0 0 4px rgba(0,0,0,0.1), 1px 2px 4px rgba(0,0,0,0.05);
-  padding: 5px;
+  background: #d7e0ce;
+  border: 2px solid #8e9a85;
+  padding: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -274,54 +272,55 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 4px;
+  display: block;
 }
 
-/* กลุ่มปุ่มใต้รูป Avatar แยกบรรทัดละกล่อง ขอบเหลี่ยม */
+/* ปุ่ม Send / Search ขอบเหลี่ยมสไตล์ Retro */
 .wsprp-dp-btns {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  margin-top: 2px;
+  gap: 4px;
 }
 
 .wsprp-btn-rect {
   box-sizing: border-box;
   width: 100%;
-  height: 24px;
-  background: #ece9d8;
-  border-top: 1.5px solid #ffffff;
-  border-left: 1.5px solid #ffffff;
-  border-right: 1.5px solid #707070;
-  border-bottom: 1.5px solid #707070;
+  height: 22px;
+  background: #9c9a9c;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
   border-radius: 0px;
   font-size: 11px;
-  font-family: Tahoma, sans-serif;
-  color: #000000;
+  font-family: Tahoma, monospace, sans-serif;
+  font-weight: bold;
+  color: #2e263d;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
 }
 
 .wsprp-btn-rect:active {
-  border-top: 1.5px solid #707070;
-  border-left: 1.5px solid #707070;
-  border-right: 1.5px solid #ffffff;
-  border-bottom: 1.5px solid #ffffff;
-  background: #dedbd0;
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  background: #888688;
 }
 
-/* แถบหมายเหตุโรลเพลย์ (ฟอนต์ WSPpixel 16px) */
+/* แถบหมายเหตุโรลเพลย์: ฟอนต์ WSPpixel 13px */
 .wsprp-notebar {
   box-sizing: border-box;
-  min-height: 26px;
-  background: #d4d0c8;
-  border-top: 1.5px solid #808080;
-  border-bottom: 1.5px solid #404040;
-  border-left: 1.5px solid #808080;
-  border-right: 1.5px solid #404040;
+  min-height: 24px;
+  background: #9c9a9c;
+  border-top: 2px solid #dfdfdf;
+  border-left: 2px solid #dfdfdf;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
   margin: 0 1px 1px 1px;
   display: flex;
   align-items: center;
@@ -333,8 +332,8 @@
 
 .wsprp-note-box {
   flex: 1;
-  min-height: 20px;
-  background: #d4d0c8;
+  min-height: 18px;
+  background: #d7e0ce;
   border-top: 1px solid #808080;
   border-left: 1px solid #808080;
   border-right: 1px solid #ffffff;
@@ -342,9 +341,9 @@
   padding: 1px 6px;
   display: flex;
   align-items: center;
-  font-size: 16px;
+  font-size: 13px;
   font-family: 'WSPpixel', monospace, sans-serif;
-  color: #000;
+  color: #434e40;
   overflow: hidden;
   white-space: nowrap;
 }
@@ -352,13 +351,14 @@
 .wsprp-note-right {
   display: flex;
   align-items: center;
-  height: 20px;
+  height: 18px;
   gap: 2px;
 }
 
 .wsprp-note-empty {
   width: 20px;
-  height: 20px;
+  height: 18px;
+  background: #d7e0ce;
   border-top: 1px solid #808080;
   border-left: 1px solid #808080;
   border-right: 1px solid #ffffff;
@@ -368,7 +368,7 @@
 .wsprp-note-grip {
   width: 14px;
   height: 14px;
-  background: radial-gradient(circle, #808080 1.5px, transparent 1.5px);
+  background: radial-gradient(circle, #505050 1.5px, transparent 1.5px);
   background-size: 4px 4px;
   background-position: bottom right;
   margin-left: 2px;
