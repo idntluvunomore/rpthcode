@@ -20,14 +20,14 @@
   background: url(https://i.imgur.com/njpSbPJ.jpeg) center/cover no-repeat;
   margin: 0px auto;
   box-sizing: border-box;
-  padding: 60px 20px 60px 20px; 
+  padding: 60px 20px 60px 20px;
   position: relative;
 }
 
 .wspxp-bg::after {
   content: "Simon Kyle • Asteria Leuruna";
   display: block;
-  position: static; 
+  position: static;
   margin-top: 250px;
   font-size: 10px;
   text-align: center;
@@ -138,7 +138,7 @@
   box-sizing: border-box;
   height: 20px;
   background: #ece9d8;
-  border-bottom: 1px solid #919b9c;
+  border-bottom: 1px solid #dcdad0;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -402,6 +402,7 @@
   top: 0;
 }
 
+/* ================= TASKBAR ================= */
 .wspxp-taskbar {
   box-sizing: border-box;
   height: 32px;
@@ -443,28 +444,28 @@
   cursor: pointer;
   letter-spacing: 1px;
   user-select: none;
-  text-decoration: none;
-  transition: transform 0.05s ease, filter 0.05s ease;
 }
 
-.wspxp-btn-start:hover,
-.wspxp-btn-code:hover,
-.wspxp-btn-back:hover {
-  filter: brightness(1.08);
-}
-
-.wspxp-btn-start:active,
-.wspxp-btn-code:active,
-.wspxp-btn-back:active {
+.wspxp-btn-home {
+  box-sizing: border-box;
+  height: 22px;
+  padding: 0 8px;
   background: #888688;
   border-top: 2px solid #404040;
   border-left: 2px solid #404040;
   border-right: 2px solid #fff;
   border-bottom: 2px solid #fff;
-  transform: translateY(1px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 12px;
+  color: #2e263d;
+  cursor: pointer;
+  letter-spacing: 1px;
+  user-select: none;
 }
 
-/* ปุ่ม CODE ใน Taskbar */
 .wspxp-btn-code {
   box-sizing: border-box;
   height: 22px;
@@ -483,15 +484,33 @@
   cursor: pointer;
   letter-spacing: 1px;
   user-select: none;
-  transition: transform 0.05s ease, filter 0.05s ease;
 }
 
-/* ซ่อน Checkbox สลับ Popup */
+.wspxp-btn-back {
+  box-sizing: border-box;
+  height: 22px;
+  padding: 0 8px;
+  background: #9c9a9c;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 12px;
+  color: #2e263d;
+  cursor: pointer;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+/* ================= MODAL WINDOW (RETRO XP) ================= */
 .wspxp-modal-toggle {
   display: none;
 }
 
-/* ฉากหลัง Overlay */
 .wspxp-modal-overlay {
   position: fixed;
   top: 0;
@@ -506,12 +525,10 @@
   z-index: 99999;
 }
 
-/* แสดงหน้าต่างเมื่อเปิด */
 .wspxp-modal-toggle:checked ~ .wspxp-modal-overlay {
   display: flex;
 }
 
-/* หน้าต่าง Window ซ้อน */
 .wspxp-modal-window {
   box-sizing: border-box;
   width: 520px;
@@ -530,7 +547,6 @@
   to { transform: scale(1); opacity: 1; }
 }
 
-/* Titlebar */
 .wspxp-modal-titlebar {
   box-sizing: border-box;
   height: 30px;
@@ -549,7 +565,6 @@
   user-select: none;
 }
 
-/* Menubar */
 .wspxp-modal-menubar {
   box-sizing: border-box;
   height: 20px;
@@ -565,7 +580,6 @@
   user-select: none;
 }
 
-/* Main Body */
 .wspxp-modal-main {
   box-sizing: border-box;
   background: #c2ceba;
@@ -578,7 +592,6 @@
   gap: 8px;
 }
 
-/* Taskbar ของ Modal */
 .wspxp-modal-taskbar {
   box-sizing: border-box;
   height: 28px;
@@ -590,21 +603,20 @@
   margin: 0 1px 1px 1px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 2px 6px;
   font-size: 11px;
   font-family: monospace, sans-serif;
   color: #000;
   user-select: none;
-  gap: 8px;
 }
 
-/* ปุ่มคัดลอกสไตล์ Retro */
+/* ปุ่มคัดลอกทั้งหมดใน Taskbar ของ Modal */
 .wspxp-btn-copy {
   box-sizing: border-box;
   height: 20px;
   padding: 0 8px;
-  background: #d4d0c8;
+  background: #9c9a9c;
   border-top: 1.5px solid #fff;
   border-left: 1.5px solid #fff;
   border-right: 1.5px solid #404040;
@@ -617,9 +629,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
 }
 
 .wspxp-btn-copy:active {
+  background: #888688;
   border-top: 1.5px solid #404040;
   border-left: 1.5px solid #404040;
   border-right: 1.5px solid #fff;
