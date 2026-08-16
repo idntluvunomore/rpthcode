@@ -554,10 +554,12 @@
   color: #222;
   font-style: oblique;
   margin-top: 7px;
-  user-select: none;
-  pointer-events: none;
+  user-select: text;
+  -webkit-user-select: text;
 }
 
 .lcpf-credit::before {
   content: "© Lucine F. Varner";
+  user-select: text;
+  -webkit-user-select: text;
 }
