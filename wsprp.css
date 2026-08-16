@@ -199,10 +199,10 @@
 }
 
 .wsprp-act-img {
-  width: 80px !important;
-  height: 80px !important;
-  max-width: 80px !important;
-  max-height: 80px !important;
+  width: auto;
+  height: 32px; /* ขนาดความสูงมาตรฐาน สามารถปรับเปลี่ยนได้ */
+  max-width: 48px;
+  max-height: 48px;
   object-fit: contain;
   display: block;
 }
