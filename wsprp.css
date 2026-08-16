@@ -296,31 +296,35 @@
   gap: 4px;
 }
 
+/* ปุ่ม Send / Search ขอบเหลี่ยมแท้จริง + สีเข้มขึ้น */
 .wsprp-btn-rect {
-  box-sizing: border-box;
-  width: 100%;
-  height: 24px;
-  background: #d7e0ce;
-  border: 2px solid #8e9a85;
-  border-radius: 0px;
-  font-size: 11px;
-  font-family: Tahoma, monospace, sans-serif;
-  font-weight: bold;
-  color: #434e40;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 24px !important;
+  background: #a6b39d !important; /* ปรับพื้นหลังให้เข้มขึ้นชัดเจน */
+  border: 2px solid #73806b !important; /* ขอบสีเข้ม */
+  border-radius: 0px !important; /* ล็อกขอบเหลี่ยม 100% */
+  -webkit-border-radius: 0px !important;
+  outline: none !important;
+  font-size: 11px !important;
+  font-family: Tahoma, monospace, sans-serif !important;
+  font-weight: bold !important;
+  color: #2b3329 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  user-select: none !important;
   transition: transform 0.05s ease, filter 0.05s ease;
 }
 
 .wsprp-btn-rect:hover {
-  filter: brightness(1.05);
+  filter: brightness(1.08) !important;
 }
 
 .wsprp-btn-rect:active {
-  transform: translateY(1px);
+  transform: translateY(1px) !important;
+  background: #95a38b !important;
 }
 
 /* แถบหมายเหตุโรลเพลย์ (สีเทาเดิม) */
