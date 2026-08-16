@@ -174,7 +174,7 @@
   cursor: pointer;
 }
 
-/* Action Bar ขยายเต็มแถว (Space-around) และใช้รูปภาพไอคอน */
+/* Action Bar ด้านบน: ปรับไอคอนเป็นขนาด 22x22px */
 .wsprp-action-bar {
   box-sizing: border-box;
   background: linear-gradient(180deg, #f4f8fd 0%, #dcebfc 50%, #c8def9 100%);
@@ -199,13 +199,15 @@
 }
 
 .wsprp-act-img {
-  width: 16px;
-  height: 16px;
+  width: 22px !important;
+  height: 22px !important;
+  max-width: 22px !important;
+  max-height: 22px !important;
   object-fit: contain;
   display: block;
 }
 
-/* Main Area */
+/* Main Area ด้านใน */
 .wsprp-main {
   box-sizing: border-box;
   flex: 1;
@@ -213,86 +215,100 @@
   border: 2px solid #7f9db9;
   border-top: none;
   margin: 0 1px 0 1px;
-  padding: 10px;
+  padding: 10px 12px;
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: flex-start;
 }
 
-/* กล่องฝั่งซ้าย (แบบเก่าที่อ่านง่าย) */
+/* คอลัมน์ซ้าย */
 .wsprp-chat-left {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
+/* Toolbar เหนือกล่องพิมพ์: ล็อกไอคอนขนาด 16x16px */
 .wsprp-chat-toolbar {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-size: 11px;
-  color: #444;
-  padding: 2px 4px;
+  color: #333;
+  padding: 0 2px;
   user-select: none;
 }
 
 .wsprp-chat-toolbar span {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   cursor: pointer;
+  font-family: Tahoma, sans-serif;
+  font-size: 11px;
 }
 
 .wsprp-tool-img {
-  width: 14px;
-  height: 14px;
+  width: 16px !important;
+  height: 16px !important;
+  max-width: 16px !important;
+  max-height: 16px !important;
   object-fit: contain;
   display: inline-block;
+  vertical-align: middle;
 }
 
-/* กล่องข้อความโรลเพลย์: ฟอนต์ WSPbasic ขนาด 17px ขยายความสูงตามข้อความ */
+/* กล่องพิมพ์โรลเพลย์: ฟอนต์ WSPbasic 17px ขยายตามเนื้อหา */
 .wsprp-chat-box {
   box-sizing: border-box;
   width: 100%;
-  min-height: 200px;
+  min-height: 180px;
   height: auto;
   background: #ffffff;
   border: 1px solid #7f9db9;
   padding: 12px;
   font-size: 17px;
   line-height: 1.6;
-  color: #000;
+  color: #000000;
   text-align: justify;
   font-family: 'WSPbasic', Tahoma, sans-serif;
   overflow: visible;
 }
 
-/* ปุ่ม Send / Search ด้านล่าง */
+/* ปุ่ม Send / Search ทรงแคปซูลโค้งมนตามแบบภาพที่ 1 */
 .wsprp-chat-bottom {
   display: flex;
-  justify-content: flex-end;
-  gap: 4px;
-  margin-top: 4px;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
 }
 
-.wsprp-btn-send {
+.wsprp-btn-capsule {
   box-sizing: border-box;
-  height: 22px;
-  padding: 0 12px;
-  background: #ece9d8;
-  border-top: 1.5px solid #fff;
-  border-left: 1.5px solid #fff;
-  border-right: 1.5px solid #707070;
-  border-bottom: 1.5px solid #707070;
+  height: 24px;
+  padding: 0 16px;
+  background: #f1ede3;
+  border: 1px solid #9c9a91;
+  border-radius: 12px;
   font-size: 11px;
   font-family: Tahoma, sans-serif;
+  color: #000000;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
-/* ฝั่งขวา: Display Picture */
+.wsprp-btn-capsule:active {
+  background: #e2ddd1;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
+}
+
+/* คอลัมน์ขวา: Display Picture */
 .wsprp-dp-right {
-  width: 140px;
+  width: 130px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -307,7 +323,7 @@
   border-radius: 8px;
   border: 2px solid #b8cfe5;
   box-shadow: inset 0 0 4px rgba(0,0,0,0.1), 1px 2px 4px rgba(0,0,0,0.05);
-  padding: 6px;
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -315,8 +331,8 @@
 }
 
 .wsprp-dp-img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 4px;
 }
@@ -326,7 +342,7 @@
   text-align: center;
   font-size: 9px;
   color: #7b9ebd;
-  margin-top: 2px;
+  margin-top: 4px;
   cursor: pointer;
   user-select: none;
 }
