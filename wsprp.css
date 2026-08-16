@@ -176,7 +176,7 @@
   cursor: pointer;
 }
 
-/* ฝัง Action Bar พร้อมไอคอนทั้ง 6 ตัวผ่าน CSS Grid/Flex */
+/* ฝัง Action Bar ทั้งหมด 6 ช่อง (ภาพ + ข้อความ) */
 .wsprp-action-bar {
   box-sizing: border-box;
   background: #d4d0c8;
@@ -190,7 +190,7 @@
   user-select: none;
 }
 
-.wsprp-action-bar span {
+.wsprp-act-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -198,7 +198,7 @@
   cursor: pointer;
 }
 
-.wsprp-action-bar span::before {
+.wsprp-act-item::before {
   content: "";
   display: block;
   height: 25px;
@@ -208,12 +208,23 @@
   background-size: contain;
 }
 
-.wsprp-action-bar span:nth-child(1)::before { background-image: url('https://i.imgur.com/ifIidSQ.png'); }
-.wsprp-action-bar span:nth-child(2)::before { background-image: url('https://i.imgur.com/0LsmALo.png'); }
-.wsprp-action-bar span:nth-child(3)::before { background-image: url('https://i.imgur.com/ZbXpS8T.png'); }
-.wsprp-action-bar span:nth-child(4)::before { background-image: url('https://i.imgur.com/HUAIASa.png'); }
-.wsprp-action-bar span:nth-child(5)::before { background-image: url('https://i.imgur.com/GS9xPvY.png'); }
-.wsprp-action-bar span:nth-child(6)::before { background-image: url('https://i.imgur.com/OkNcsbD.png'); }
+.wsprp-act-item:nth-child(1)::before { background-image: url('https://i.imgur.com/ifIidSQ.png'); }
+.wsprp-act-item:nth-child(1)::after  { content: "Invite"; }
+
+.wsprp-act-item:nth-child(2)::before { background-image: url('https://i.imgur.com/0LsmALo.png'); }
+.wsprp-act-item:nth-child(2)::after  { content: "Send Files"; }
+
+.wsprp-act-item:nth-child(3)::before { background-image: url('https://i.imgur.com/ZbXpS8T.png'); }
+.wsprp-act-item:nth-child(3)::after  { content: "Video"; }
+
+.wsprp-act-item:nth-child(4)::before { background-image: url('https://i.imgur.com/HUAIASa.png'); }
+.wsprp-act-item:nth-child(4)::after  { content: "Voice"; }
+
+.wsprp-act-item:nth-child(5)::before { background-image: url('https://i.imgur.com/GS9xPvY.png'); }
+.wsprp-act-item:nth-child(5)::after  { content: "Activities"; }
+
+.wsprp-act-item:nth-child(6)::before { background-image: url('https://i.imgur.com/OkNcsbD.png'); }
+.wsprp-act-item:nth-child(6)::after  { content: "Games"; }
 
 /* Main Area */
 .wsprp-main {
@@ -280,12 +291,22 @@
   display: block;
 }
 
-/* ฝังปุ่มสามเหลี่ยมใต้ Avatar */
-.wsprp-dp-frame::after {
-  /* จัดการ layout ใน container */
+/* ฝังลูกศรสามเหลี่ยมใต้ Avatar อัตโนมัติ */
+.wsprp-dp-arrow::before {
+  content: "▼";
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 8px;
+  color: #5c6854;
+  margin-top: -3px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
 }
 
-/* ฝังปุ่ม Send และ Search ผ่าน CSS โดยไม่ต้องเขียนแท็ก button ใน HTML */
+/* ฝังปุ่ม Send / Search */
 .wsprp-dp-btns {
   width: 100%;
   display: flex;
@@ -312,13 +333,8 @@
   transition: transform 0.05s ease, filter 0.05s ease;
 }
 
-.wsprp-dp-btns::before {
-  content: "Send";
-}
-
-.wsprp-dp-btns::after {
-  content: "Search";
-}
+.wsprp-dp-btns::before { content: "Send"; }
+.wsprp-dp-btns::after  { content: "Search"; }
 
 .wsprp-dp-btns::before:hover,
 .wsprp-dp-btns::after:hover {
@@ -331,7 +347,7 @@
   background: #95a38b;
 }
 
-/* แถบหมายเหตุโรลเพลย์ */
+/* แถบหมายเหตุโรลเพลย์ (สีเทาเดิม) */
 .wsprp-notebar {
   box-sizing: border-box;
   min-height: 24px;
