@@ -222,14 +222,14 @@
 /* 3. Video: ปรับขนาดเฉพาะรูปนี้ */
 .wsprp-act-item:nth-child(3)::before { 
   background-image: url('https://i.imgur.com/ZbXpS8T.png'); 
-  background-size: 20px auto; 
+  background-size: 24px auto; 
 }
 .wsprp-act-item:nth-child(3)::after  { content: "Video"; }
 
 /* 4. Voice: ปรับขนาดเฉพาะรูปนี้ */
 .wsprp-act-item:nth-child(4)::before { 
   background-image: url('https://i.imgur.com/HUAIASa.png'); 
-  background-size: 22px auto; 
+  background-size: 20px auto; 
 }
 .wsprp-act-item:nth-child(4)::after  { content: "Voice"; }
 
