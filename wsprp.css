@@ -11,14 +11,16 @@
   font-weight: normal;
   font-style: normal;
 }
+
 .wsprp-container {
   width: 100%;
-  max-width: 650px;
+  max-width: 700px;
   min-width: 400px;
   box-sizing: border-box;
   margin: auto;
   overflow: visible;
 }
+
 .wsprp-window {
   box-sizing: border-box;
   width: 100%;
@@ -114,6 +116,7 @@
   line-height: 1;
 }
 
+/* Menubar */
 .wsprp-menubar {
   box-sizing: border-box;
   height: 20px;
@@ -170,7 +173,7 @@
 .wsprp-act-item:nth-child(2)::before { background-image: url('https://i.imgur.com/0LsmALo.png'); background-size: 22px auto; }
 .wsprp-act-item:nth-child(2)::after  { content: "Send Files"; }
 
-.wsprp-act-item:nth-child(3)::before { background-image: url('https://i.imgur.com/ZbXpS8T.png'); background-size: 28px auto; }
+.wsprp-act-item:nth-child(3)::before { background-image: url('https://i.imgur.com/ZbXpS8T.png'); background-size: 30px auto; }
 .wsprp-act-item:nth-child(3)::after  { content: "Video"; }
 
 .wsprp-act-item:nth-child(4)::before { background-image: url('https://i.imgur.com/HUAIASa.png'); background-size: 20px auto; }
@@ -182,7 +185,6 @@
 .wsprp-act-item:nth-child(6)::before { background-image: url('https://i.imgur.com/OkNcsbD.png'); background-size: 22px auto; }
 .wsprp-act-item:nth-child(6)::after  { content: "Games"; }
 
-/* Main Area */
 .wsprp-main {
   box-sizing: border-box;
   background: #c2ceba;
