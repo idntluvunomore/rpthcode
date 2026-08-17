@@ -167,13 +167,13 @@
   background-repeat: no-repeat;
 }
 
-.wsprp-act-item:nth-child(1)::before { background-image: url('https://i.imgur.com/ifIidSQ.png'); background-size: 22px auto; }
+.wsprp-act-item:nth-child(1)::before { background-image: url('https://i.imgur.com/ifIidSQ.png'); background-size: 24px auto; }
 .wsprp-act-item:nth-child(1)::after  { content: "Invite"; }
 
 .wsprp-act-item:nth-child(2)::before { background-image: url('https://i.imgur.com/0LsmALo.png'); background-size: 22px auto; }
 .wsprp-act-item:nth-child(2)::after  { content: "Send Files"; }
 
-.wsprp-act-item:nth-child(3)::before { background-image: url('https://i.imgur.com/ZbXpS8T.png'); background-size: 30px auto; }
+.wsprp-act-item:nth-child(3)::before { background-image: url('https://i.imgur.com/ZbXpS8T.png'); background-size: 35px auto; }
 .wsprp-act-item:nth-child(3)::after  { content: "Video"; }
 
 .wsprp-act-item:nth-child(4)::before { background-image: url('https://i.imgur.com/HUAIASa.png'); background-size: 20px auto; }
