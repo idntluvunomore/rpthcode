@@ -172,6 +172,7 @@
   cursor: pointer;
 }
 
+/* ================= ACTION BAR (FIXED BASELINE) ================= */
 .wsprp-action-bar {
   box-sizing: border-box;
   background: #d4d0c8;
@@ -189,36 +190,61 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end; /* ดึงข้อความให้ยึดติดแนวล่างสุดเสมอ */
   gap: 2px;
   cursor: pointer;
 }
 
+/* ล็อกขนาดกล่องไอคอนให้เท่ากันทุกปุ่ม */
 .wsprp-act-item::before {
   content: "";
   display: block;
-  height: 25px;
-  width: 25px;
-  background-position: center;
+  width: 100%;
+  height: 26px; /* ความสูงพื้นที่ไอคอน */
+  background-position: center bottom;
   background-repeat: no-repeat;
-  background-size: contain;
 }
 
-.wsprp-act-item:nth-child(1)::before { background-image: url('https://i.imgur.com/ifIidSQ.png'); }
+/* 1. Invite: ปรับขนาดเฉพาะรูปนี้ */
+.wsprp-act-item:nth-child(1)::before { 
+  background-image: url('https://i.imgur.com/ifIidSQ.png'); 
+  background-size: 20px auto; 
+}
 .wsprp-act-item:nth-child(1)::after  { content: "Invite"; }
 
-.wsprp-act-item:nth-child(2)::before { background-image: url('https://i.imgur.com/0LsmALo.png'); }
+/* 2. Send Files: ปรับขนาดเฉพาะรูปนี้ */
+.wsprp-act-item:nth-child(2)::before { 
+  background-image: url('https://i.imgur.com/0LsmALo.png'); 
+  background-size: 24px auto; 
+}
 .wsprp-act-item:nth-child(2)::after  { content: "Send Files"; }
 
-.wsprp-act-item:nth-child(3)::before { background-image: url('https://i.imgur.com/ZbXpS8T.png'); }
+/* 3. Video: ปรับขนาดเฉพาะรูปนี้ */
+.wsprp-act-item:nth-child(3)::before { 
+  background-image: url('https://i.imgur.com/ZbXpS8T.png'); 
+  background-size: 20px auto; 
+}
 .wsprp-act-item:nth-child(3)::after  { content: "Video"; }
 
-.wsprp-act-item:nth-child(4)::before { background-image: url('https://i.imgur.com/HUAIASa.png'); }
+/* 4. Voice: ปรับขนาดเฉพาะรูปนี้ */
+.wsprp-act-item:nth-child(4)::before { 
+  background-image: url('https://i.imgur.com/HUAIASa.png'); 
+  background-size: 22px auto; 
+}
 .wsprp-act-item:nth-child(4)::after  { content: "Voice"; }
 
-.wsprp-act-item:nth-child(5)::before { background-image: url('https://i.imgur.com/GS9xPvY.png'); }
+/* 5. Activities: ปรับขนาดเฉพาะรูปนี้ */
+.wsprp-act-item:nth-child(5)::before { 
+  background-image: url('https://i.imgur.com/GS9xPvY.png'); 
+  background-size: 22px auto; 
+}
 .wsprp-act-item:nth-child(5)::after  { content: "Activities"; }
 
-.wsprp-act-item:nth-child(6)::before { background-image: url('https://i.imgur.com/OkNcsbD.png'); }
+/* 6. Games: ปรับขนาดเฉพาะรูปนี้ */
+.wsprp-act-item:nth-child(6)::before { 
+  background-image: url('https://i.imgur.com/OkNcsbD.png'); 
+  background-size: 22px auto; 
+}
 .wsprp-act-item:nth-child(6)::after  { content: "Games"; }
 
 .wsprp-main {
