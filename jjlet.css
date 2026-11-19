@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'jjtoxic';
+  src: url('https://cdn.jsdelivr.net/gh/idntluvunomore/rpthcode@main/jjtoxic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .jjlet {
   --jjlet-w: 280px;
   --jjlet-b: #b99273;
