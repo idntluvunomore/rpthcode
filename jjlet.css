@@ -4,6 +4,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 .jjlet {
   --jjlet-w: 180px;
   --jjlet-mw: 380px;
@@ -17,30 +18,40 @@
 
   position: relative;
   width: 100%;
-  margin: 20px auto;
+  padding: 22px 18px;
+  margin: 12px auto;
   font-family: var(--jjlet-ft);
   color: var(--jjlet-i);
   isolation: isolate;
+  box-sizing: border-box;
 }
+
 .jjlet * {
   box-sizing: border-box;
 }
-.jjlet .jjlet-t {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
+
+.jjlet > .jjlet-tg {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
   clip-path: inset(50%);
+  margin: 0 !important;
 }
-.jjlet .jjlet-e {
-  position: relative;
-  width: var(--jjlet-w);
-  max-width: 100%;
+
+.jjlet > .jjlet-en {
+  position: relative !important;
+  display: block !important;
+  width: min(var(--jjlet-w), 100%) !important;
+  height: auto !important;
   aspect-ratio: 180 / 132;
-  margin: 0 auto;
-  isolation: isolate;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background: none !important;
+  z-index: 2;
 }
-.jjlet .jjlet-f {
+
+.jjlet .jjlet-fl {
   position: absolute;
   inset: 0 0 auto;
   height: 44%;
@@ -48,20 +59,22 @@
   clip-path: polygon(0 100%, 50% 0, 100% 100%);
   z-index: 0;
 }
-.jjlet .jjlet-b {
+
+.jjlet .jjlet-bk {
   position: absolute;
   inset: 42% 0 0;
   background: var(--jjlet-b);
   border-radius: 0 0 3px 3px;
   z-index: 1;
 }
-.jjlet .jjlet-s {
+
+.jjlet .jjlet-sh {
   position: absolute;
-  top: 23%;
-  left: 10%;
+  inset: 23% 10% auto;
   width: 80%;
   height: 65%;
-  padding: 9px;
+  margin: 0;
+  padding: 8px;
   background: var(--jjlet-p);
   color: var(--jjlet-i);
   border: 1px solid #00000012;
@@ -69,37 +82,47 @@
   box-shadow: 0 2px 8px #00000015;
   overflow: hidden;
   text-align: left;
-  font-size: 9px;
-  line-height: 1.6;
-  transition: transform .3s ease;
+  font-size: 10px;
+  line-height: 1.5;
   z-index: 2;
+  transition: transform .25s ease;
 }
-.jjlet .jjlet-x {
+
+.jjlet .jjlet-tx {
+  font-size: inherit;
+  line-height: inherit;
   overflow-wrap: anywhere;
 }
-.jjlet .jjlet-x p {
+
+.jjlet .jjlet-tx p {
+  font-size: inherit;
+  line-height: inherit;
   margin: 0 0 8px;
 }
-.jjlet .jjlet-x img {
+
+.jjlet .jjlet-tx img {
   max-width: 100%;
   height: auto;
 }
-.jjlet .jjlet-p {
-  position: absolute;
-  top: 23%;
-  left: 10%;
-  width: 80%;
-  height: 65%;
+
+.jjlet .jjlet-op,
+.jjlet .jjlet-ov {
+  position: absolute !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
   cursor: pointer;
+  font-size: 0 !important;
+}
+
+.jjlet .jjlet-op {
+  display: block !important;
+  inset: 18% 10% 12%;
   z-index: 3;
 }
-.jjlet .jjlet-e:has(.jjlet-p:hover) .jjlet-s {
-  transform: translateY(-8px);
-}
-.jjlet .jjlet-e:has(.jjlet-p:hover) .jjlet-p {
-  transform: translateY(-8px);
-}
-.jjlet .jjlet-r {
+
+.jjlet .jjlet-fr {
   position: absolute;
   inset: 42% 0 0;
   background: var(--jjlet-r);
@@ -114,80 +137,85 @@
   overflow: hidden;
   z-index: 4;
 }
-.jjlet .jjlet-r::before,
-.jjlet .jjlet-r::after {
+
+.jjlet .jjlet-fr::before,
+.jjlet .jjlet-fr::after {
   content: '';
   position: absolute;
   inset: 0;
 }
-.jjlet .jjlet-r::before {
+
+.jjlet .jjlet-fr::before {
   background: var(--jjlet-f);
   clip-path: polygon(0 0, 65% 80%, 0 100%);
 }
 
-.jjlet .jjlet-r::after {
+.jjlet .jjlet-fr::after {
   background: var(--jjlet-d);
   clip-path: polygon(0 100%, 50% 35%, 100% 100%);
 }
-.jjlet .jjlet-n {
-  position: absolute;
-  right: 10px;
-  bottom: 8px;
+
+.jjlet .jjlet-nm {
+  position: absolute !important;
+  inset: auto 10px 8px auto !important;
   max-width: 85%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 10px;
-  font-style: italic;
   color: var(--jjlet-i);
+  font-size: 10px;
+  line-height: 1.2;
+  font-style: italic;
   z-index: 5;
 }
-.jjlet .jjlet-c {
-  display: none;
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  font-size: 22px;
-  font-weight: normal;
-  line-height: 1;
-  color: var(--jjlet-i);
-  cursor: pointer;
-  z-index: 6;
+
+.jjlet > .jjlet-ov {
+  display: none !important;
+  inset: 0;
+  z-index: 1;
 }
-.jjlet .jjlet-t:checked ~ .jjlet-e {
-  width: var(--jjlet-mw);
-  max-width: 100%;
+
+.jjlet > .jjlet-tg:checked ~ .jjlet-ov {
+  display: block !important;
+}
+
+.jjlet > .jjlet-tg:checked ~ .jjlet-en {
+  width: min(var(--jjlet-mw), 100%) !important;
   aspect-ratio: auto;
 }
 
-.jjlet .jjlet-t:checked ~ .jjlet-e .jjlet-f,
-.jjlet .jjlet-t:checked ~ .jjlet-e .jjlet-b,
-.jjlet .jjlet-t:checked ~ .jjlet-e .jjlet-r,
-.jjlet .jjlet-t:checked ~ .jjlet-e .jjlet-p {
-  display: none;
+.jjlet > .jjlet-tg:checked ~ .jjlet-en > .jjlet-fl,
+.jjlet > .jjlet-tg:checked ~ .jjlet-en > .jjlet-bk,
+.jjlet > .jjlet-tg:checked ~ .jjlet-en > .jjlet-fr,
+.jjlet > .jjlet-tg:checked ~ .jjlet-en > .jjlet-op {
+  display: none !important;
 }
-.jjlet .jjlet-t:checked ~ .jjlet-e .jjlet-s {
-  position: relative;
-  inset: auto;
-  width: 100%;
-  height: auto;
-  min-height: 150px;
-  padding: 35px 25px 25px;
+
+.jjlet > .jjlet-tg:checked ~ .jjlet-en > .jjlet-sh {
+  position: relative !important;
+  inset: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 120px;
+  padding: 24px;
   overflow: visible;
   font-size: 13px;
   line-height: 1.8;
-  border-radius: 3px;
   box-shadow: 0 5px 20px #00000018;
   transform: none;
-  animation: jjlet-in .3s ease both;
+  animation: jjlet-in .25s ease both;
 }
-.jjlet .jjlet-t:checked ~ .jjlet-e .jjlet-c {
-  display: block;
+
+@media (hover: hover) {
+  .jjlet .jjlet-en:has(> .jjlet-op:hover) > .jjlet-sh {
+    transform: translateY(-6px);
+  }
 }
+
 @keyframes jjlet-in {
   from {
     opacity: 0;
-    transform: translateY(12px) scale(.95);
+    transform: translateY(10px) scale(.96);
   }
 
   to {
@@ -197,7 +225,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .jjlet .jjlet-s {
+  .jjlet .jjlet-sh {
     transition: none;
     animation: none !important;
   }
