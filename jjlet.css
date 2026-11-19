@@ -89,6 +89,7 @@
 }
 
 .jjlet .jjlet-tx {
+  font-family: 'jjtoxic', sans-serif !important;
   font-size: inherit;
   line-height: inherit;
   overflow-wrap: anywhere;
@@ -229,4 +230,7 @@
     transition: none;
     animation: none !important;
   }
+}
+ .jjlet .jjlet-tx * {
+  font-family: inherit !important;
 }
