@@ -90,13 +90,13 @@
 
 .jjlet .jjlet-tx {
   font-family: 'jjtoxic', sans-serif !important;
-  font-size: 20px;
+  font-size: 25px;
   line-height: inherit;
   overflow-wrap: anywhere;
 }
 
 .jjlet .jjlet-tx p {
-  font-size: inherit;
+  font-size: 25px;
   line-height: inherit;
   margin: 0 0 8px;
 }
